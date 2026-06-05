@@ -1,0 +1,57 @@
+@import url(/CSS/headerfooter.css);
+
+.maincontainer {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* DEBUT MAIN */
+
+@media (min-width: 1075px) {
+    main {
+        padding-top: 5rem;
+    }
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 3.43rem;
+    font-weight: 700;
+    color: var(--maincolor);
+    margin-bottom: 1.87rem;
+}
+
+/* MAIN CONTENT */
+
+.container_legal {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.container_legal section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.container_legal h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--maincolor);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+}
+
+.container_legal p,
+.container_legal li {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--textcolor);
+}

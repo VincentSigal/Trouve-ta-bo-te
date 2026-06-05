@@ -1,0 +1,325 @@
+@import url(/CSS/headerfooter.css);
+
+/* DEBUT MAIN */
+@media (min-width: 1075px) {
+  main {
+    padding-top: 5rem;
+  }
+}
+
+main {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0)28%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.2) 34%, rgba(0, 0, 0, 0.4) 38%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 1) 60%);
+  padding-bottom: 1.5rem;
+}
+
+.entete {
+  /* EN TÊTE */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.trait1,
+.trait2 {
+  border: 1px solid rgba(255, 203, 112, 0.5);
+}
+
+.trait1 {
+  width: 100%;
+  max-width: 41.25rem;
+  margin-bottom: 1.53rem;
+}
+
+.trait2 {
+  width: 100%;
+  max-width: 23.87rem;
+}
+
+.traitlogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 0.12rem;
+}
+
+.traitlogo img {
+  max-width: 2.31rem;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: 2.62rem;
+  font-weight: 700;
+  color: var(--maincolor);
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.entete p {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.31rem;
+  font-weight: 400;
+  color: var(--textcolor);
+}
+
+/* SECTION CARROUSSEL */
+
+.filter {
+  /* FILTER */
+  display: flex;
+  justify-content: center;
+  gap: 0.31rem;
+  border: 1px solid var(--maincolor);
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.87rem 1.25rem;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.filter select {
+  background-color: var(--maincolor);
+  border: 1px solid black;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #000000;
+  padding: 0.1rem 0;
+  cursor: pointer;
+}
+
+.filter button {
+  border: 1px solid var(--maincolor);
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--maincolor);
+  padding: 0.1rem 1.81rem;
+  cursor: pointer;
+}
+
+.filter button:hover {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.headings2 {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  margin-bottom: 0.2rem;
+}
+
+h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.31rem;
+  font-weight: 600;
+  color: var(--maincolor);
+}
+
+.section_carroussel>p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.31rem;
+  font-weight: 400;
+  color: var(--textcolor);
+}
+
+.carroussel {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card {
+  border: 2px solid rgba(255, 203, 112, 0.3);
+  border-radius: 30px;
+  padding: 0.31rem;
+  cursor: pointer;
+}
+
+.card:not(.popcard) {
+  transition: 0.7s;
+}
+
+.card:not(.popcard):hover {
+  transform: scale(1.1);
+  border-color: var(--maincolor);
+}
+
+.bgcard {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 30px;
+  width: 258px;
+  height: 375px;
+  box-shadow: inset 0px 105px 100px 0px rgba(0, 0, 0, 0.9), inset 0px -60px 50px 20px rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem 1rem 0.6rem 1rem;
+}
+
+.carroussel h3 {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--maincolor);
+}
+
+.card a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--textcolor);
+}
+
+.card a::after {
+  content: url(/img/icons/pin_icon.svg);
+  vertical-align: middle;
+  margin-left: 0.5rem;
+}
+
+.card a:hover,
+.card a:focus {
+  text-decoration: underline var(--maincolor);
+}
+
+.card a:visited {
+  color: var(--textcolor);
+}
+
+.card p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--maincolor);
+}
+
+/* POP UP CARD */
+
+.popcard {
+  position: fixed;
+  width: fit-content;
+  height: fit-content;
+  inset: 0;
+  margin: auto;
+  border: 1px solid var(--maincolor);
+  cursor: default;
+  z-index: 11;
+}
+
+.popdesc {
+  display: none;
+}
+
+.card.popcard .popdesc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.card.popcard .bgcard {
+  width: 350px;
+  height: 515px;
+  box-shadow: inset 0px 120px 50px -25px rgba(0, 0, 0, 0.9), inset 0px -225px 90px -25px rgba(0, 0, 0, 0.9);
+}
+
+.popdesc p {
+  color: var(--textcolor);
+}
+
+.popdesc a {
+  color: #95BEF8;
+  font-size: 0.8rem;
+  align-self: flex-end;
+}
+
+.popdesc a:visited {
+  color: #95BEF8;
+}
+
+.popdesc a::after {
+  display: none;
+}
+
+/* FIN POP UP CARD */
+
+/* FIN MAIN */
+
+/* FOOTER */
+
+footer {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* CARROUSSEL A CHANGER */
+
+.carroussel {
+  gap: 1.56rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 1.5rem 1rem 1.5rem 1rem;
+}
+
+.carroussel::-webkit-scrollbar {
+  background-color: var(--textcolor);
+  border-radius: 15px;
+  height: 6px;
+}
+
+.carroussel::-webkit-scrollbar-thumb {
+  background-color: var(--maincolor);
+}
+
+@media (max-width: 1075px) {
+  .entete {
+    padding-top: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .filter {
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .filter select {
+    width: 180px;
+    height: 30px;
+  }
+
+  .filter button {
+    width: 105px;
+    height: 30px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1075px) {
+  /* .popcard {
+    top: 35px;
+  } */
+}
+
+@media (max-width: 410px) {
+  /* #popup_amnesia:checked~.popcard {
+    transform: scale(1.2);
+  } */
+}
+
+@media (max-width: 390px) {
+  .card.popcard .bgcard {
+    width: 300px;
+    height: 485px;
+  }
+}

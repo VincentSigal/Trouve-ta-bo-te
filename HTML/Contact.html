@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <link rel="stylesheet" href="/CSS/Contact.css">
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Le site qui référence les boîtes de nuit et leurs soirées dans l'Hérault. Prenez contact avec nous si vous souhaitez ajouter votre établissement et vos soirées ou nous laisser un message.">
+    <title>Contact | Trouve ta boîte</title>
+</head>
+
+<body>
+
+    <div class="maincontainer"> <!-- CONTAINER PRINCIPAL -->
+
+
+        <header id="header"> <!-- HEADER -->
+            <div class="slogan"> <!-- SLOGAN -->
+                <a href="/HTML/Accueil.html" title="Logo"><img src="/img/logo.png" alt="Logo Trouve ta boîte"></a>
+                <a href="/HTML/Accueil.html" title="Trouve ta boîte">Trouve ta boîte</a>
+            </div>
+
+            <nav class="menu"> <!-- MENU HEADER -->
+                <ul>
+                    <li><a href="/HTML/Accueil.html" title="Accueil">Accueil</a></li>
+                    <div class="separateur"></div>
+                    <li><a href="/HTML/Boîtes_de_nuit.html" title="Boîtes de nuit">Boîtes de nuit</a></li>
+                    <div class="separateur"></div>
+                    <li><a href="#" title="Soirées">Soirées</a></li>
+                    <div class="separateur"></div>
+                    <li><a href="/HTML/Contact.html" title="Contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="newsletter"> <!-- NEWSLETTER -->
+                <p>Ne rate aucune soirée !</p>
+            </div>
+
+            <!-- CTA S'INSCRIRE -->
+            <button class="sinscrire"><img src="/img/icons/mail_icon.svg" alt="Icon email">S'INSCRIRE</button>
+
+        </header>
+
+
+        <!-- MAIN -->
+        <main>
+
+            <h1>CONTACT</h1> <!-- HEADINGS 1 -->
+
+
+            <section class="contact_main_section"> <!-- SECTION FORMULAIRE -->
+
+                <div class="textform">
+                    <h2 class="headings one">Un avis ? Un renseignement ?</h2> <!-- HEADINGS 2 -->
+                    <div class="traitlogo">
+                        <div class="trait2"></div>
+                        <img src="/img/logo.png" alt="Logo Trouve ta boîte">
+                        <div class="trait2"></div>
+                    </div>
+                    <p class="pbottom">N’hésitez pas à nous contacter via ce formulaire et nous reviendrons vers vous au
+                        plus vite.</p>
+
+                    <h2 class="headings two">Propriétaire de boîte ?</h2> <!-- HEADINGS 2 -->
+                    <div class="traitlogo">
+                        <div class="trait2"></div>
+                        <img src="/img/logo.png" alt="Logo Trouve ta boîte">
+                        <div class="trait2"></div>
+                    </div>
+                    <p>Propriétaire de boîte ? Contactez-nous pour ajouter votre établissement.</p>
+                </div>
+
+                <form name="Contact" action="#" method="post"> <!-- FORMULAIRE -->
+                    <fieldset>
+                        <label for="Nom">Nom :</label>
+                        <input type="text" name="Nom" id="Nom" placeholder="Votre nom" title="Votre nom" required>
+                        <label for="mail">*E-mail :</label>
+                        <input type="email" name="email" id="mail" placeholder="Votre email" title="Votre email"
+                            required>
+                        <label for="message">*Votre message :</label>
+                        <textarea name="message" id="message" placeholder="Votre message..." title="Votre message"
+                            cols="10" rows="10" required></textarea>
+                        <div class="contact_checkbox">
+                            <input type="checkbox" name="checkbox" id="checkbox">
+                            <label for="checkbox">J'accepte la politique de confidentialité.*</label>
+                        </div>
+                        <button type="submit">Envoyer</button>
+                    </fieldset>
+                </form>
+
+            </section>
+
+        </main>
+
+
+        <footer> <!-- FOOTER -->
+            <nav> <!-- MENU FOOTER -->
+                <ul>
+                    <li><a href="/HTML/Mentions_légales.html" title="Mentions légales">Mentions légales</a></li>
+                    <li><a href="/HTML/Politique_de_confidentialité.html" title="Politique de confidentialité">Politique
+                            de confidentialité</a></li>
+                    <li><a href="/HTML/Contact.html" title="Contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="ctapro">
+                <div> <!-- CTA PROFESSIONNEL -->
+                    <h3><a href="/HTML/Contact.html" title="Ajouter votre établissement">Propriétaire de boîte ?</a>
+                    </h3>
+                    <a href="/HTML/Contact.html" title="Ajouter votre établissement">Ajouter votre établissement</a>
+                </div>
+                <div>
+                    <h3><a href="/HTML/Contact.html" title="Ajouter votre soirée">Organisateur de soirée ?</a></h3>
+                    <a href="/HTML/Contact.html" title="Ajouter votre soirée">Ajouter votre soirée</a>
+                </div>
+            </div>
+            <img src="/img/logo.png" alt="Logo Trouve ta boîte">
+        </footer>
+    </div>
+    <script type="module" src="/JS/contact.js"></script>
+</body>
+
+</html>

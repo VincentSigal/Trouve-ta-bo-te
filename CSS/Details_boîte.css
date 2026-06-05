@@ -1,0 +1,339 @@
+@import url(/CSS/headerfooter.css);
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.5)), url(/img/background_scroll.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* DEBUT MAIN */
+
+@media (min-width: 1075px) {
+    main {
+        padding-top: 5rem;
+    }
+}
+
+.logo_banniere {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.info_boite {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 3.12rem;
+}
+
+.musique_age_media {
+    display: flex;
+    gap: 10px;
+}
+
+.musique_boite {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--maincolor);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.93rem 1.75rem;
+    gap: 0.3rem;
+}
+
+.musique_boite p:first-child::before {
+    content: url(/img/icons/music_boite.svg);
+    vertical-align: middle;
+    margin-right: 0.3rem;
+}
+
+.musique_boite p:first-child {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--textcolor);
+}
+
+.musique_boite p:last-child {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--maincolor);
+    margin: 0 auto;
+}
+
+.age_boite {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--maincolor);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.93rem 1.75rem;
+    gap: 0.3rem;
+
+}
+
+.age_boite p:first-child::before {
+    content: url(/img/icons/user_boite.svg);
+    vertical-align: middle;
+    margin-right: 0.3rem;
+}
+
+.age_boite p:first-child {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--textcolor);
+}
+
+.age_boite p:last-child {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--maincolor);
+    margin: 0 auto;
+}
+
+.horaires_boite {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--maincolor);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    padding: 0.93rem 1.75rem;
+    gap: 0.93rem;
+}
+
+.prix_boite {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.prix_boite p:first-child::before {
+    content: url(/img/icons/prix_boite.svg);
+    vertical-align: middle;
+    margin-right: 0.3rem;
+}
+
+.prix_boite p:first-child {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--textcolor);
+}
+
+.prix_boite p:last-child {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--maincolor);
+    margin: 0 auto;
+}
+
+.ligneboite {
+    border: 1px solid var(--maincolor);
+    align-self: stretch;
+}
+
+.detail_horaires {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.detail_horaires p:first-child {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--textcolor);
+}
+
+.detail_horaires p:nth-child(2) {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--maincolor);
+}
+
+.detail_horaires p:nth-child(3) {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--maincolor);
+    margin: 0 auto;
+}
+
+.preventes {
+    background: linear-gradient(120deg,
+            #3d2b00 0%,
+            #7a5a00 10%,
+            #c9a227 20%,
+            #ffd95a 30%,
+            #fff1a8 40%,
+            #ffd95a 50%,
+            #c9a227 60%,
+            #a67c00 70%,
+            #e6c200 80%,
+            #fff1a8 90%,
+            #c9a227 100%);
+    border: 1px solid var(--maincolor);
+    border-radius: 30px;
+    padding: 0.43rem 1.68rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    color: black;
+    transition: filter 0.2s ease;
+}
+
+.preventes:hover,
+.preventes:focus {
+    filter: brightness(1.2) saturate(1.1);
+}
+
+.preventes:visited {
+    color: black;
+}
+
+.main_detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.62rem;
+    margin-bottom: 3rem;
+}
+
+h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--maincolor);
+}
+
+.detail_left p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.12rem;
+    font-weight: 500;
+    color: var(--textcolor);
+    text-align: justify;
+    max-width: 30.18rem;
+    line-height: 1.6;
+    text-indent: 50px;
+}
+
+.detail_right img {
+    width: 160px;
+    height: 213px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.detail_right img:nth-child(2) {
+    transform: translateY(24px) translateX(-40px);
+}
+
+.detail_right img:last-child {
+    transform: translateY(48px) translateX(-80px);
+}
+
+.ligne_div_details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.12rem;
+    margin-bottom: 1.3rem;
+}
+
+.ligne_details {
+    border: 1px solid rgba(255, 203, 112, 0.7);
+    width: 100%;
+    max-width: 25rem;
+}
+
+.ligne_div_details img {
+    width: 1.5rem;
+}
+
+address {
+    text-align: center;
+    margin-bottom: 0.3rem;
+}
+
+address a {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--maincolor);
+}
+
+address a:hover,
+address a:focus {
+    text-decoration: underline;
+}
+
+iframe {
+    border-radius: 10px;
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    max-height: 200px;
+    margin-bottom: 2rem;
+}
+
+@media (max-width:1085px) {
+    .main_detail {
+        flex-direction: column;
+    }
+
+    .detail_left p {
+        text-align: left;
+    }
+
+    .detail_right img:nth-child(2),
+    .detail_right img:nth-child(3) {
+        transform: none;
+    }
+}
+
+@media (max-width:845px) {
+    .info_boite {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width:585px) {
+    .detail_right {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+}
+
+@media (max-width:375px) {
+    .horaires_boite {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .ligneboite {
+        opacity: 0.7;
+    }
+
+    .detail_horaires {
+        align-items: center;
+    }
+
+    .detail_horaires p:last-child {
+        text-align: center;
+    }
+}

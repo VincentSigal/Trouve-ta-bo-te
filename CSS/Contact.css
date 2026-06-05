@@ -1,0 +1,213 @@
+@import url(/CSS/headerfooter.css);
+
+.maincontainer {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* DEBUT MAIN */
+
+@media (min-width: 1075px) {
+    main {
+        padding-top: 5rem;
+    }
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 3.43rem;
+    font-weight: 700;
+    color: var(--maincolor);
+    margin-bottom: 1.87rem;
+}
+
+.contact_main_section {
+    /* MAIN SECTION */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4.06rem;
+    padding-bottom: 2rem;
+}
+
+.textform {
+    /* CONTAINER GAUCHE */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.headings {
+    font-family: "Playfair Display", serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--maincolor);
+    text-align: center;
+}
+
+.one::before {
+    content: url(/img/icons/bulle_icon.svg);
+    vertical-align: middle;
+    margin-right: 0.62rem;
+}
+
+.two::before {
+    content: url(/img/icons/bulle2_icon.svg);
+    vertical-align: baseline;
+    margin-right: 0.62rem;
+}
+
+.traitlogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.12rem;
+    margin-bottom: 0.62rem;
+}
+
+.trait2 {
+    border: 1px solid var(--maincolor);
+    width: 13.31rem;
+}
+
+.traitlogo img {
+    max-width: 1.25rem;
+}
+
+.textform p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--textcolor);
+    text-align: center;
+    max-width: 20.063rem;
+}
+
+.pbottom {
+    margin-bottom: 3.12rem;
+}
+
+fieldset {
+    /* CONTAINER DROIT */
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgba(255, 203, 112, 0.8);
+    border-radius: 30px;
+    padding: 4rem 7.12rem;
+    transition: 0.7s;
+}
+
+fieldset>label {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--textcolor);
+    margin-bottom: 0.18rem;
+}
+
+fieldset>input,
+textarea {
+    color: var(--textcolor);
+    border: 2px solid rgba(255, 203, 112, 0.8);
+    border-radius: 30px;
+    padding: 0.5rem 0 0.5rem 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #00000000;
+    transition: 0.7s;
+}
+
+.contact_checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1.5rem;
+}
+
+input#checkbox {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+.contact_main_section div label {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--textcolor);
+}
+
+form input:hover,
+form input:focus,
+textarea:hover,
+textarea:focus {
+    border: 2px solid var(--accent);
+}
+
+::placeholder {
+    color: rgb(187, 186, 186);
+}
+
+form button {
+    background: linear-gradient(120deg,
+            #3d2b00 0%,
+            #7a5a00 10%,
+            #c9a227 20%,
+            #ffd95a 30%,
+            #fff1a8 40%,
+            #ffd95a 50%,
+            #c9a227 60%,
+            #a67c00 70%,
+            #e6c200 80%,
+            #fff1a8 90%,
+            #c9a227 100%);
+    border: 1px solid var(--maincolor);
+    border-radius: 30px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    width: fit-content;
+    padding: 0.31rem 1.56rem;
+    align-self: center;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+}
+
+form button:hover,
+form button:focus {
+    filter: brightness(1.2) saturate(1.1);
+
+}
+
+/* FIN MAIN */
+
+/* MEDIA QUERY */
+@media (max-width: 1075px) {
+    h1 {
+        padding-top: 2rem;
+    }
+}
+
+@media (max-width: 965px) {
+    .contact_main_section {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 550px) {
+    fieldset {
+        padding: 2rem 3.5rem;
+    }
+}
+
+@media (max-width: 475px) {
+    .textform {
+        width: 100%;
+    }
+
+    .traitlogo {
+        width: 100%;
+    }
+}

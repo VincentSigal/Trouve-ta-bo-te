@@ -1,0 +1,238 @@
+@import url(/CSS/headerfooter.css);
+
+.maincontainer {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* DEBUT MAIN */
+
+@media (min-width: 1075px) {
+    main {
+        padding-top: 5rem;
+    }
+}
+
+h1 {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 3.43rem;
+    font-weight: 700;
+    color: var(--maincolor);
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.87rem;
+}
+
+.headings_title {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.headings_title h2 {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--maincolor);
+    padding: 0.93rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--maincolor);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.trait {
+    border: 2px solid var(--maincolor);
+    width: 100%;
+
+}
+
+.headings_title img {
+    max-width: 2.31rem;
+}
+
+.touteslesboites {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.card {
+    border: 2px solid rgba(255, 203, 112, 0.3);
+    border-radius: 30px;
+    padding: 0.31rem;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    border-color: var(--maincolor);
+}
+
+.bgcard {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    width: 258px;
+    height: 375px;
+    box-shadow: inset 0px 105px 100px 0px rgba(0, 0, 0, 0.9), inset 0px -60px 50px 20px rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.25rem 0 0.93rem 1.25rem;
+}
+
+.bg1 {
+    background-image: url(/img/la_dune/la_dune.png);
+}
+
+.bg2 {
+    background-image: url(/img/amnesia/amnesia.png);
+}
+
+h3 {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--maincolor);
+}
+
+.card a {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--textcolor);
+}
+
+.card a::after {
+    content: url(/img/icons/pin_icon.svg);
+    vertical-align: middle;
+    margin-left: 0.5rem;
+}
+
+.card a:hover,
+.card a:focus {
+    text-decoration: underline var(--maincolor);
+}
+
+.card a:visited {
+    color: var(--textcolor);
+}
+
+.card p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--maincolor);
+}
+
+.categorie:last-child {
+    margin-bottom: 1.87rem;
+}
+
+/* POP UP CARD */
+#popup_amnesia {
+    display: none;
+}
+
+.popcard {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.7);
+    transition: 0.3s;
+    cursor: auto;
+}
+
+.popbg {
+    box-shadow: inset 0px 105px 100px 0px rgba(0, 0, 0, 0.9), inset 0px -75px 50px 20px rgba(0, 0, 0, 0.9);
+}
+
+.popdesc {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.popdesc div {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.popdesc>p {
+    color: var(--textcolor);
+}
+
+.popdesc p {
+    font-size: 0.6rem;
+}
+
+.popdesc a {
+    color: #95BEF8;
+    font-size: 0.6rem;
+    text-align: end;
+    padding-right: 1rem;
+}
+
+.popdesc a:visited {
+    color: #95BEF8;
+}
+
+.popdesc a::after {
+    display: none;
+}
+
+#popup_amnesia:checked~.popcard {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#popup_amnesia:checked~.popcard {
+    transform: scale(1.5);
+}
+
+.popbg {
+    z-index: 2;
+}
+
+#popup_amnesia:checked~.popcard .popbg {
+    border: 1px solid var(--maincolor);
+}
+
+/* FIN POP UP CARD */
+/* FIN MAIN */
+
+/* MEDIA QUERY */
+@media (max-width: 1075px) {
+    h1 {
+        padding-top: 2rem;
+    }
+
+    .popcard {
+        top: 35px;
+    }
+}
+
+@media (max-width: 410px) {
+    #popup_amnesia:checked~.popcard {
+        transform: scale(1.2);
+    }
+}
+
+@media (max-width: 335px) {
+    #popup_amnesia:checked~.popcard {
+        transform: scale(1);
+    }
+}

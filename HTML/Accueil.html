@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <link rel="stylesheet" href="/CSS/Accueil.css">
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Le site qui référence les boîtes de nuit et leurs soirées dans l'Hérault">
+    <title>Accueil | Trouve ta boîte</title>
+</head>
+
+<body>
+
+
+    <div class="maincontainer"> <!-- CONTAINER PRINCIPAL -->
+
+
+        <header id="header"> <!-- HEADER -->
+            <div class="slogan"> <!-- SLOGAN -->
+                <a href="/HTML/Accueil.html" title="Logo"><img src="/img/logo.png" alt="Logo Trouve ta boîte"></a>
+                <a href="/HTML/Accueil.html" title="Trouve ta boîte">Trouve ta boîte</a>
+            </div>
+
+            <nav class="menu"> <!-- MENU HEADER -->
+                <ul>
+                    <li><a href="/HTML/Accueil.html" title="Accueil">Accueil</a></li>
+                    <div class="separateur"></div>
+                    <li><a href="/HTML/Boîtes_de_nuit.html" title="Boîtes de nuit">Boîtes de nuit</a></li>
+                    <div class="separateur"></div>
+                    <li><a href="#" title="Soirées">Soirées</a></li>
+                    <div class="separateur"></div>
+                    <li><a href="/HTML/Contact.html" title="Contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="newsletter"> <!-- NEWSLETTER -->
+                <p>Ne rate aucune soirée !</p>
+            </div>
+
+            <!-- CTA S'INSCRIRE -->
+            <button class="sinscrire"><img src="/img/icons/mail_icon.svg" alt="Icon email">S'INSCRIRE</button>
+
+        </header>
+
+
+        <!-- MAIN -->
+        <main>
+
+            <div class="entete"> <!-- EN TÊTE -->
+                <div class="trait1"></div>
+                <h1>Trouve ta boîte de nuit près de chez toi</h1> <!-- HEADINGS 1 -->
+                <div class="traitlogo">
+                    <div class="trait2"></div>
+                    <img src="/img/logo.png" alt="Logo Trouve ta boîte">
+                    <div class="trait2"></div>
+                </div>
+                <p>Découvre les meilleures boîtes et soirées de l'Hérault</p>
+            </div>
+
+
+            <section class="section_carroussel"> <!-- CARROUSSEL -->
+
+                <div class="filter"> <!-- FILTER -->
+                    <img src="/img/icons/filter_icon.svg" alt="Logo filtre">
+                    <select name="" id="">
+                        <option value="" disabled selected>Ville</option>
+                        <option>Montpellier</option>
+                        <option>Cap d'Agde</option>
+                        <option>La Grande-Motte</option>
+                        <option>Lattes</option>
+                        <option>St Jean de Védas</option>
+                        <option>Béziers</option>
+                    </select>
+                    <select name="" id="">
+                        <option value="" disabled selected>Musique</option>
+                        <option>Open Format</option>
+                        <option>Rap, Shatta, Afro, Buyon</option>
+                        <option>Pop</option>
+                        <option>Techno</option>
+                    </select>
+                    <button>Filtrer</button>
+                </div>
+
+                <div class="headings2"> <!-- H2 -->
+                    <h2>Boîtes populaires</h2>
+                    <img src="/img/icons/etoile_icon.svg" alt="Logo favoris">
+                </div>
+                <p>Trouve les meilleures boîtes et soirées près de Montpellier, Lattes, le Cap d'Agde et dans tout
+                    l'Herault
+                </p>
+
+                <!-- CARROUSSEL -->
+                <div class="carroussel">
+                </div>
+            </section>
+
+
+        </main>
+
+
+        <footer> <!-- FOOTER -->
+            <nav> <!-- MENU FOOTER -->
+                <ul>
+                    <li><a href="/HTML/Mentions_légales.html" title="Mentions légales">Mentions légales</a></li>
+                    <li><a href="/HTML/Politique_de_confidentialité.html" title="Politique de confidentialité">Politique
+                            de confidentialité</a></li>
+                    <li><a href="/HTML/Contact.html" title="Contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="ctapro">
+                <div> <!-- CTA PROFESSIONNEL -->
+                    <h3><a href="/HTML/Contact.html" title="Ajouter votre établissement">Propriétaire de boîte ?</a>
+                    </h3>
+                    <a href="/HTML/Contact.html" title="Ajouter votre établissement">Ajouter votre établissement</a>
+                </div>
+                <div>
+                    <h3><a href="/HTML/Contact.html" title="Ajouter votre soirée">Organisateur de soirée ?</a></h3>
+                    <a href="/HTML/Contact.html" title="Ajouter votre soirée">Ajouter votre soirée</a>
+                </div>
+            </div>
+            <img src="/img/logo.png" alt="Logo Trouve ta boîte">
+        </footer>
+    </div>
+    <script type="module" src="/JS/Trouvetaboîte.js"></script>
+</body>
+
+</html>
