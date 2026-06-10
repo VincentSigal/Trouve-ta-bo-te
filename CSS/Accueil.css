@@ -134,7 +134,6 @@ h2 {
 
 .carroussel {
   display: flex;
-  justify-content: space-around;
 }
 
 .card {
@@ -167,7 +166,7 @@ h2 {
   padding: 1.25rem 1rem 0.6rem 1rem;
 }
 
-.carroussel h3 {
+.card h3 {
   font-family: "Montserrat Alternates", sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
@@ -262,7 +261,7 @@ footer {
 
 /* CARROUSSEL A CHANGER */
 
-.carroussel {
+/* .carroussel {
   gap: 1.56rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -277,6 +276,56 @@ footer {
 
 .carroussel::-webkit-scrollbar-thumb {
   background-color: var(--maincolor);
+} */
+
+.carrousel-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.carrousel-wrapper {
+  overflow: hidden;
+  flex: 1;
+}
+
+.carroussel {
+  gap: 20px;
+  transition: transform 0.3s linear;
+  padding: 1.5rem 1rem 1.5rem 1rem;
+  user-select: none;
+}
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0.2rem;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--maincolor);
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #555;
+  cursor: pointer;
+}
+
+.dot.dot_active {
+  background: var(--maincolor);
 }
 
 @media (max-width: 1075px) {
@@ -305,16 +354,10 @@ footer {
   }
 }
 
-@media (max-width: 1075px) {
-  /* .popcard {
-    top: 35px;
-  } */
-}
-
-@media (max-width: 410px) {
-  /* #popup_amnesia:checked~.popcard {
-    transform: scale(1.2);
-  } */
+@media (max-width: 785px) {
+  .arrow {
+    display: none;
+  }
 }
 
 @media (max-width: 390px) {
@@ -322,4 +365,26 @@ footer {
     width: 300px;
     height: 485px;
   }
+
+  .carrousel-container {
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+}
+
+.popup-card {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+
+  width: fit-content;
+  height: fit-content;
+
+  z-index: 11;
+
+  display: none;
+}
+
+.popup-card.active {
+  display: block;
 }

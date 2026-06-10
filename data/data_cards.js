@@ -79,3 +79,90 @@ export let boites = [
         details: "/HTML/Details_boite.html",
     },
 ];
+
+/* 
+  {
+    name: "Dieze Warehouse",
+    location: "Montpellier",
+    tags: ["Techno", "Warehouse"],
+    description: "Ancien entrepôt reconverti en lieu événementiel accueillant les plus grands noms de la scène techno."
+  },
+  {
+    name: "Rockstore",
+    location: "Montpellier",
+    tags: ["Concerts", "Clubbing"],
+    description: "Salle mythique de Montpellier alternant concerts, soirées dansantes et événements musicaux variés."
+  },
+  {
+    name: "Milk Club",
+    location: "Montpellier",
+    tags: ["Électro", "House"],
+    description: "Club moderne proposant une programmation électronique variée dans une ambiance intimiste."
+  },
+  {
+    name: "Must Club",
+    location: "Vias",
+    tags: ["Open Format", "Ambiance Festive"],
+    description: "Club récent de la côte héraultaise proposant des soirées généralistes et événements saisonniers."
+  },
+  {
+    name: "Le Milk Famous Club",
+    location: "Saint-Jean-de-Védas",
+    tags: ["House", "Électro"],
+    description: "Club moderne aux portes de Montpellier accueillant régulièrement des DJ et soirées thématiques."
+  },
+  {
+    name: "Mélomane Club",
+    location: "Montpellier",
+    tags: ["Techno", "House"],
+    description: "Lieu apprécié des amateurs de musique électronique avec une programmation orientée club culture."
+  },
+  {
+    name: "Le Panama Club",
+    location: "Montpellier",
+    tags: ["Open Format", "Centre-ville"],
+    description: "Discothèque du centre historique proposant des soirées commerciales et étudiantes."
+  },
+  {
+    name: "Le Fizz",
+    location: "Montpellier",
+    tags: ["Étudiant", "Commercial"],
+    description: "Club populaire du centre-ville connu pour ses soirées étudiantes et son ambiance généraliste."
+  },
+  {
+    name: "Le Club",
+    location: "Montpellier",
+    tags: ["After", "Centre-ville"],
+    description: "Établissement nocturne situé au cœur de Montpellier proposant des soirées jusqu'au matin."
+  },
+  {
+    name: "Le Club Cabaret Oriental",
+    location: "Lattes",
+    tags: ["Oriental", "Cabaret"],
+    description: "Établissement mêlant ambiance orientale, spectacles et soirées dansantes."
+  },
+  {
+    name: "Les Coulisses",
+    location: "La Grande-Motte",
+    tags: ["Lounge", "Open Format"],
+    description: "Club festif de La Grande-Motte proposant une programmation variée durant la saison."
+  },
+  {
+    name: "L'EG Club",
+    location: "Marseillan-Plage",
+    tags: ["Summer Club", "Commercial"],
+    description: "Discothèque estivale proche du front de mer attirant une clientèle touristique."
+  },
+  {
+    name: "L'Usine à Gaz",
+    location: "Béziers",
+    tags: ["Techno", "Électro"],
+    description: "Club biterrois accueillant régulièrement des soirées électroniques et événements musicaux."
+  },
+  {
+    name: "Discothèque Le 2",
+    location: "Béziers",
+    tags: ["Commercial", "Open Format"],
+    description: "Discothèque du centre de Béziers proposant des soirées généralistes et festives."
+  },
+ */

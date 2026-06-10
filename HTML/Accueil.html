@@ -63,7 +63,7 @@
 
                 <div class="filter"> <!-- FILTER -->
                     <img src="/img/icons/filter_icon.svg" alt="Logo filtre">
-                    <select name="" id="">
+                    <select name="" id="ville">
                         <option value="" disabled selected>Ville</option>
                         <option>Montpellier</option>
                         <option>Cap d'Agde</option>
@@ -72,14 +72,14 @@
                         <option>St Jean de Védas</option>
                         <option>Béziers</option>
                     </select>
-                    <select name="" id="">
+                    <select name="" id="musique">
                         <option value="" disabled selected>Musique</option>
                         <option>Open Format</option>
                         <option>Rap, Shatta, Afro, Buyon</option>
                         <option>Pop</option>
                         <option>Techno</option>
                     </select>
-                    <button>Filtrer</button>
+                    <button id="btn-filter">Filtrer</button>
                 </div>
 
                 <div class="headings2"> <!-- H2 -->
@@ -91,8 +91,27 @@
                 </p>
 
                 <!-- CARROUSSEL -->
-                <div class="carroussel">
+
+                <div class="carrousel-container">
+
+                    <button class="arrow prev">
+                        ◄
+                    </button>
+
+                    <div class="carrousel-wrapper">
+
+                        <div class="carroussel">
+                        </div>
+                        <div class="dots">
+                        </div>
+                    </div>
+
+                    <button class="arrow next">
+                        ►
+                    </button>
+
                 </div>
+
             </section>
 
 
@@ -121,6 +140,7 @@
             </div>
             <img src="/img/logo.png" alt="Logo Trouve ta boîte">
         </footer>
+        <div class="popup-card"></div>
     </div>
     <script type="module" src="/JS/Trouvetaboîte.js"></script>
 </body>

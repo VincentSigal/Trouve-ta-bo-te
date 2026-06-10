@@ -61,24 +61,27 @@ export function init_newsletter() {
     const foreground_menu = document.querySelector(".foreground_menu");
 
     btn_subscribe.addEventListener("click", () => {
-        newsletter_container.classList.add("popnewsletter_active");
+        newsletter_container.classList.add("active");
         show_overlay();
     });
 
     btn_close.addEventListener("click", () => {
-        newsletter_container.classList.remove("popnewsletter_active");
+        newsletter_container.classList.remove("active");
         close_overlay();
     });
 
     newsletter_burger.addEventListener("click", () => {
-        newsletter_container.classList.add("popnewsletter_active");
+        newsletter_container.classList.add("active");
         show_overlay();
-        menu_burger.classList.remove("menu_burger_active");
-        foreground_menu.classList.remove("foreground_burger_active");
+
+        const hamburger = document.querySelector(".hamburger");
+        hamburger.classList.remove("active")
+        menu_burger.classList.remove("open");
+        foreground_menu.classList.remove("open");
     });
 
     on_overlay_click(() => {
-        newsletter_container.classList.remove("popnewsletter_active");
+        newsletter_container.classList.remove("active");
         close_overlay();
     });
 };

@@ -2,10 +2,10 @@
 import { boites } from "../data/data_cards.js";
 import { show_overlay, close_overlay, on_overlay_click } from "./overlay.js";
 
-export function init_cards() {
+export function renderCards(data) {
     const cards_container = document.querySelector(`.carroussel`);
     let boites_html = ``;
-    boites.forEach((boites_js) => {
+    data.forEach((boites_js) => {
         boites_html += `
                     <section class="card">
                         <div class="bgcard" style="background-image:url(${boites_js.background})">
@@ -29,19 +29,38 @@ export function init_cards() {
 
     /* POP UP CARDS BOITES DE NUIT */
     const cards_popup = document.querySelectorAll(`.card`);
+    const popup = document.querySelector(".popup-card");
 
     cards_popup.forEach((event_cards) => {
+
         event_cards.addEventListener("click", () => {
-            event_cards.classList.toggle("popcard");
-            if (event_cards.classList.contains("popcard")) {
-                show_overlay();
-            } else {
+
+            const carrousel = document.querySelector(".carroussel");
+            if (carrousel.classList.contains("dragging")) {
+                return;
+            };
+
+            popup.innerHTML = event_cards.outerHTML;
+
+            const popupCard = popup.querySelector(".card");
+
+            popupCard.classList.add("popcard");
+            popup.classList.add("active");
+
+            show_overlay();
+
+            popupCard.addEventListener("click", () => {
+
+                popup.classList.remove("active");
+
                 close_overlay();
-            }
+            });
         });
-        on_overlay_click(() => {
-            event_cards.classList.remove("popcard");
-            close_overlay();
-        });
+    });
+    on_overlay_click(() => {
+
+        popup.classList.remove("active");
+
+        close_overlay();
     });
 };

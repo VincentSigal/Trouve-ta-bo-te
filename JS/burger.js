@@ -32,12 +32,12 @@ export function init_burger() {
 
 
     hamburger.addEventListener("click", () => {
-        menu_burger.classList.toggle("menu_burger_active");
-        hamburger.classList.toggle("hamburger_active")
-        if (menu_burger.classList.contains("menu_burger_active")) {
-            foreground_menu.classList.add("foreground_burger_active");
+        menu_burger.classList.toggle("open");
+        hamburger.classList.toggle("active");
+        if (menu_burger.classList.contains("open")) {
+            foreground_menu.classList.add("open");
         } else {
-            foreground_menu.classList.remove("foreground_burger_active");
-        }
+            foreground_menu.classList.remove("open");
+        };
     });
 };

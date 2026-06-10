@@ -14,11 +14,11 @@ export function init_overlay() {
 /* TOOLS OVERLAY */
 
 export function show_overlay() {
-    overlay.classList.add("overlay_active");
+    overlay.classList.add("active");
 };
 
 export function close_overlay() {
-    overlay.classList.remove("overlay_active");
+    overlay.classList.remove("active");
 };
 
 export function on_overlay_click(closePop) {
