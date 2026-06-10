@@ -1,6 +1,6 @@
 import { boites } from "../data/data_cards.js";
 import { renderCards } from "./cards_boites.js";
-import { init_carrousel } from "./carrousel.js";
+import { refreshCarrousel } from "./carrousel.js";
 
 export function init_filter() {
 
@@ -21,8 +21,6 @@ export function init_filter() {
 
         });
         renderCards(resultatFiltre);
-        const carrousel = document.querySelector(".carroussel");
-        carrousel.style.transform = "translateX(0px)";
-        init_carrousel();
+        refreshCarrousel();
     });
 };
