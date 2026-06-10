@@ -1,9 +1,13 @@
 /* INTERACTIVE CARROUSEL */
 
+export let refreshCarrousel;
+
 export function init_carrousel() {
 
     const carrousel = document.querySelector(".carroussel");
-    const cards = document.querySelectorAll(".card");
+    function getCards() {
+        return document.querySelectorAll(".card");
+    }
     const nextBtn = document.querySelector(".next");
     const prevBtn = document.querySelector(".prev");
 
@@ -16,7 +20,7 @@ export function init_carrousel() {
     let visibleCards; // NOMBRE DE CARDS VISIBLE A L'ECRAN
     let maxIndex; // NOMBRE DE POSITION MAXIMUM DU CARROUSEL
     function getCardWidth() { // OBTENIR LA LARGUEUR D'UNE CARTE
-        return cards[0].offsetWidth + 20;
+        return getCards()[0].offsetWidth + 20;
     };
 
     /* PERMET DE CONNAITRE LE NOMBRE DE CARTES A L'ECRAN AINSI QUE L'INDEX MAX DU CARROUSEL EN FONCTION DU NOMBRE DE CARTES EN DEHORS DE L'ECRAN */
@@ -27,7 +31,7 @@ export function init_carrousel() {
             / getCardWidth()
         );
 
-        maxIndex = Math.max(0, cards.length - visibleCards);
+        maxIndex = Math.max(0, getCards().length - visibleCards);
     };
     calculateCarousel();
 
@@ -95,15 +99,19 @@ export function init_carrousel() {
     calculateCarousel();
     createDots();
 
+
+    /* METTRE A JOUR LES DOTS EN FONCTION DU NOMBRE DE CARTES VISIBLE */
     function updateDots() {
 
         const dots = document.querySelectorAll(".dot");
 
         dots.forEach(dot => dot.classList.remove("dot_active"));
 
-        dots[currentIndex].classList.add("dot_active");
-
+        if (dots[currentIndex]) {
+            dots[currentIndex].classList.add("dot_active");
+        };
     };
+
     carrousel.addEventListener("mousedown", (event) => {
 
         isDragging = true;
@@ -136,13 +144,14 @@ export function init_carrousel() {
         const distance = event.pageX - startX;
         if (Math.abs(distance) > 5) {
             carrousel.classList.add("dragging");
+            
         };
         currentTranslate = prevTranslate + distance;
 
         const largeurCarte = getCardWidth();
 
         const maxTranslate = 0;
-        const minTranslate = -(cards.length - visibleCards) * largeurCarte;
+        const minTranslate = -(getCards().length - visibleCards) * largeurCarte;
 
         if (currentTranslate > maxTranslate) {
             currentTranslate = maxTranslate;
@@ -184,7 +193,7 @@ export function init_carrousel() {
         const largeurCarte = getCardWidth();
 
         const maxTranslate = 0;
-        const minTranslate = -(cards.length - visibleCards) * largeurCarte;
+        const minTranslate = -(getCards().length - visibleCards) * largeurCarte;
 
         if (currentTranslate > maxTranslate) {
             currentTranslate = maxTranslate;
@@ -215,4 +224,15 @@ export function init_carrousel() {
         updateCarrousel();
 
     });
+
+    refreshCarrousel = () => {
+
+        currentIndex = 0;
+
+        calculateCarousel();
+
+        createDots();
+
+        updateCarrousel();
+    };
 };
