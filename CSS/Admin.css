@@ -1,0 +1,512 @@
+@import url(/CSS/fonts.css);
+
+:root {
+    --maincolor: #FFCB70;
+    --textcolor: #F2EFE9;
+    --accent: #fee4b6;
+    --bg-dark: rgba(0, 0, 0, 0.85);
+    --bg-card: rgba(255, 255, 255, 0.05);
+    --border: rgba(255, 203, 112, 0.3);
+    --danger: #e05555;
+    --success: #5cb85c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-image: url(/img/background_club.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--textcolor);
+}
+
+.login-screen.hidden,
+.admin-panel.hidden,
+.form-container.hidden,
+.error-form.hidden,
+.error-login.hidden {
+    display: none;
+}
+
+/* ── ÉCRAN DE CONNEXION ── */
+
+.login-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.login-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.5rem 3rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-box img {
+    width: 3.5rem;
+}
+
+.login-box h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.8rem;
+    color: var(--maincolor);
+}
+
+.trait-login {
+    width: 80%;
+    border: 1px solid var(--border);
+}
+
+.login-box p {
+    font-size: 0.85rem;
+    color: var(--accent);
+}
+
+.input-login {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.input-login input {
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--textcolor);
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+}
+
+.input-login button {
+    padding: 0.7rem 1.2rem;
+    background: linear-gradient(120deg,
+            #3d2b00 0%,
+            #7a5a00 10%,
+            #c9a227 20%,
+            #ffd95a 30%,
+            #fff1a8 40%,
+            #ffd95a 50%,
+            #c9a227 60%,
+            #a67c00 70%,
+            #e6c200 80%,
+            #fff1a8 90%,
+            #c9a227 100%);
+    color: black;
+    border: 1px solid var(--maincolor);
+    border-radius: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+}
+
+.input-login button:hover,
+.input-login button:focus {
+    filter: brightness(1.2) saturate(1.1);
+}
+
+.login-screen .error-login {
+    color: var(--danger);
+    font-size: 0.8rem;
+    display: none;
+}
+
+.login-screen .error-login.visible {
+    display: block;
+}
+
+/* ── HEADER ADMIN ── */
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2.5rem;
+}
+
+.admin-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.admin-logo img {
+    width: 2.2rem;
+}
+
+.admin-logo span {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--maincolor);
+}
+
+.logout-btn {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--textcolor);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.85rem;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.logout-btn:hover,
+.logout-btn:focus {
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+/* ── MAIN ADMIN ── */
+
+.admin-main {
+    padding: 2rem 1.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 0 auto;
+}
+
+.admin-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-top h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.6rem;
+    color: var(--maincolor);
+}
+
+.btn-add {
+    background: linear-gradient(120deg,
+            #3d2b00 0%,
+            #7a5a00 10%,
+            #c9a227 20%,
+            #ffd95a 30%,
+            #fff1a8 40%,
+            #ffd95a 50%,
+            #c9a227 60%,
+            #a67c00 70%,
+            #e6c200 80%,
+            #fff1a8 90%,
+            #c9a227 100%);
+    color: black;
+    border: 1px solid var(--maincolor);
+    padding: 0.65rem 1.4rem;
+    border-radius: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+}
+
+.btn-add:hover,
+.btn-add:focus {
+    filter: brightness(1.2) saturate(1.1);
+}
+
+/* ── FORMULAIRE ── */
+
+.form-container {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-container h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.2rem;
+    color: var(--maincolor);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.65rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--textcolor);
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.btn-save {
+    background-color: var(--maincolor);
+    color: black;
+    border: none;
+    padding: 0.65rem 1.6rem;
+    border-radius: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-save:hover,
+.btn-save:focus {
+    opacity: 0.85;
+}
+
+.btn-cancel {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--textcolor);
+    padding: 0.65rem 1.4rem;
+    border-radius: 8px;
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.btn-cancel:hover,
+.btn-cancel:focus {
+    border-color: var(--textcolor);
+}
+
+.error-form {
+    color: var(--danger);
+    font-size: 0.85rem;
+}
+
+/* ── LISTE DES BOÎTES ── */
+
+.boites-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.25rem;
+}
+
+.boite-card {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s;
+}
+
+.boite-card:hover,
+.boite-card:focus {
+    border-color: var(--maincolor);
+}
+
+.boite-card-img {
+    height: 8.125rem;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 14px 14px 0 0;
+}
+
+.boite-card-body {
+    padding: 1rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.boite-card-name {
+    font-family: "Playfair Display", serif;
+    font-size: 1.1rem;
+    color: var(--maincolor);
+}
+
+.boite-card-location {
+    font-size: 0.82rem;
+    color: var(--accent);
+}
+
+.boite-card-tags {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.boite-card-tags span {
+    font-size: 0.72rem;
+    background: rgba(255, 203, 112, 0.15);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 0.2rem 0.6rem;
+    color: var(--maincolor);
+}
+
+.boite-card-desc {
+    font-size: 0.8rem;
+    color: var(--textcolor);
+    opacity: 0.75;
+    line-height: 1.5;
+}
+
+.boite-card-actions {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.75rem 1.2rem;
+    border-top: 1px solid var(--border);
+}
+
+.btn-edit {
+    width: 100%;
+    padding: 0.5rem;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    color: var(--textcolor);
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-edit:hover,
+.btn-edit:focus {
+    border-color: var(--maincolor);
+    color: var(--maincolor);
+}
+
+.btn-delete {
+    width: 100%;
+    padding: 0.5rem;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    color: var(--textcolor);
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-delete:hover,
+.btn-delete:focus {
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+/* ── EXPORT ── */
+
+.export-section {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.export-section p {
+    font-size: 0.85rem;
+    color: var(--accent);
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.export-section code {
+    background: rgba(255, 203, 112, 0.15);
+    border-radius: 4px;
+    padding: 0.1rem 0.4rem;
+    font-size: 0.82rem;
+    color: var(--maincolor);
+}
+
+.btn-export {
+    background-color: transparent;
+    border: 1px solid var(--maincolor);
+    color: var(--maincolor);
+    padding: 0.65rem 1.4rem;
+    border-radius: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+
+.btn-export:hover,
+.btn-export:focus {
+    background-color: var(--maincolor);
+    color: #000;
+}
+
+/* ── RESPONSIVE ── */
+
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .export-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

@@ -53,7 +53,7 @@ export function init_newsletter() {
     document.body.insertAdjacentHTML("beforeend", newsletter_html);
 
     /* POP-UP NEWSLETTER + OVERLAY */
-    const btn_subscribe = document.querySelector(`.sinscrire`);
+    const btn_subscribe = document.querySelector(`.btn-newsletter`);
     const newsletter_container = document.querySelector(`.popnewsletter`);
     const btn_close = document.querySelector(`.newscross`);
     const newsletter_burger = document.querySelector(`.burger_sinscrire`);

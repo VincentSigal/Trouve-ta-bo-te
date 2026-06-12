@@ -29,23 +29,29 @@ export function init_filter() {
 
             return villeOk && musiqueOk;
         });
+        const errorMessage = document.querySelector(".error-filter");
         if (resultatFiltre.length === 0) {
-            document.querySelector(".carroussel").textContent =
-                "<p>Aucune boîte ne correspond à votre recherche.</p>";
 
-            document.querySelector(".dots").innerHTML = "";
+            if (!errorMessage) {
+
+                document.querySelector(".club-filters").insertAdjacentHTML(
+                    "afterend",
+                    `<p class="error-filter">
+                Aucune boîte ne correspond à votre recherche.
+            </p>`
+                );
+
+            }
+            document.querySelector(".carousel-pagination").innerHTML = "";
 
             return;
         };
         renderCards(resultatFiltre);
         refreshCarrousel();
-
+        
+        if (errorMessage) {
+            errorMessage.remove();
+        }
     });
 
 };
-
-
-function addition(a, b) {
-    a + b;
-};
-let resultat = addition(1 + 2);

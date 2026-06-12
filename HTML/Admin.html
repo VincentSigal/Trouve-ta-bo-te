@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <link rel="stylesheet" href="/CSS/Admin.css">
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Trouve ta boîte</title>
+</head>
+
+<body>
+
+    <!-- ÉCRAN DE CONNEXION -->
+    <div class="login-screen" id="loginScreen">
+        <div class="login-box">
+            <img src="/img/logo.png" alt="Logo Trouve ta boîte">
+            <h1>Espace Admin</h1>
+            <div class="trait-login"></div>
+            <p>Accès réservé à l'administrateur</p>
+            <div class="input-login">
+                <input type="password" id="passwordInput" placeholder="Mot de passe" />
+                <button id="loginBtn">Accéder</button>
+            </div>
+            <p class="error-login" id="errorLogin">Mot de passe incorrect.</p>
+        </div>
+    </div>
+
+    <!-- PANNEAU ADMIN (masqué jusqu'à connexion) -->
+    <div class="admin-panel hidden" id="adminPanel">
+
+        <header class="admin-header">
+            <div class="admin-logo">
+                <img src="/img/logo.png" alt="Logo">
+                <span>Admin — Trouve ta boîte</span>
+            </div>
+            <button class="logout-btn" id="logoutBtn">Déconnexion</button>
+        </header>
+
+        <main class="admin-main">
+
+            <div class="admin-top">
+                <h2>Gestion des boîtes de nuit</h2>
+                <button class="btn-add" id="btnOpenForm">+ Ajouter une boîte</button>
+            </div>
+
+            <!-- FORMULAIRE AJOUT / MODIFICATION -->
+            <div class="form-container hidden" id="formContainer">
+                <h3 id="formTitle">Ajouter une boîte</h3>
+
+                <form name="add-clubs" class="form-grid" action="#" method="#">
+
+                    <div class="form-group">
+                        <label for="inputName">Nom de la boîte *</label>
+                        <input type="text" id="inputName" placeholder="Ex : L'AMNESIA" />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputLocation">Ville *</label>
+                        <input type="text" id="inputLocation" placeholder="Ex : Cap d'Agde" />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputLocationLink">Lien Google Maps</label>
+                        <input type="url" id="inputLocationLink" placeholder="https://maps.app.goo.gl/..." />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputMusique">Style musical *</label>
+                        <input type="text" id="inputMusique" placeholder="Ex : Open Format" />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputTag1">Tag 1 *</label>
+                        <input type="text" id="inputTag1" placeholder="Ex : Club n°1 France" />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputTag2">Tag 2 *</label>
+                        <input type="text" id="inputTag2" placeholder="Ex : Pop" />
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="inputDescription">Description *</label>
+                        <textarea id="inputDescription" rows="3" placeholder="Description de la boîte..."></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="inputBackground">Chemin de l'image</label>
+                        <input type="text" id="inputBackground" placeholder="Ex : /img/amnesia/amnesia.png" />
+                    </div>
+
+                </form>
+
+                <div class="form-actions">
+                    <button class="btn-save" id="btnSave">Enregistrer</button>
+                    <button class="btn-cancel" id="btnCancel">Annuler</button>
+                </div>
+
+                <p class="error-form hidden" id="errorForm">Veuillez remplir tous les champs obligatoires (*).</p>
+            </div>
+
+            <!-- LISTE DES BOÎTES -->
+            <div class="boites-list" id="boitesList"></div>
+
+            <!-- EXPORT -->
+            <div class="export-section">
+                <p>Une fois tes modifications terminées, exporte le fichier et remplace <code>data_cards.js</code> dans
+                    ton projet.</p>
+                <button class="btn-export" id="btnExport">⬇ Exporter data_cards.js</button>
+            </div>
+
+        </main>
+
+    </div>
+
+    <script type="module" src="/JS/admin.js"></script>
+
+</body>
+
+</html>

@@ -3,7 +3,7 @@ import { boites } from "../data/data_cards.js";
 import { show_overlay, close_overlay, on_overlay_click } from "./overlay.js";
 
 export function renderCards(data) {
-    const cards_container = document.querySelector(`.carroussel`);
+    const cards_container = document.querySelector(`.carousel-track`);
     let boites_html = ``;
     data.forEach((boites_js) => {
         boites_html += `
@@ -29,13 +29,13 @@ export function renderCards(data) {
 
     /* POP UP CARDS BOITES DE NUIT */
     const cards_popup = document.querySelectorAll(`.card`);
-    const popup = document.querySelector(".popup-card");
+    const popup = document.querySelector(".club-popup-card");
 
     cards_popup.forEach((event_cards) => {
 
         event_cards.addEventListener("click", () => {
 
-            const carrousel = document.querySelector(".carroussel");
+            const carrousel = document.querySelector(".carousel-track");
             if (carrousel.classList.contains("dragging")) {
                 return;
             };

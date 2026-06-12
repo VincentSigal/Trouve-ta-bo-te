@@ -13,33 +13,33 @@
 <body>
 
 
-    <div class="maincontainer"> <!-- CONTAINER PRINCIPAL -->
+    <div class="page-container"> <!-- CONTAINER PRINCIPAL -->
 
 
         <header id="header"> <!-- HEADER -->
-            <div class="slogan"> <!-- SLOGAN -->
+            <div class="site-branding"> <!-- SLOGAN -->
                 <a href="/HTML/Accueil.html" title="Logo"><img src="/img/logo.png" alt="Logo Trouve ta boîte"></a>
                 <a href="/HTML/Accueil.html" title="Trouve ta boîte">Trouve ta boîte</a>
             </div>
 
-            <nav class="menu"> <!-- MENU HEADER -->
+            <nav class="main-navigation"> <!-- MENU HEADER -->
                 <ul>
                     <li><a href="/HTML/Accueil.html" title="Accueil">Accueil</a></li>
-                    <div class="separateur"></div>
+                    <div class="nav-divider"></div>
                     <li><a href="/HTML/Boîtes_de_nuit.html" title="Boîtes de nuit">Boîtes de nuit</a></li>
-                    <div class="separateur"></div>
+                    <div class="nav-divider"></div>
                     <li><a href="#" title="Soirées">Soirées</a></li>
-                    <div class="separateur"></div>
+                    <div class="nav-divider"></div>
                     <li><a href="/HTML/Contact.html" title="Contact">Contact</a></li>
                 </ul>
             </nav>
 
-            <div class="newsletter"> <!-- NEWSLETTER -->
+            <div class="newsletter-banner"> <!-- NEWSLETTER -->
                 <p>Ne rate aucune soirée !</p>
             </div>
 
             <!-- CTA S'INSCRIRE -->
-            <button class="sinscrire"><img src="/img/icons/mail_icon.svg" alt="Icon email">S'INSCRIRE</button>
+            <button class="btn-newsletter"><img src="/img/icons/mail_icon.svg" alt="Icon email">S'INSCRIRE</button>
 
         </header>
 
@@ -47,21 +47,21 @@
         <!-- MAIN -->
         <main>
 
-            <div class="entete"> <!-- EN TÊTE -->
-                <div class="trait1"></div>
+            <section class="hero-section"> <!-- EN TÊTE -->
+                <div class="hero-divider-one"></div>
                 <h1>Trouve ta boîte de nuit près de chez toi</h1> <!-- HEADINGS 1 -->
-                <div class="traitlogo">
-                    <div class="trait2"></div>
+                <div class="hero-logo-divider">
+                    <div class="hero-divider-two"></div>
                     <img src="/img/logo.png" alt="Logo Trouve ta boîte">
-                    <div class="trait2"></div>
+                    <div class="hero-divider-two"></div>
                 </div>
                 <p>Découvre les meilleures boîtes et soirées de l'Hérault</p>
-            </div>
+            </section>
 
 
-            <section class="section_carroussel"> <!-- CARROUSSEL -->
+            <section class="featured-clubs-section"> <!-- SECTION DU CARROUSSEL -->
 
-                <div class="filter"> <!-- FILTER -->
+                <div class="club-filters"> <!-- FILTRE -->
                     <img src="/img/icons/filter_icon.svg" alt="Logo filtre">
                     <select name="" id="ville">
                         <option value="" disabled selected>VILLE</option>
@@ -84,31 +84,31 @@
                     <button id="btn-filter">Filtrer</button>
                 </div>
 
-                <div class="headings2"> <!-- H2 -->
+                <div class="section-heading-two"> <!-- H2 -->
                     <h2>Boîtes populaires</h2>
                     <img src="/img/icons/etoile_icon.svg" alt="Logo favoris">
                 </div>
-                <p>Trouve les meilleures boîtes et soirées près de Montpellier, Lattes, le Cap d'Agde et dans tout
+                <p class="section-description">Trouve les meilleures boîtes et soirées près de Montpellier, Lattes, le Cap d'Agde et dans tout
                     l'Herault
                 </p>
 
                 <!-- CARROUSSEL -->
 
-                <div class="carrousel-container">
+                <div class="carousel-container">
 
-                    <button class="arrow prev">
+                    <button class="carousel-arrow prev">
                         ◄
                     </button>
 
-                    <div class="carrousel-wrapper">
+                    <div class="carousel-wrapper">
 
-                        <div class="carroussel">
+                        <div class="carousel-track">
                         </div>
-                        <div class="dots">
+                        <div class="carousel-pagination">
                         </div>
                     </div>
 
-                    <button class="arrow next">
+                    <button class="carousel-arrow next">
                         ►
                     </button>
 
@@ -129,7 +129,7 @@
                     <li><a href="/HTML/Contact.html" title="Contact">Contact</a></li>
                 </ul>
             </nav>
-            <div class="ctapro">
+            <div class="professional-cta">
                 <div> <!-- CTA PROFESSIONNEL -->
                     <h3><a href="/HTML/Contact.html" title="Ajouter votre établissement">Propriétaire de boîte ?</a>
                     </h3>
@@ -142,7 +142,7 @@
             </div>
             <img src="/img/logo.png" alt="Logo Trouve ta boîte">
         </footer>
-        <div class="popup-card"></div>
+        <div class="club-popup-card"></div>
     </div>
     <script type="module" src="/JS/Trouvetaboîte.js"></script>
 </body>

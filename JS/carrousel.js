@@ -4,7 +4,7 @@ export let refreshCarrousel;
 
 export function init_carrousel() {
 
-    const carrousel = document.querySelector(".carroussel");
+    const carrousel = document.querySelector(".carousel-track");
     function getCards() {
         return document.querySelectorAll(".card");
     }
@@ -27,7 +27,7 @@ export function init_carrousel() {
     function calculateCarousel() {
 
         visibleCards = Math.floor(
-            document.querySelector(".carrousel-wrapper").offsetWidth
+            document.querySelector(".carousel-wrapper").offsetWidth
             / getCardWidth()
         );
 
@@ -67,7 +67,7 @@ export function init_carrousel() {
 
 
     /* CREER LE NOMBRE DE DOT EQUIVALENT AU MAX INDEX DU CARROUSEL */
-    const dotsContainer = document.querySelector(".dots");
+    const dotsContainer = document.querySelector(".carousel-pagination");
 
     function createDots() {
 

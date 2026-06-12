@@ -1,18 +1,14 @@
 @import url(/CSS/headerfooter.css);
 
 /* DEBUT MAIN */
-@media (min-width: 1075px) {
-  main {
-    padding-top: 5rem;
-  }
-}
 
 main {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0)28%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.2) 34%, rgba(0, 0, 0, 0.4) 38%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 1) 60%);
+  padding-top: 5.5rem;
   padding-bottom: 1.5rem;
 }
 
-.entete {
+.hero-section {
   /* EN TÊTE */
   display: flex;
   flex-direction: column;
@@ -20,23 +16,23 @@ main {
   margin-bottom: 2rem;
 }
 
-.trait1,
-.trait2 {
+.hero-divider-one,
+.hero-divider-two {
   border: 1px solid rgba(255, 203, 112, 0.5);
 }
 
-.trait1 {
+.hero-divider-one {
   width: 100%;
   max-width: 41.25rem;
   margin-bottom: 1.53rem;
 }
 
-.trait2 {
+.hero-divider-two {
   width: 100%;
   max-width: 23.87rem;
 }
 
-.traitlogo {
+.hero-logo-divider {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,7 +40,7 @@ main {
   gap: 0.12rem;
 }
 
-.traitlogo img {
+.hero-logo-divider img {
   max-width: 2.31rem;
 }
 
@@ -59,7 +55,7 @@ h1 {
     0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-.entete p {
+.hero-section p {
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-size: 1.31rem;
@@ -69,7 +65,7 @@ h1 {
 
 /* SECTION CARROUSSEL */
 
-.filter {
+.club-filters {
   /* FILTER */
   display: flex;
   justify-content: center;
@@ -82,7 +78,7 @@ h1 {
   margin: 0 auto;
 }
 
-.filter select {
+.club-filters select {
   background-color: var(--maincolor);
   border: 1px solid black;
   text-align: center;
@@ -95,7 +91,7 @@ h1 {
   cursor: pointer;
 }
 
-.filter button {
+.club-filters button {
   border: 1px solid var(--maincolor);
   border-radius: 30px;
   background-color: rgba(0, 0, 0, 0.5);
@@ -107,11 +103,20 @@ h1 {
   cursor: pointer;
 }
 
-.filter button:hover {
+.club-filters button:hover {
   background-color: rgba(0, 0, 0, 1);
 }
 
-.headings2 {
+.error-filter {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--textcolor);
+  margin-top: 1rem;
+}
+
+.section-heading-two {
   display: flex;
   align-items: baseline;
   gap: 1.25rem;
@@ -125,14 +130,14 @@ h2 {
   color: var(--maincolor);
 }
 
-.section_carroussel>p {
+.section-description {
   font-family: "Montserrat", sans-serif;
   font-size: 1.31rem;
   font-weight: 400;
   color: var(--textcolor);
 }
 
-.carroussel {
+.carousel-track {
   display: flex;
 }
 
@@ -278,38 +283,47 @@ footer {
   background-color: var(--maincolor);
 } */
 
-.carrousel-container {
+.carousel-container {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.carrousel-wrapper {
+.carousel-wrapper {
   overflow: hidden;
   flex: 1;
 }
 
-.carroussel {
+.carousel-track {
   gap: 20px;
-  transition: transform 0.3s linear;
+  transition: transform 0.25s ease-out;
   padding: 1.5rem 1rem 1.5rem 1rem;
   user-select: none;
 }
 
-.arrow {
+.carousel-track.dragging .card {
+  cursor: grabbing;
+}
+
+.carousel-arrow {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 0.2rem;
   border-radius: 25px;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   border: none;
   background: none;
   cursor: pointer;
   color: var(--maincolor);
+  transition: 0.3s;
 }
 
-.dots {
+.carousel-arrow:hover {
+  color: var(--accent);
+  transform: scale(1.4);
+}
+
+.carousel-pagination {
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -329,25 +343,25 @@ footer {
 }
 
 @media (max-width: 1075px) {
-  .entete {
+  main {
     padding-top: 2rem;
   }
 }
 
 @media (max-width: 600px) {
-  .filter {
+  .club-filters {
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
     gap: 20px;
   }
 
-  .filter select {
+  .club-filters select {
     width: 180px;
     height: 30px;
   }
 
-  .filter button {
+  .club-filters button {
     width: 105px;
     height: 30px;
     text-align: center;
@@ -355,7 +369,7 @@ footer {
 }
 
 @media (max-width: 785px) {
-  .arrow {
+  .carousel-arrow {
     display: none;
   }
 }
@@ -366,13 +380,13 @@ footer {
     height: 485px;
   }
 
-  .carrousel-container {
+  .carousel-container {
     margin-left: -16px;
     margin-right: -16px;
   }
 }
 
-.popup-card {
+.club-popup-card {
   position: fixed;
   inset: 0;
   margin: auto;
@@ -385,6 +399,6 @@ footer {
   display: none;
 }
 
-.popup-card.active {
+.club-popup-card.active {
   display: block;
 }
