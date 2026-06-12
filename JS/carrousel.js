@@ -113,7 +113,7 @@ export function init_carrousel() {
     };
 
     carrousel.addEventListener("mousedown", (event) => {
-
+        if (maxIndex === 0) return;
         isDragging = true;
         hasDragged = false;
         startX = event.pageX;
@@ -144,7 +144,7 @@ export function init_carrousel() {
         const distance = event.pageX - startX;
         if (Math.abs(distance) > 5) {
             carrousel.classList.add("dragging");
-            
+
         };
         currentTranslate = prevTranslate + distance;
 
@@ -178,7 +178,7 @@ export function init_carrousel() {
 
     });
     carrousel.addEventListener("touchstart", (event) => {
-
+        if (maxIndex === 0) return;
         isDragging = true;
         startX = event.touches[0].pageX;
     });
