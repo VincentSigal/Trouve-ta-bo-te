@@ -29,11 +29,23 @@
     <!-- PANNEAU ADMIN (masqué jusqu'à connexion) -->
     <div class="admin-panel hidden" id="adminPanel">
 
-        <header class="admin-header">
-            <div class="admin-logo">
-                <img src="/img/logo.png" alt="Logo">
-                <span>Admin — Trouve ta boîte</span>
+        <header id="header" class="admin-header" >
+            <div class="site-branding"> <!-- SLOGAN -->
+                <a href="/HTML/Accueil.html" title="Logo"><img src="/img/logo.png" alt="Logo Trouve ta boîte"></a>
+                <a href="/HTML/Accueil.html" title="Trouve ta boîte">Admin — Trouve ta boîte</a>
             </div>
+
+            <nav class="main-navigation"> <!-- MENU HEADER -->
+                <ul>
+                    <li><a href="/HTML/Accueil.html" title="Accueil">Accueil</a></li>
+                    <div class="nav-divider"></div>
+                    <li><a href="/HTML/Boîtes_de_nuit.html" title="Boîtes de nuit">Boîtes de nuit</a></li>
+                    <div class="nav-divider"></div>
+                    <li><a href="#" title="Soirées">Soirées</a></li>
+                    <div class="nav-divider"></div>
+                    <li><a href="/HTML/Contact.html" title="Contact">Contact</a></li>
+                </ul>
+            </nav>
             <button class="logout-btn" id="logoutBtn">Déconnexion</button>
         </header>
 

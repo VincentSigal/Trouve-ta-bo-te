@@ -2,6 +2,7 @@
 
 export let boites = [
   {
+    idClub: 1,
     background: "/img/la_dune/la_dune.png",
     name: "LA DUNE",
     location: {
@@ -11,9 +12,10 @@ export let boites = [
     tags: ["Club n°2 France", "Open Format"],
     description: "Discothèque élégante et futuriste avec toit-terrasse proposant de la cuisine française moderne et une vue sur la mer.",
     details: "/HTML/Details_boite.html",
-    musique: "Open Format",
+    music: "Open Format",
   },
   {
+    idClub: 2,
     background: "/img/amnesia/amnesia.png",
     name: "L'AMNESIA",
     location: {
@@ -23,9 +25,10 @@ export let boites = [
     tags: ["Club n°1 France", "Pop"],
     description: "Discothèque populaire ouverte en saison, accueillant régulièrement des DJ internationaux et français.",
     details: "/HTML/Details_boite.html",
-    musique: "Pop",
+    music: "Pop",
   },
   {
+    idClub: 3,
     background: "/img/entrepot/lentrepot.png",
     name: "L'ENTREPÔT",
     location: {
@@ -35,9 +38,10 @@ export let boites = [
     tags: ["Urban", "Showcase"],
     description: "Discothèque animée diffusant du dancehall et du hip-hop dans un espace de type entrepôt, avec danse de salon chaque semaine.",
     details: "/HTML/Details_boite.html",
-    musique: "Rap, shatta, afro, buyon",
+    music: "Rap, Shatta, Afro, Buyon",
   },
   {
+    idClub: 4,
     background: "/img/le_pulp/le_pulp.png",
     name: "LE PULP",
     location: {
@@ -47,9 +51,10 @@ export let boites = [
     tags: ["Généraliste", "Chill"],
     description: "Club avec espaces bar, piste de danse, patio orné de palmiers et d'une statue de Bouddha et soirées à thème.",
     details: "/HTML/Details_boite.html",
-    musique: "Open Format",
+    music: "Pop",
   },
   {
+    idClub: 5,
     background: "/img/bora/bora.jpg",
     name: "BORA CLUB",
     location: {
@@ -59,9 +64,10 @@ export let boites = [
     tags: ["Rap", "Showcase"],
     description: "Ce club ouvert en saison, qui propose des soirées DJ, comprend un jardin, un lounge privé et plusieurs bars.",
     details: "/HTML/Details_boite.html",
-    musique: "Rap, shatta, afro, buyon",
+    music: "Rap, Shatta, Afro, Buyon",
   },
   {
+    idClub: 6,
     background: "/img/casita/casita.jpg",
     name: "CLUB CASITA",
     location: {
@@ -71,9 +77,10 @@ export let boites = [
     tags: ["Hip-hop", "House"],
     description: "Cette boîte de nuit organise des soirées variées, au son du hip-hop, de l’électro, du rock et de la house.",
     details: "/HTML/Details_boite.html",
-    musique: "Open Format",
+    music: "Open Format",
   },
   {
+    idClub: 7,
     background: "/img/osmose/osmose.jpg",
     name: "L'OSMOSE",
     location: {
@@ -83,93 +90,162 @@ export let boites = [
     tags: ["Généraliste", "Lounge"],
     description: "Discothèque lounge avec plusieurs salles, proposant de la musique généraliste.",
     details: "/HTML/Details_boite.html",
-    musique: "Open Format",
+    music: "Pop",
+  },
+  {
+    idClub: 8,
+    background: "/img/dieze/dieze.jpg",
+    name: "Dieze Warehouse",
+    location: {
+      location_link: "https://maps.app.goo.gl/Fzci1sVkdAtK36LE7",
+      location_name: "Montpellier",
+    },
+    tags: ["Techno", "Warehouse"],
+    description: "Ancien entrepôt reconverti en lieu événementiel accueillant les plus grands noms de la scène techno.",
+    details: "/HTML/Details_boite.html",
+    music: "Techno",
+  },
+  {
+    idClub: 9,
+    background: "/img/rockstore/rockstore.webp",
+    name: "Rockstore",
+    location: {
+      location_link: "https://maps.app.goo.gl/tZh4MQr22SUJeBda8",
+      location_name: "Montpellier",
+    },
+    tags: ["Concerts", "30ans d'activité"],
+    description: "Salle mythique de Montpellier alternant concerts, boîte de nuit et événements musicaux variés.",
+    details: "/HTML/Details_boite.html",
+    music: "Open Format",
+  },
+  {
+    idClub: 10,
+    background: "/img/must_club/must_club.webp",
+    name: "Must Club",
+    location: {
+      location_link: "https://maps.app.goo.gl/ykNjzxP67TgqtZwY7",
+      location_name: "Vias-Plage",
+    },
+    tags: ["Open Format", "Ambiance Festive"],
+    description: "Club récent de la côte héraultaise proposant des soirées généralistes et événements saisonniers.",
+    details: "/HTML/Details_boite.html",
+    music: "Open Format",
+  },
+  {
+    idClub: 11,
+    background: "/img/milk/milk.webp",
+    name: "Le Milk Famous Club",
+    location: {
+      location_link: "https://maps.app.goo.gl/vwFukTkRAFoiUYScA",
+      location_name: "Saint-Jean-de-Védas",
+    },
+    tags: ["Open Format", "+15ans d'activité"],
+    description: "Club moderne aux portes de Montpellier accueillant régulièrement des DJ et soirées thématiques.",
+    details: "/HTML/Details_boite.html",
+    music: "Open Format",
+  },
+  {
+    idClub: 12,
+    background: "/img/melomane/melomane.webp",
+    name: "Mélomane Club",
+    location: {
+      location_link: "https://maps.app.goo.gl/pygW8CxzqRC2uWKT6",
+      location_name: "Montpellier",
+    },
+    tags: ["Techno", "Hard"],
+    description: "Le Mélomane Club, est une adresse incontournable pour les amateurs de rave, techno et hard music.",
+    details: "/HTML/Details_boite.html",
+    music: "Techno",
+  },
+  {
+    idClub: 13,
+    background: "/img/panama/panama.webp",
+    name: "Le Panama Club",
+    location: {
+      location_link: "https://maps.app.goo.gl/PQ2McqpiGXJArj1z9",
+      location_name: "Montpellier",
+    },
+    tags: ["Open Format", "Latin"],
+    description: "Discothèque du centre historique proposant des soirées commerciales et étudiantes avec un étage dédié à la musique latine.",
+    details: "/HTML/Details_boite.html",
+    music: "Pop",
+  },
+  {
+    idClub: 14,
+    background: "/img/fizz/fizz.webp",
+    name: "Le Fizz",
+    location: {
+      location_link: "https://maps.app.goo.gl/emR1MjEZsqnGWnNQ6",
+      location_name: "Montpellier",
+    },
+    tags: ["Étudiant", "Commercial"],
+    description: "Club populaire du centre-ville connu pour ses soirées étudiantes et son ambiance généraliste.",
+    details: "/HTML/Details_boite.html",
+    music: "Pop",
+  },
+  {
+    idClub: 15,
+    background: "/img/club/club.webp",
+    name: "Le Club",
+    location: {
+      location_link: "https://maps.app.goo.gl/BAGPQSRgA9JWuzdV6",
+      location_name: "Montpellier",
+    },
+    tags: ["Rap", "Centre-ville"],
+    description: "Cocktails et sets de DJ dans une petite discothèque animée ouverte tard dans la nuit et prisée des étudiants locaux.",
+    details: "/HTML/Details_boite.html",
+    music: "Rap, Shatta, Afro, Buyon",
+  },
+  {
+    idClub: 16,
+    background: "/img/club_oriental/club_oriental.webp",
+    name: "Le Club Cabaret Oriental",
+    location: {
+      location_link: "https://maps.app.goo.gl/LvzUz82G7LQRSKTE6",
+      location_name: "Lattes",
+    },
+    tags: ["Oriental", "Chanteurs"],
+    description: "Établissement mêlant ambiance orientale et spectacles.",
+    details: "/HTML/Details_boite.html",
+    music: "Open Format",
+  },
+  {
+    idClub: 17,
+    background: "/img/eg/eg.webp",
+    name: "L'EG Club",
+    location: {
+      location_link: "https://maps.app.goo.gl/ogZLhDpRghaFYrJx7",
+      location_name: "Marseillan-Plage",
+    },
+    tags: ["Summer Club", "Patio"],
+    description: "Discothèque estivale proche du front de mer avec un patio ouvert.",
+    details: "/HTML/Details_boite.html",
+    music: "Pop",
+  },
+  {
+    idClub: 18,
+    background: "/img/lusine_a_gaz/lusine_a_gaz.webp",
+    name: "L'Usine à Gaz",
+    location: {
+      location_link: "https://maps.app.goo.gl/JCCNhSbp2e8r1qGi7",
+      location_name: "Béziers",
+    },
+    tags: ["Open Format", "+20ans d'activité"],
+    description: "Installée dans un usine de 1901, cette boîte de nuit propose des concerts et de la musique diversifiée.",
+    details: "/HTML/Details_boite.html",
+    music: "Open Format",
+  },
+  {
+    idClub: 19,
+    background: "/img/le_2/le_2.webp",
+    name: "Discothèque Le 2",
+    location: {
+      location_link: "https://maps.app.goo.gl/dUcxxFo87KNa37wP8",
+      location_name: "Béziers",
+    },
+    tags: ["Latin", "Open Format"],
+    description: "Discothèque du centre de Béziers proposant des soirées latino et festives.",
+    details: "/HTML/Details_boite.html",
+    music: "Open Format",
   },
 ];
-
-/* 
-  {
-    name: "Dieze Warehouse",
-    location: "Montpellier",
-    tags: ["Techno", "Warehouse"],
-    description: "Ancien entrepôt reconverti en lieu événementiel accueillant les plus grands noms de la scène techno."
-  },
-  {
-    name: "Rockstore",
-    location: "Montpellier",
-    tags: ["Concerts", "Clubbing"],
-    description: "Salle mythique de Montpellier alternant concerts, soirées dansantes et événements musicaux variés."
-  },
-  {
-    name: "Milk Club",
-    location: "Montpellier",
-    tags: ["Électro", "House"],
-    description: "Club moderne proposant une programmation électronique variée dans une ambiance intimiste."
-  },
-  {
-    name: "Must Club",
-    location: "Vias",
-    tags: ["Open Format", "Ambiance Festive"],
-    description: "Club récent de la côte héraultaise proposant des soirées généralistes et événements saisonniers."
-  },
-  {
-    name: "Le Milk Famous Club",
-    location: "Saint-Jean-de-Védas",
-    tags: ["House", "Électro"],
-    description: "Club moderne aux portes de Montpellier accueillant régulièrement des DJ et soirées thématiques."
-  },
-  {
-    name: "Mélomane Club",
-    location: "Montpellier",
-    tags: ["Techno", "House"],
-    description: "Lieu apprécié des amateurs de musique électronique avec une programmation orientée club culture."
-  },
-  {
-    name: "Le Panama Club",
-    location: "Montpellier",
-    tags: ["Open Format", "Centre-ville"],
-    description: "Discothèque du centre historique proposant des soirées commerciales et étudiantes."
-  },
-  {
-    name: "Le Fizz",
-    location: "Montpellier",
-    tags: ["Étudiant", "Commercial"],
-    description: "Club populaire du centre-ville connu pour ses soirées étudiantes et son ambiance généraliste."
-  },
-  {
-    name: "Le Club",
-    location: "Montpellier",
-    tags: ["After", "Centre-ville"],
-    description: "Établissement nocturne situé au cœur de Montpellier proposant des soirées jusqu'au matin."
-  },
-  {
-    name: "Le Club Cabaret Oriental",
-    location: "Lattes",
-    tags: ["Oriental", "Cabaret"],
-    description: "Établissement mêlant ambiance orientale, spectacles et soirées dansantes."
-  },
-  {
-    name: "Les Coulisses",
-    location: "La Grande-Motte",
-    tags: ["Lounge", "Open Format"],
-    description: "Club festif de La Grande-Motte proposant une programmation variée durant la saison."
-  },
-  {
-    name: "L'EG Club",
-    location: "Marseillan-Plage",
-    tags: ["Summer Club", "Commercial"],
-    description: "Discothèque estivale proche du front de mer attirant une clientèle touristique."
-  },
-  {
-    name: "L'Usine à Gaz",
-    location: "Béziers",
-    tags: ["Techno", "Électro"],
-    description: "Club biterrois accueillant régulièrement des soirées électroniques et événements musicaux."
-  },
-  {
-    name: "Discothèque Le 2",
-    location: "Béziers",
-    tags: ["Commercial", "Open Format"],
-    description: "Discothèque du centre de Béziers proposant des soirées généralistes et festives."
-  },
- */

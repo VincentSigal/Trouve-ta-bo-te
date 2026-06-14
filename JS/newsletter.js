@@ -1,8 +1,14 @@
-/* POP-UP NEWSLETTER */
+/* ==========================
+   POPUP NEWSLETTER
+   ========================== */
+// La popup n'existe pas dans le HTML.
+// Elle est générée dynamiquement au chargement de la page.
+
 import { show_overlay, close_overlay, on_overlay_click } from "./overlay.js";
 
 export function init_newsletter() {
 
+    // Structure HTML complète de la popup
     const newsletter_html = `
 <section class="popnewsletter">
                 <div class="newscross">
@@ -50,36 +56,84 @@ export function init_newsletter() {
                     <p>Pas de spam, désinscription à tout moment.</p>
                 </form>
             </section>`;
+
+    // Ajoute la popup à la fin du body
     document.body.insertAdjacentHTML("beforeend", newsletter_html);
 
-    /* POP-UP NEWSLETTER + OVERLAY */
+
+    /* ==========================
+       RECUPERATION DES ELEMENTS
+       ========================== */
+
+    // Bouton newsletter du site
     const btn_subscribe = document.querySelector(`.btn-newsletter`);
+
+    // Conteneur principal de la popup
     const newsletter_container = document.querySelector(`.popnewsletter`);
+
+    // Bouton de fermeture de la popup
     const btn_close = document.querySelector(`.newscross`);
+
+    // Lien newsletter présent dans le menu burger
     const newsletter_burger = document.querySelector(`.burger_sinscrire`);
     const menu_burger = document.querySelector(".menu_burger");
     const foreground_menu = document.querySelector(".foreground_menu");
 
+
+    /* ==========================
+       OUVERTURE DE LA POPUP
+       ========================== */
+
     btn_subscribe.addEventListener("click", () => {
+
+        // Affiche la popup
         newsletter_container.classList.add("active");
+
+        // Affiche l'arrière-plan assombri
         show_overlay();
     });
 
+    /* ==========================
+           FERMETURE DE LA POPUP
+           ========================== */
+
     btn_close.addEventListener("click", () => {
+
+        // Masque la popup
         newsletter_container.classList.remove("active");
+
+        // Masque l'overlay
         close_overlay();
     });
 
+    /* ==========================
+           OUVERTURE DEPUIS LE BURGER
+           ========================== */
+
     newsletter_burger.addEventListener("click", () => {
+
+        // Affiche la popup newsletter
         newsletter_container.classList.add("active");
+
+        // Active l'overlay
         show_overlay();
 
+        // Ferme automatiquement le menu burger
+        // afin d'éviter d'avoir les deux
+        // interfaces ouvertes en même temps
         const hamburger = document.querySelector(".hamburger");
         hamburger.classList.remove("active")
         menu_burger.classList.remove("open");
         foreground_menu.classList.remove("open");
     });
 
+
+    /* ==========================
+       FERMETURE VIA L'OVERLAY
+       ========================== */
+
+    // Ferme également la popup lorsqu'on
+    // clique sur l'arrière-plan assombri
     on_overlay_click(() => {
         newsletter_container.classList.remove("active");
         close_overlay();

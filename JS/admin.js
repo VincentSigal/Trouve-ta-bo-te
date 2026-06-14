@@ -25,11 +25,74 @@ let editingIndex = null; // null = ajout, number = modification
 // ============================================================
 
 const loginScreen = document.getElementById("loginScreen");
-const adminPanel  = document.getElementById("adminPanel");
-const loginBtn    = document.getElementById("loginBtn");
-const logoutBtn   = document.getElementById("logoutBtn");
+const adminPanel = document.getElementById("adminPanel");
+const loginBtn = document.getElementById("loginBtn");
+const logoutBtn = document.getElementById("logoutBtn");
 const passwordInput = document.getElementById("passwordInput");
-const errorLogin  = document.getElementById("errorLogin");
+const errorLogin = document.getElementById("errorLogin");
+
+// HEADER DISPARAÎT AU SCROLL
+function scrollHeader() {
+    const header = document.querySelector("#header");
+
+    let lastScroll = window.scrollY;
+
+    window.addEventListener("scroll", () => {
+        const currentScroll = window.scrollY;
+
+        if (currentScroll > lastScroll) {
+            header.classList.add("hidden");
+        } else {
+            header.classList.remove("hidden");
+        }
+
+        lastScroll = currentScroll;
+    });
+};
+scrollHeader();
+
+/* BURGER */
+function init_burger() {
+    const header = document.querySelector("header");
+
+    const burger_html = `
+<nav class="burger">
+                <div class="hamburger">
+                    <div class="ligne"></div>
+                    <div class="ligne"></div>
+                    <div class="ligne"></div>
+                </div>
+                <ul class="menu_burger">
+                    <li><a href="/HTML/Accueil.html" title="Accueil">Accueil</a></li>
+                    <li><a href="/HTML/Boîtes_de_nuit.html" title="Boîtes de nuit">Boîtes de nuit</a></li>
+                    <li><a href="#" title="Soirées">Soirées</a></li>
+                    <li><a href="/HTML/Contact.html" title="Contact">Contact</a></li>
+                        <p class="burger_sinscrire">Ne rate aucune soirée avec notre Newsletter
+                            !</p>
+                    </li>
+                </ul>
+                <div class="foreground_menu"></div>
+            </nav>
+`;
+
+    header.insertAdjacentHTML("beforeend", burger_html);
+
+    const hamburger = document.querySelector(".hamburger");
+    const menu_burger = document.querySelector(".menu_burger");
+    const foreground_menu = document.querySelector(".foreground_menu");
+
+
+    hamburger.addEventListener("click", () => {
+        menu_burger.classList.toggle("open");
+        hamburger.classList.toggle("active");
+        if (menu_burger.classList.contains("open")) {
+            foreground_menu.classList.add("open");
+        } else {
+            foreground_menu.classList.remove("open");
+        };
+    });
+};
+init_burger();
 
 function checkAuth() {
     if (sessionStorage.getItem(LS_AUTH) === "true") {
@@ -115,21 +178,21 @@ function saveBoites(boites) {
 // ============================================================
 
 const formContainer = document.getElementById("formContainer");
-const formTitle     = document.getElementById("formTitle");
-const btnOpenForm   = document.getElementById("btnOpenForm");
-const btnSave       = document.getElementById("btnSave");
-const btnCancel     = document.getElementById("btnCancel");
-const errorForm     = document.getElementById("errorForm");
+const formTitle = document.getElementById("formTitle");
+const btnOpenForm = document.getElementById("btnOpenForm");
+const btnSave = document.getElementById("btnSave");
+const btnCancel = document.getElementById("btnCancel");
+const errorForm = document.getElementById("errorForm");
 
 // Champs du formulaire
-const inputName        = document.getElementById("inputName");
-const inputLocation    = document.getElementById("inputLocation");
+const inputName = document.getElementById("inputName");
+const inputLocation = document.getElementById("inputLocation");
 const inputLocationLink = document.getElementById("inputLocationLink");
-const inputMusique     = document.getElementById("inputMusique");
-const inputTag1        = document.getElementById("inputTag1");
-const inputTag2        = document.getElementById("inputTag2");
+const inputMusique = document.getElementById("inputMusique");
+const inputTag1 = document.getElementById("inputTag1");
+const inputTag2 = document.getElementById("inputTag2");
 const inputDescription = document.getElementById("inputDescription");
-const inputBackground  = document.getElementById("inputBackground");
+const inputBackground = document.getElementById("inputBackground");
 
 btnOpenForm.addEventListener("click", () => {
     openForm(null);
@@ -149,14 +212,14 @@ function openForm(index) {
         formTitle.textContent = "Modifier la boîte";
         const boites = loadBoites();
         const b = boites[index];
-        inputName.value         = b.name;
-        inputLocation.value     = b.location.location_name;
+        inputName.value = b.name;
+        inputLocation.value = b.location.location_name;
         inputLocationLink.value = b.location.location_link;
-        inputMusique.value      = b.musique;
-        inputTag1.value         = b.tags[0];
-        inputTag2.value         = b.tags[1];
-        inputDescription.value  = b.description;
-        inputBackground.value   = b.background;
+        inputMusique.value = b.musique;
+        inputTag1.value = b.tags[0];
+        inputTag2.value = b.tags[1];
+        inputDescription.value = b.description;
+        inputBackground.value = b.background;
     } else {
         // Mode ajout (CREATE)
         formTitle.textContent = "Ajouter une boîte";
@@ -173,14 +236,14 @@ function closeForm() {
 }
 
 function clearForm() {
-    inputName.value         = "";
-    inputLocation.value     = "";
+    inputName.value = "";
+    inputLocation.value = "";
     inputLocationLink.value = "";
-    inputMusique.value      = "";
-    inputTag1.value         = "";
-    inputTag2.value         = "";
-    inputDescription.value  = "";
-    inputBackground.value   = "";
+    inputMusique.value = "";
+    inputTag1.value = "";
+    inputTag2.value = "";
+    inputDescription.value = "";
+    inputBackground.value = "";
 }
 
 // ── ENREGISTRER (CREATE ou UPDATE) ──
@@ -305,9 +368,9 @@ document.getElementById("btnExport").addEventListener("click", () => {
     const contenu = `/* ARRAY CARDS BOITES DE NUIT */\n\nexport let boites = ${JSON.stringify(boites, null, 2)};\n`;
 
     const blob = new Blob([contenu], { type: "text/javascript" });
-    const url  = URL.createObjectURL(blob);
-    const a    = document.createElement("a");
-    a.href     = url;
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
     a.download = "data_cards.js";
     a.click();
     URL.revokeObjectURL(url);

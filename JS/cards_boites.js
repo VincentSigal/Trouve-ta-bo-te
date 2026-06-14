@@ -1,10 +1,27 @@
-/* INTEGRER CARDS BOITES DE NUIT */
+/* ==========================
+   AFFICHAGE DES CARTES
+   ========================== */
+
+// Données des boîtes de nuit
 import { boites } from "../data/data_cards.js";
+
+// Fonctions de gestion de l'overlay
 import { show_overlay, close_overlay, on_overlay_click } from "./overlay.js";
 
+
+// Génère dynamiquement les cartes
+// à partir des données reçues
 export function renderCards(data) {
+
+    // Conteneur qui recevra les cartes
     const cards_container = document.querySelector(`.carousel-track`);
+
+    // Chaîne HTML qui contiendra
+    // toutes les cartes générées
     let boites_html = ``;
+
+    // Parcourt chaque boîte de nuit
+    // pour construire son HTML
     data.forEach((boites_js) => {
         boites_html += `
                     <section class="card">
@@ -25,38 +42,69 @@ export function renderCards(data) {
                         </div>
                     </section>`;
     });
+
+    // Injecte toutes les cartes
+    // dans le carrousel
     cards_container.innerHTML = boites_html;
 
-    /* POP UP CARDS BOITES DE NUIT */
+
+    /* ==========================
+   POPUP DES CARTES
+   ========================== */
+
+    // Récupère toutes les cartes affichées
     const cards_popup = document.querySelectorAll(`.card`);
+
+    // Conteneur de la popup
     const popup = document.querySelector(".club-popup-card");
 
+    // Ajoute un clic sur chaque carte
     cards_popup.forEach((event_cards) => {
 
+        // Ouvre la popup contenant
+        // les détails de la carte
         event_cards.addEventListener("click", () => {
 
+
+            // Empêche l'ouverture de la popup
+            // lorsqu'un drag du carrousel est en cours
             const carrousel = document.querySelector(".carousel-track");
             if (carrousel.classList.contains("dragging")) {
                 return;
             };
 
+            // outerHTML copie l'élément complet
+            // (balise + contenu) afin de recréer
+            // la carte dans la popup
             popup.innerHTML = event_cards.outerHTML;
 
+            // Récupère la carte nouvellement créée
+            // à l'intérieur de la popup
             const popupCard = popup.querySelector(".card");
 
+            // Applique le style popup
             popupCard.classList.add("popcard");
+
+            // Affiche la popup
             popup.classList.add("active");
 
+            // Affiche l'arrière-plan assombri
             show_overlay();
 
+            // Ferme la popup lorsqu'on clique dessus
             popupCard.addEventListener("click", () => {
 
+                // Masque la popup
                 popup.classList.remove("active");
 
+                // Masque l'overlay
                 close_overlay();
             });
         });
     });
+
+    // Ferme également la popup
+    // lorsqu'on clique sur l'overlay
     on_overlay_click(() => {
 
         popup.classList.remove("active");

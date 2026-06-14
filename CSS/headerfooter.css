@@ -264,15 +264,29 @@ footer img {
 }
 
 /* FIN FOOTER */
+@media (max-width:1229px) {
+    main {
+        padding-top: 7rem;
+    }
+}
+
+@media (max-width:1210px) {
+    .newsletter-banner {
+        display: none;
+    }
+}
 
 /* MOBILE BURGER DEBUT */
 .burger {
     display: none;
 }
 
-@media (max-width: 1075px) {
+@media (max-width: 1015px) {
 
     /* MEDIA QUERIE BURGER */
+    main {
+        padding-top: 2rem;
+    }
 
     header {
         position: sticky;
@@ -398,7 +412,7 @@ footer img {
     }
 
     .foreground_menu.open {
-        height: 290px;
+        height: 330px;
     }
 
     .menu_burger.open {

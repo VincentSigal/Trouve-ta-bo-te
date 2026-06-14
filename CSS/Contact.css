@@ -183,11 +183,6 @@ form button:focus {
 /* FIN MAIN */
 
 /* MEDIA QUERY */
-@media (max-width: 1075px) {
-    h1 {
-        padding-top: 2rem;
-    }
-}
 
 @media (max-width: 965px) {
     .contact_main_section {

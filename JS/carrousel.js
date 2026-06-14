@@ -1,29 +1,48 @@
-/* INTERACTIVE CARROUSEL */
+/* ==========================
+   CARROUSEL INTERACTIF
+   ========================== */
 
+
+// Fonction appelée après un filtrage
+// pour réinitialiser le carrousel
 export let refreshCarrousel;
 
 export function init_carrousel() {
 
     const carrousel = document.querySelector(".carousel-track");
+
+    // Récupère toutes les cartes actuellement affichées
+    // (important après un filtrage)
     function getCards() {
         return document.querySelectorAll(".card");
     }
+
     const nextBtn = document.querySelector(".next");
     const prevBtn = document.querySelector(".prev");
 
-    let currentIndex = 0; // POSITION DU CARROUSEL
-    let startX = 0; // POSITION QUAND ON CLIC
-    let isDragging = false;
-    let hasDragged = false;
-    let currentTranslate = 0; // DISTANCE PARCOURUE A LA SOURIS
-    let prevTranslate = 0;
-    let visibleCards; // NOMBRE DE CARDS VISIBLE A L'ECRAN
-    let maxIndex; // NOMBRE DE POSITION MAXIMUM DU CARROUSEL
-    function getCardWidth() { // OBTENIR LA LARGUEUR D'UNE CARTE
+
+    // État actuel du carrousel
+    let currentIndex = 0; // Position actuelle du carrousel
+    let startX = 0; // Position de départ du drag
+    let isDragging = false; // Indique si un drag est en cours
+    let currentTranslate = 0; // Position actuelle du track en pixels
+    let prevTranslate = 0; // Dernière position enregistrée
+    let visibleCards; // Nombre de cartes visibles à l'écran
+    let maxIndex; // Nombre de position maximale du carrousel
+
+    // Calcule la largeur réelle d'une carte
+    // (largeur + espace entre les cartes)
+    function getCardWidth() {
         return getCards()[0].offsetWidth + 20;
     };
 
-    /* PERMET DE CONNAITRE LE NOMBRE DE CARTES A L'ECRAN AINSI QUE L'INDEX MAX DU CARROUSEL EN FONCTION DU NOMBRE DE CARTES EN DEHORS DE L'ECRAN */
+
+    /* ==========================
+    CALCUL DU CARROUSEL
+    ========================== */
+    // Détermine :
+    // - combien de cartes sont visibles
+    // - combien de positions le carrousel possède
     function calculateCarousel() {
 
         visibleCards = Math.floor(
@@ -36,7 +55,11 @@ export function init_carrousel() {
     calculateCarousel();
 
 
-    /* DEPLACE LE CARROUSEL */
+    /* ==========================
+       DEPLACEMENT DU CARROUSEL
+       ========================== */
+    // Déplace le track à la position correspondant
+    // à currentIndex puis met à jour les dots
     function updateCarrousel() {
 
         const largeurCarte = getCardWidth();
@@ -50,14 +73,17 @@ export function init_carrousel() {
     };
 
 
-    /* FLECHE DROITE DU CARROUSEL */
+    /* ==========================
+       BOUTONS PRECEDENT / SUIVANT
+       ========================== */
+    // Avance d'une position vers la droite
     nextBtn.addEventListener("click", () => {
         if (currentIndex < maxIndex) {
             currentIndex++;
             updateCarrousel();
         };
     });
-    /* FLECHE GAUCHE DU CARROUSEL */
+    // Revient d'une position vers la gauche
     prevBtn.addEventListener("click", () => {
         if (currentIndex > 0) {
             currentIndex--;
@@ -66,17 +92,18 @@ export function init_carrousel() {
     });
 
 
-    /* CREER LE NOMBRE DE DOT EQUIVALENT AU MAX INDEX DU CARROUSEL */
+    /* ==========================
+       PAGINATION (DOTS)
+       ========================== */
+    // Génère automatiquement le nombre de dots
+    // en fonction du nombre de positions possibles
     const dotsContainer = document.querySelector(".carousel-pagination");
-
     function createDots() {
 
         dotsContainer.innerHTML = "";
 
         for (let i = 0; i <= maxIndex; i++) {
-
             const dot = document.createElement("div");
-
             dot.classList.add("dot");
 
             if (i === currentIndex) {
@@ -84,44 +111,41 @@ export function init_carrousel() {
             };
 
             dot.addEventListener("click", () => {
-
                 currentIndex = i;
-
                 updateCarrousel();
-
             });
-
             dotsContainer.appendChild(dot);
-
         };
 
     };
     calculateCarousel();
     createDots();
-
-
-    /* METTRE A JOUR LES DOTS EN FONCTION DU NOMBRE DE CARTES VISIBLE */
+    // Met en évidence le dot correspondant
+    // à la position actuelle du carrousel
     function updateDots() {
-
         const dots = document.querySelectorAll(".dot");
 
         dots.forEach(dot => dot.classList.remove("dot_active"));
-
         if (dots[currentIndex]) {
             dots[currentIndex].classList.add("dot_active");
         };
     };
 
+
+    /* ==========================
+       DRAG SOURIS
+       ========================== */
+    // Début du drag
     carrousel.addEventListener("mousedown", (event) => {
         if (maxIndex === 0) return;
         isDragging = true;
-        hasDragged = false;
         startX = event.pageX;
         event.preventDefault();
     });
-
+    // Fin du drag :
+    // on calcule la carte la plus proche
+    // puis on replace correctement le carrousel
     document.addEventListener("mouseup", () => {
-
         if (!isDragging) return;
 
         isDragging = false;
@@ -136,7 +160,9 @@ export function init_carrousel() {
             carrousel.classList.remove("dragging");
         }, 0);
     });
-
+    // Pendant le déplacement de la souris :
+    // on suit le mouvement tout en empêchant
+    // de sortir des limites du carrousel
     document.addEventListener("mousemove", (event) => {
 
         if (!isDragging) return;
@@ -164,6 +190,13 @@ export function init_carrousel() {
         carrousel.style.transform = `translateX(${currentTranslate}px)`;
 
     });
+
+
+    /* ==========================
+   RESPONSIVE
+   ========================== */
+    // Recalcule le carrousel lorsque
+    // la taille de la fenêtre change
     window.addEventListener("resize", () => {
 
         calculateCarousel();
@@ -177,11 +210,18 @@ export function init_carrousel() {
         updateCarrousel();
 
     });
+
+
+    /* ==========================
+   VERSION TACTILE
+   ========================== */
+    // Début du swipe
     carrousel.addEventListener("touchstart", (event) => {
         if (maxIndex === 0) return;
         isDragging = true;
         startX = event.touches[0].pageX;
     });
+    // Déplacement du doigt
     document.addEventListener("touchmove", (event) => {
 
         if (!isDragging) return;
@@ -207,6 +247,7 @@ export function init_carrousel() {
             `translateX(${currentTranslate}px)`;
 
     });
+    // Fin du swipe
     document.addEventListener("touchend", () => {
 
         if (!isDragging) return;
@@ -225,14 +266,18 @@ export function init_carrousel() {
 
     });
 
+
+    /* ==========================
+       RAFRAICHISSEMENT APRES FILTRE
+       ========================== */
+    // Réinitialise complètement le carrousel
+    // après un filtrage des cartes
     refreshCarrousel = () => {
 
         currentIndex = 0;
 
         calculateCarousel();
-
         createDots();
-
         updateCarrousel();
     };
 };

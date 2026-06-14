@@ -10,5 +10,4 @@ document.addEventListener("DOMContentLoaded", () => {
     init_burger();
     init_newsletter();
     scrollHeader();
-
 });
