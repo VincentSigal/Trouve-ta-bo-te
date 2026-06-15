@@ -273,7 +273,7 @@ btnSave.addEventListener("click", () => {
         },
         tags: [inputTag1.value.trim(), inputTag2.value.trim()],
         description: inputDescription.value.trim(),
-        details: "/HTML/Details_boite.html",
+        linkDetails: "/HTML/Details_boite.html",
         musique: inputMusique.value.trim(),
     };
 

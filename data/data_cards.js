@@ -11,8 +11,33 @@ export let boites = [
     },
     tags: ["Club n°2 France", "Open Format"],
     description: "Discothèque élégante et futuriste avec toit-terrasse proposant de la cuisine française moderne et une vue sur la mer.",
-    details: "/HTML/Details_boite.html",
+    linkDetails: "/HTML/Details_boite.html",
     music: "Open Format",
+    // DONNEES PAGE DETAILS BOITE
+    logo: {
+      logo_img: "/img/la_dune/la_dune.png",
+      logo_alt: "TEST",
+    },
+    age: "30",
+    price: "50€",
+    hours: {
+      time: "00h - 7h",
+      date: "Dimanche",
+    },
+    summary: {
+      heading: "Test",
+      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvkjdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvhvkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvwdbwdkbdwfvkwfvkwbvwfkvbwdfkjvbwdvkjbwdvkjwdfvjdbwdfkjvwdfkvjwdvkjwdvkjwd",
+    },
+
+    img: {
+      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos_alt: "testtesttest"
+    },
+    adress: {
+      adress_link: "https://maps.app.goo.gl/CFpmZ8fX7qj14rmg9",
+      adress_name: "Poussan",
+      maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
+    },
   },
   {
     idClub: 2,
@@ -24,7 +49,7 @@ export let boites = [
     },
     tags: ["Club n°1 France", "Pop"],
     description: "Discothèque populaire ouverte en saison, accueillant régulièrement des DJ internationaux et français.",
-    details: "/HTML/Details_boite.html",
+    linkDetails: "/HTML/Details_boite.html",
     music: "Pop",
   },
   {
@@ -37,7 +62,7 @@ export let boites = [
     },
     tags: ["Urban", "Showcase"],
     description: "Discothèque animée diffusant du dancehall et du hip-hop dans un espace de type entrepôt, avec danse de salon chaque semaine.",
-    details: "/HTML/Details_boite.html",
+    linkDetails: "/HTML/Details_boite.html",
     music: "Rap, Shatta, Afro, Buyon",
   },
   {
@@ -50,7 +75,7 @@ export let boites = [
     },
     tags: ["Généraliste", "Chill"],
     description: "Club avec espaces bar, piste de danse, patio orné de palmiers et d'une statue de Bouddha et soirées à thème.",
-    details: "/HTML/Details_boite.html",
+    linkDetails: "/HTML/Details_boite.html",
     music: "Pop",
   },
   {
@@ -63,7 +88,7 @@ export let boites = [
     },
     tags: ["Rap", "Showcase"],
     description: "Ce club ouvert en saison, qui propose des soirées DJ, comprend un jardin, un lounge privé et plusieurs bars.",
-    details: "/HTML/Details_boite.html",
+    linkDetails: "/HTML/Details_boite.html",
     music: "Rap, Shatta, Afro, Buyon",
   },
   {
@@ -76,7 +101,7 @@ export let boites = [
     },
     tags: ["Hip-hop", "House"],
     description: "Cette boîte de nuit organise des soirées variées, au son du hip-hop, de l’électro, du rock et de la house.",
-    details: "/HTML/Details_boite.html",
+    linkDetails: "/HTML/Details_boite.html",
     music: "Open Format",
   },
   {
@@ -89,7 +114,7 @@ export let boites = [
     },
     tags: ["Généraliste", "Lounge"],
     description: "Discothèque lounge avec plusieurs salles, proposant de la musique généraliste.",
-    details: "/HTML/Details_boite.html",
+    linkDetails: "/HTML/Details_boite.html",
     music: "Pop",
   },
   {
@@ -102,7 +127,7 @@ export let boites = [
     },
     tags: ["Techno", "Warehouse"],
     description: "Ancien entrepôt reconverti en lieu événementiel accueillant les plus grands noms de la scène techno.",
-    details: "/HTML/Details_boite.html",
+    linkDetails: "/HTML/Details_boite.html",
     music: "Techno",
   },
   {
@@ -115,7 +140,7 @@ export let boites = [
     },
     tags: ["Concerts", "30ans d'activité"],
     description: "Salle mythique de Montpellier alternant concerts, boîte de nuit et événements musicaux variés.",
-    details: "/HTML/Details_boite.html",
+    linkDetails: "/HTML/Details_boite.html",
     music: "Open Format",
   },
   {
@@ -128,7 +153,7 @@ export let boites = [
     },
     tags: ["Open Format", "Ambiance Festive"],
     description: "Club récent de la côte héraultaise proposant des soirées généralistes et événements saisonniers.",
-    details: "/HTML/Details_boite.html",
+    linkDetails: "/HTML/Details_boite.html",
     music: "Open Format",
   },
   {
@@ -141,7 +166,7 @@ export let boites = [
     },
     tags: ["Open Format", "+15ans d'activité"],
     description: "Club moderne aux portes de Montpellier accueillant régulièrement des DJ et soirées thématiques.",
-    details: "/HTML/Details_boite.html",
+    linkDetails: "/HTML/Details_boite.html",
     music: "Open Format",
   },
   {
@@ -154,7 +179,7 @@ export let boites = [
     },
     tags: ["Techno", "Hard"],
     description: "Le Mélomane Club, est une adresse incontournable pour les amateurs de rave, techno et hard music.",
-    details: "/HTML/Details_boite.html",
+    linkDetails: "/HTML/Details_boite.html",
     music: "Techno",
   },
   {
@@ -167,7 +192,7 @@ export let boites = [
     },
     tags: ["Open Format", "Latin"],
     description: "Discothèque du centre historique proposant des soirées commerciales et étudiantes avec un étage dédié à la musique latine.",
-    details: "/HTML/Details_boite.html",
+    linkDetails: "/HTML/Details_boite.html",
     music: "Pop",
   },
   {
@@ -180,7 +205,7 @@ export let boites = [
     },
     tags: ["Étudiant", "Commercial"],
     description: "Club populaire du centre-ville connu pour ses soirées étudiantes et son ambiance généraliste.",
-    details: "/HTML/Details_boite.html",
+    linkDetails: "/HTML/Details_boite.html",
     music: "Pop",
   },
   {
@@ -193,7 +218,7 @@ export let boites = [
     },
     tags: ["Rap", "Centre-ville"],
     description: "Cocktails et sets de DJ dans une petite discothèque animée ouverte tard dans la nuit et prisée des étudiants locaux.",
-    details: "/HTML/Details_boite.html",
+    linkDetails: "/HTML/Details_boite.html",
     music: "Rap, Shatta, Afro, Buyon",
   },
   {
@@ -206,7 +231,7 @@ export let boites = [
     },
     tags: ["Oriental", "Chanteurs"],
     description: "Établissement mêlant ambiance orientale et spectacles.",
-    details: "/HTML/Details_boite.html",
+    linkDetails: "/HTML/Details_boite.html",
     music: "Open Format",
   },
   {
@@ -219,7 +244,7 @@ export let boites = [
     },
     tags: ["Summer Club", "Patio"],
     description: "Discothèque estivale proche du front de mer avec un patio ouvert.",
-    details: "/HTML/Details_boite.html",
+    linkDetails: "/HTML/Details_boite.html",
     music: "Pop",
   },
   {
@@ -232,7 +257,7 @@ export let boites = [
     },
     tags: ["Open Format", "+20ans d'activité"],
     description: "Installée dans un usine de 1901, cette boîte de nuit propose des concerts et de la musique diversifiée.",
-    details: "/HTML/Details_boite.html",
+    linkDetails: "/HTML/Details_boite.html",
     music: "Open Format",
   },
   {
@@ -245,7 +270,7 @@ export let boites = [
     },
     tags: ["Latin", "Open Format"],
     description: "Discothèque du centre de Béziers proposant des soirées latino et festives.",
-    details: "/HTML/Details_boite.html",
+    linkDetails: "/HTML/Details_boite.html",
     music: "Open Format",
   },
 ];

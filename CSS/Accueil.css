@@ -373,6 +373,12 @@ footer {
   }
 }
 
+@media (max-width: 440px) {
+  main {
+    padding-top: 2rem;
+  }
+}
+
 @media (max-width: 390px) {
   .card.popcard .bgcard {
     width: 300px;

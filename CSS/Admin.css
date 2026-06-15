@@ -239,6 +239,7 @@ footer a:visited {
     flex-direction: column;
     gap: 2rem;
     margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .admin-top {
@@ -419,7 +420,8 @@ footer a:visited {
 }
 
 .boite-card-name {
-    font-family: "Playfair Display", serif;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 700;
     font-size: 1.1rem;
     color: var(--maincolor);
 }
@@ -558,10 +560,12 @@ footer a:visited {
     main {
         padding-top: 2rem;
     }
-.logout-btn{
-    order: 3;
-    margin-left: 2rem;
-}
+
+    .logout-btn {
+        order: 3;
+        margin-left: 2rem;
+    }
+
     header {
         position: sticky;
         top: 0;
