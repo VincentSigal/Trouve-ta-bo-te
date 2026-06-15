@@ -274,7 +274,7 @@ btnSave.addEventListener("click", () => {
         tags: [inputTag1.value.trim(), inputTag2.value.trim()],
         description: inputDescription.value.trim(),
         linkDetails: "/HTML/Details_boite.html",
-        musique: inputMusique.value.trim(),
+        music: inputMusique.value.trim(),
     };
 
     const boites = loadBoites();
@@ -315,7 +315,7 @@ function renderList() {
                 <div class="boite-card-tags">
                     <span>#${b.tags[0]}</span>
                     <span>#${b.tags[1]}</span>
-                    <span>${b.musique}</span>
+                    <span>${b.music}</span>
                 </div>
                 <p class="boite-card-desc">${b.description}</p>
             </div>

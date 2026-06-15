@@ -15,10 +15,10 @@ export let boites = [
     music: "Open Format",
     // DONNEES PAGE DETAILS BOITE
     logo: {
-      logo_img: "/img/la_dune/la_dune.png",
+      logo_img: "/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
-    age: "30",
+    age: "18-25",
     price: "50€",
     hours: {
       time: "00h - 7h",
@@ -26,7 +26,7 @@ export let boites = [
     },
     summary: {
       heading: "Test",
-      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvkjdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvhvkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvwdbwdkbdwfvkwfvkwbvwfkvbwdfkjvbwdvkjbwdvkjwdfvjdbwdfkjvwdfkvjwdvkjwdvkjwd",
+      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
     },
 
     img: {
@@ -51,6 +51,31 @@ export let boites = [
     description: "Discothèque populaire ouverte en saison, accueillant régulièrement des DJ internationaux et français.",
     linkDetails: "/HTML/Details_boite.html",
     music: "Pop",
+    // DONNEES PAGE DETAILS BOITE
+    logo: {
+      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_alt: "TEST",
+    },
+    age: "18-30",
+    price: "50€",
+    hours: {
+      time: "00h - 7h",
+      date: "Dimanche",
+    },
+    summary: {
+      heading: "Test",
+      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+    },
+
+    img: {
+      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos_alt: "testtesttest"
+    },
+    adress: {
+      adress_link: "https://maps.app.goo.gl/CFpmZ8fX7qj14rmg9",
+      adress_name: "Poussan",
+      maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
+    },
   },
   {
     idClub: 3,
@@ -64,6 +89,31 @@ export let boites = [
     description: "Discothèque animée diffusant du dancehall et du hip-hop dans un espace de type entrepôt, avec danse de salon chaque semaine.",
     linkDetails: "/HTML/Details_boite.html",
     music: "Rap, Shatta, Afro, Buyon",
+    // DONNEES PAGE DETAILS BOITE
+    logo: {
+      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_alt: "TEST",
+    },
+    age: "18-30",
+    price: "50€",
+    hours: {
+      time: "00h - 7h",
+      date: "Dimanche",
+    },
+    summary: {
+      heading: "Test",
+      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+    },
+
+    img: {
+      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos_alt: "testtesttest"
+    },
+    adress: {
+      adress_link: "https://maps.app.goo.gl/CFpmZ8fX7qj14rmg9",
+      adress_name: "Poussan",
+      maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
+    },
   },
   {
     idClub: 4,
@@ -77,6 +127,31 @@ export let boites = [
     description: "Club avec espaces bar, piste de danse, patio orné de palmiers et d'une statue de Bouddha et soirées à thème.",
     linkDetails: "/HTML/Details_boite.html",
     music: "Pop",
+    // DONNEES PAGE DETAILS BOITE
+    logo: {
+      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_alt: "TEST",
+    },
+    age: "25-40",
+    price: "50€",
+    hours: {
+      time: "00h - 7h",
+      date: "Dimanche",
+    },
+    summary: {
+      heading: "Test",
+      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+    },
+
+    img: {
+      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos_alt: "testtesttest"
+    },
+    adress: {
+      adress_link: "https://maps.app.goo.gl/CFpmZ8fX7qj14rmg9",
+      adress_name: "Poussan",
+      maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
+    },
   },
   {
     idClub: 5,
@@ -90,6 +165,31 @@ export let boites = [
     description: "Ce club ouvert en saison, qui propose des soirées DJ, comprend un jardin, un lounge privé et plusieurs bars.",
     linkDetails: "/HTML/Details_boite.html",
     music: "Rap, Shatta, Afro, Buyon",
+    // DONNEES PAGE DETAILS BOITE
+    logo: {
+      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_alt: "TEST",
+    },
+    age: "18-30",
+    price: "50€",
+    hours: {
+      time: "00h - 7h",
+      date: "Dimanche",
+    },
+    summary: {
+      heading: "Test",
+      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+    },
+
+    img: {
+      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos_alt: "testtesttest"
+    },
+    adress: {
+      adress_link: "https://maps.app.goo.gl/CFpmZ8fX7qj14rmg9",
+      adress_name: "Poussan",
+      maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
+    },
   },
   {
     idClub: 6,
@@ -103,6 +203,31 @@ export let boites = [
     description: "Cette boîte de nuit organise des soirées variées, au son du hip-hop, de l’électro, du rock et de la house.",
     linkDetails: "/HTML/Details_boite.html",
     music: "Open Format",
+    // DONNEES PAGE DETAILS BOITE
+    logo: {
+      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_alt: "TEST",
+    },
+    age: "18-25",
+    price: "50€",
+    hours: {
+      time: "00h - 7h",
+      date: "Dimanche",
+    },
+    summary: {
+      heading: "Test",
+      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+    },
+
+    img: {
+      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos_alt: "testtesttest"
+    },
+    adress: {
+      adress_link: "https://maps.app.goo.gl/CFpmZ8fX7qj14rmg9",
+      adress_name: "Poussan",
+      maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
+    },
   },
   {
     idClub: 7,
@@ -116,6 +241,31 @@ export let boites = [
     description: "Discothèque lounge avec plusieurs salles, proposant de la musique généraliste.",
     linkDetails: "/HTML/Details_boite.html",
     music: "Pop",
+    // DONNEES PAGE DETAILS BOITE
+    logo: {
+      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_alt: "TEST",
+    },
+    age: "25-40",
+    price: "50€",
+    hours: {
+      time: "00h - 7h",
+      date: "Dimanche",
+    },
+    summary: {
+      heading: "Test",
+      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+    },
+
+    img: {
+      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos_alt: "testtesttest"
+    },
+    adress: {
+      adress_link: "https://maps.app.goo.gl/CFpmZ8fX7qj14rmg9",
+      adress_name: "Poussan",
+      maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
+    },
   },
   {
     idClub: 8,
@@ -129,6 +279,31 @@ export let boites = [
     description: "Ancien entrepôt reconverti en lieu événementiel accueillant les plus grands noms de la scène techno.",
     linkDetails: "/HTML/Details_boite.html",
     music: "Techno",
+    // DONNEES PAGE DETAILS BOITE
+    logo: {
+      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_alt: "TEST",
+    },
+    age: "18-30",
+    price: "50€",
+    hours: {
+      time: "00h - 7h",
+      date: "Dimanche",
+    },
+    summary: {
+      heading: "Test",
+      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+    },
+
+    img: {
+      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos_alt: "testtesttest"
+    },
+    adress: {
+      adress_link: "https://maps.app.goo.gl/CFpmZ8fX7qj14rmg9",
+      adress_name: "Poussan",
+      maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
+    },
   },
   {
     idClub: 9,
@@ -142,6 +317,31 @@ export let boites = [
     description: "Salle mythique de Montpellier alternant concerts, boîte de nuit et événements musicaux variés.",
     linkDetails: "/HTML/Details_boite.html",
     music: "Open Format",
+    // DONNEES PAGE DETAILS BOITE
+    logo: {
+      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_alt: "TEST",
+    },
+    age: "25-40",
+    price: "50€",
+    hours: {
+      time: "00h - 7h",
+      date: "Dimanche",
+    },
+    summary: {
+      heading: "Test",
+      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+    },
+
+    img: {
+      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos_alt: "testtesttest"
+    },
+    adress: {
+      adress_link: "https://maps.app.goo.gl/CFpmZ8fX7qj14rmg9",
+      adress_name: "Poussan",
+      maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
+    },
   },
   {
     idClub: 10,
@@ -155,6 +355,31 @@ export let boites = [
     description: "Club récent de la côte héraultaise proposant des soirées généralistes et événements saisonniers.",
     linkDetails: "/HTML/Details_boite.html",
     music: "Open Format",
+    // DONNEES PAGE DETAILS BOITE
+    logo: {
+      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_alt: "TEST",
+    },
+    age: "18-30",
+    price: "50€",
+    hours: {
+      time: "00h - 7h",
+      date: "Dimanche",
+    },
+    summary: {
+      heading: "Test",
+      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+    },
+
+    img: {
+      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos_alt: "testtesttest"
+    },
+    adress: {
+      adress_link: "https://maps.app.goo.gl/CFpmZ8fX7qj14rmg9",
+      adress_name: "Poussan",
+      maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
+    },
   },
   {
     idClub: 11,
@@ -168,6 +393,31 @@ export let boites = [
     description: "Club moderne aux portes de Montpellier accueillant régulièrement des DJ et soirées thématiques.",
     linkDetails: "/HTML/Details_boite.html",
     music: "Open Format",
+    // DONNEES PAGE DETAILS BOITE
+    logo: {
+      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_alt: "TEST",
+    },
+    age: "18-25",
+    price: "50€",
+    hours: {
+      time: "00h - 7h",
+      date: "Dimanche",
+    },
+    summary: {
+      heading: "Test",
+      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+    },
+
+    img: {
+      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos_alt: "testtesttest"
+    },
+    adress: {
+      adress_link: "https://maps.app.goo.gl/CFpmZ8fX7qj14rmg9",
+      adress_name: "Poussan",
+      maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
+    },
   },
   {
     idClub: 12,
@@ -181,6 +431,31 @@ export let boites = [
     description: "Le Mélomane Club, est une adresse incontournable pour les amateurs de rave, techno et hard music.",
     linkDetails: "/HTML/Details_boite.html",
     music: "Techno",
+    // DONNEES PAGE DETAILS BOITE
+    logo: {
+      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_alt: "TEST",
+    },
+    age: "18-30",
+    price: "50€",
+    hours: {
+      time: "00h - 7h",
+      date: "Dimanche",
+    },
+    summary: {
+      heading: "Test",
+      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+    },
+
+    img: {
+      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos_alt: "testtesttest"
+    },
+    adress: {
+      adress_link: "https://maps.app.goo.gl/CFpmZ8fX7qj14rmg9",
+      adress_name: "Poussan",
+      maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
+    },
   },
   {
     idClub: 13,
@@ -194,6 +469,31 @@ export let boites = [
     description: "Discothèque du centre historique proposant des soirées commerciales et étudiantes avec un étage dédié à la musique latine.",
     linkDetails: "/HTML/Details_boite.html",
     music: "Pop",
+    // DONNEES PAGE DETAILS BOITE
+    logo: {
+      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_alt: "TEST",
+    },
+    age: "18-25",
+    price: "50€",
+    hours: {
+      time: "00h - 7h",
+      date: "Dimanche",
+    },
+    summary: {
+      heading: "Test",
+      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+    },
+
+    img: {
+      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos_alt: "testtesttest"
+    },
+    adress: {
+      adress_link: "https://maps.app.goo.gl/CFpmZ8fX7qj14rmg9",
+      adress_name: "Poussan",
+      maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
+    },
   },
   {
     idClub: 14,
@@ -207,6 +507,31 @@ export let boites = [
     description: "Club populaire du centre-ville connu pour ses soirées étudiantes et son ambiance généraliste.",
     linkDetails: "/HTML/Details_boite.html",
     music: "Pop",
+    // DONNEES PAGE DETAILS BOITE
+    logo: {
+      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_alt: "TEST",
+    },
+    age: "18-25",
+    price: "50€",
+    hours: {
+      time: "00h - 7h",
+      date: "Dimanche",
+    },
+    summary: {
+      heading: "Test",
+      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+    },
+
+    img: {
+      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos_alt: "testtesttest"
+    },
+    adress: {
+      adress_link: "https://maps.app.goo.gl/CFpmZ8fX7qj14rmg9",
+      adress_name: "Poussan",
+      maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
+    },
   },
   {
     idClub: 15,
@@ -220,6 +545,31 @@ export let boites = [
     description: "Cocktails et sets de DJ dans une petite discothèque animée ouverte tard dans la nuit et prisée des étudiants locaux.",
     linkDetails: "/HTML/Details_boite.html",
     music: "Rap, Shatta, Afro, Buyon",
+    // DONNEES PAGE DETAILS BOITE
+    logo: {
+      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_alt: "TEST",
+    },
+    age: "18-25",
+    price: "50€",
+    hours: {
+      time: "00h - 7h",
+      date: "Dimanche",
+    },
+    summary: {
+      heading: "Test",
+      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+    },
+
+    img: {
+      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos_alt: "testtesttest"
+    },
+    adress: {
+      adress_link: "https://maps.app.goo.gl/CFpmZ8fX7qj14rmg9",
+      adress_name: "Poussan",
+      maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
+    },
   },
   {
     idClub: 16,
@@ -233,6 +583,31 @@ export let boites = [
     description: "Établissement mêlant ambiance orientale et spectacles.",
     linkDetails: "/HTML/Details_boite.html",
     music: "Open Format",
+    // DONNEES PAGE DETAILS BOITE
+    logo: {
+      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_alt: "TEST",
+    },
+    age: "25-40",
+    price: "50€",
+    hours: {
+      time: "00h - 7h",
+      date: "Dimanche",
+    },
+    summary: {
+      heading: "Test",
+      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+    },
+
+    img: {
+      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos_alt: "testtesttest"
+    },
+    adress: {
+      adress_link: "https://maps.app.goo.gl/CFpmZ8fX7qj14rmg9",
+      adress_name: "Poussan",
+      maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
+    },
   },
   {
     idClub: 17,
@@ -246,6 +621,31 @@ export let boites = [
     description: "Discothèque estivale proche du front de mer avec un patio ouvert.",
     linkDetails: "/HTML/Details_boite.html",
     music: "Pop",
+    // DONNEES PAGE DETAILS BOITE
+    logo: {
+      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_alt: "TEST",
+    },
+    age: "18-40",
+    price: "50€",
+    hours: {
+      time: "00h - 7h",
+      date: "Dimanche",
+    },
+    summary: {
+      heading: "Test",
+      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+    },
+
+    img: {
+      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos_alt: "testtesttest"
+    },
+    adress: {
+      adress_link: "https://maps.app.goo.gl/CFpmZ8fX7qj14rmg9",
+      adress_name: "Poussan",
+      maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
+    },
   },
   {
     idClub: 18,
@@ -259,6 +659,31 @@ export let boites = [
     description: "Installée dans un usine de 1901, cette boîte de nuit propose des concerts et de la musique diversifiée.",
     linkDetails: "/HTML/Details_boite.html",
     music: "Open Format",
+    // DONNEES PAGE DETAILS BOITE
+    logo: {
+      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_alt: "TEST",
+    },
+    age: "18-25",
+    price: "50€",
+    hours: {
+      time: "00h - 7h",
+      date: "Dimanche",
+    },
+    summary: {
+      heading: "Test",
+      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+    },
+
+    img: {
+      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos_alt: "testtesttest"
+    },
+    adress: {
+      adress_link: "https://maps.app.goo.gl/CFpmZ8fX7qj14rmg9",
+      adress_name: "Poussan",
+      maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
+    },
   },
   {
     idClub: 19,
@@ -272,5 +697,30 @@ export let boites = [
     description: "Discothèque du centre de Béziers proposant des soirées latino et festives.",
     linkDetails: "/HTML/Details_boite.html",
     music: "Open Format",
+    // DONNEES PAGE DETAILS BOITE
+    logo: {
+      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_alt: "TEST",
+    },
+    age: "18-30",
+    price: "50€",
+    hours: {
+      time: "00h - 7h",
+      date: "Dimanche",
+    },
+    summary: {
+      heading: "Test",
+      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+    },
+
+    img: {
+      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos_alt: "testtesttest"
+    },
+    adress: {
+      adress_link: "https://maps.app.goo.gl/CFpmZ8fX7qj14rmg9",
+      adress_name: "Poussan",
+      maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
+    },
   },
 ];

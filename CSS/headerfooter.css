@@ -29,7 +29,7 @@ footer a {
 }
 
 header img {
-    max-width: 2.81rem;
+    max-width: 2.4rem;
     height: auto;
 }
 
@@ -117,7 +117,7 @@ footer a:visited {
     align-self: flex-end;
     padding: 1.25rem;
     font-family: "Montserrat Alternates", sans-serif;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 700;
     color: var(--maincolor);
     animation: neon 2s infinite ease-in-out;
@@ -160,7 +160,7 @@ main {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 0.43rem 3.21rem;
+    padding: 0.43rem 2.6rem;
     background: linear-gradient(120deg,
             #3d2b00 0%,
             #7a5a00 10%,
@@ -585,7 +585,7 @@ footer img {
     }
 }
 
-@media (max-width:1210px) {
+@media (max-width: 1015px) {
     .newsletter-banner {
         display: none;
     }
@@ -597,7 +597,7 @@ footer img {
     display: none;
 }
 
-@media (max-width: 1015px) {
+@media (max-width: 825px) {
     main {
         padding-top: 2rem;
     }
@@ -726,7 +726,7 @@ footer img {
     }
 
     .foreground_menu.open {
-        height: 330px;
+        height: 290px;
     }
 
     .menu_burger.open {
