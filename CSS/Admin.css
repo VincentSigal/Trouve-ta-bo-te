@@ -128,7 +128,7 @@ footer a {
 
 .input-login button:hover,
 .input-login button:focus {
-    filter: brightness(1.2) saturate(1.1);
+        filter: brightness(1.4) saturate(1.5);
 }
 
 .login-screen .error-login {
@@ -280,7 +280,7 @@ footer a:visited {
 
 .btn-add:hover,
 .btn-add:focus {
-    filter: brightness(1.2) saturate(1.1);
+        filter: brightness(1.4) saturate(1.5);
 }
 
 /* ── FORMULAIRE ── */

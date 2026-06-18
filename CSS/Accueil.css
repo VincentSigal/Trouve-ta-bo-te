@@ -4,6 +4,7 @@
 
 main {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0)28%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.2) 34%, rgba(0, 0, 0, 0.4) 38%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 1) 60%);
+  padding-top: 7rem;
   padding-bottom: 1.5rem;
 }
 
@@ -341,12 +342,6 @@ footer {
   background: var(--maincolor);
 }
 
-@media(min-width: 1230px) {
-  main {
-    padding-top: 5.5rem;
-  }
-}
-
 @media (max-width: 600px) {
   .club-filters {
     align-items: center;
@@ -373,9 +368,9 @@ footer {
   }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 700px) {
   main {
-    padding-top: 2rem;
+    padding-top: 3rem;
   }
 }
 

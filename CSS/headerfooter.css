@@ -108,51 +108,27 @@ footer a:visited {
     color: black;
 }
 
+.CTA {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .newsletter-banner {
     border-top: 1px solid var(--maincolor);
     border-right: 1px solid var(--maincolor);
     border-left: 1px solid var(--maincolor);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    align-self: flex-end;
-    padding: 1.25rem;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
     font-family: "Montserrat Alternates", sans-serif;
     font-size: 0.9rem;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--maincolor);
-    animation: neon 2s infinite ease-in-out;
     text-align: center;
-}
-
-@keyframes neon {
-    0% {
-        text-shadow:
-            0 0 8px rgba(255, 200, 80, 0.5),
-            0 0 15px rgba(255, 160, 28, 0.6),
-            0 0 25px rgba(255, 120, 0, 0.3);
-    }
-
-    50% {
-        text-shadow:
-            0 0 12px rgba(255, 220, 100, 0.9),
-            0 0 25px rgba(255, 160, 28, 0.8),
-            0 0 45px rgba(255, 120, 0, 0.6),
-            0 0 80px rgba(255, 100, 0, 0.3);
-    }
-
-    100% {
-        text-shadow:
-            0 0 8px rgba(255, 200, 80, 0.5),
-            0 0 15px rgba(255, 160, 28, 0.6),
-            0 0 25px rgba(255, 120, 0, 0.3);
-    }
-}
-
-/* FIN HEADER */
-
-/* DEBUT MAIN */
-main {
-    padding: 0 2.5rem;
 }
 
 /* S'INSCRIRE */
@@ -160,7 +136,7 @@ main {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 0.43rem 2.6rem;
+    padding: 0.43rem 3rem;
     background: linear-gradient(120deg,
             #3d2b00 0%,
             #7a5a00 10%,
@@ -177,7 +153,67 @@ main {
     border-bottom-right-radius: 20px;
     border: 1px solid var(--maincolor);
     font-family: "Montserrat", sans-serif;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: black;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+    position: absolute;
+    top: 100%;
+    right: 14.4rem;
+}
+
+.btn-newsletter:hover {
+    filter: brightness(1.4) saturate(1.5);
+}
+
+.newsletter-pro {
+    border-top: 1px solid var(--textcolor);
+    border-right: 1px solid var(--textcolor);
+    border-left: 1px solid var(--textcolor);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: linear-gradient(180deg,
+            #f5f5f5 0%,
+            #d9d9d9 20%,
+            #ffffff 35%,
+            #bfbfbf 50%,
+            #eeeeee 65%,
+            #a6a6a6 80%,
+            #f2f2f2 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.btn-espace-pro {
+    display: flex;
+    align-items: center;
+    padding: 0.55rem 2.74rem;
+    background: linear-gradient(120deg,
+            #2a2a2a 0%,
+            #5a5a5a 10%,
+            #a0a0a0 20%,
+            #d4d4d4 30%,
+            #f5f5f5 40%,
+            #d4d4d4 50%,
+            #a0a0a0 60%,
+            #787878 70%,
+            #c8c8c8 80%,
+            #f5f5f5 90%,
+            #a0a0a0 100%);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 1px solid var(--textcolor);
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
     font-weight: 800;
     color: black;
     cursor: pointer;
@@ -187,11 +223,17 @@ main {
     right: 2.5rem;
 }
 
-.btn-newsletter:hover {
-    filter: brightness(1.2) saturate(1.1);
+.btn-espace-pro:hover,
+.btn-espace-pro:focus {
+    filter: brightness(1.4) saturate(1.5);
 }
 
-/* FIN MAIN */
+/* FIN HEADER */
+
+/* MAIN */
+main {
+    padding: 0 2.5rem;
+}
 
 /* DEBUT FOOTER */
 footer {
@@ -524,7 +566,7 @@ footer img {
 }
 
 .popnewsletter form button:hover {
-    filter: brightness(1.2) saturate(1.1);
+    filter: brightness(1.4) saturate(1.5);
 
 }
 
@@ -585,8 +627,10 @@ footer img {
     }
 }
 
-@media (max-width: 1015px) {
-    .newsletter-banner {
+@media (max-width: 1069px) {
+
+    .newsletter-banner,
+    .newsletter-pro {
         display: none;
     }
 }
@@ -597,9 +641,9 @@ footer img {
     display: none;
 }
 
-@media (max-width: 825px) {
+@media (max-width: 700px) {
     main {
-        padding-top: 2rem;
+        padding-top: 3rem;
     }
 
     header {
@@ -610,9 +654,27 @@ footer img {
     }
 
     .main-navigation,
-    .newsletter-banner,
-    .btn-newsletter {
+    .newsletter-banner {
         display: none;
+    }
+
+    .btn-newsletter img {
+        display: none;
+    }
+
+    .btn-newsletter {
+        right: 10.5rem;
+    }
+
+    .btn-espace-pro {
+        right: 1.5rem;
+    }
+
+    .btn-newsletter,
+    .btn-espace-pro {
+        padding: 0.4rem 1.4rem;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
     }
 
     .burger {
@@ -773,7 +835,8 @@ footer img {
 
 @media(max-width: 440px) {
     main {
-        padding: 0 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
 

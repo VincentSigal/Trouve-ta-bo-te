@@ -26,7 +26,7 @@ export let boites = [
     },
     summary: {
       heading: "Test",
-      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+      paragraph: "La boîte de nuit La Dune est une institution dans l'Hérault depuis des années, c'est un incontournable des fêtes pendant l'été. Avec en plus son rooftop avec un bar et des soirées orientées 25ans+ et ses 2 restaurants aux étages d'en dessous, ça en fait un lieu qui réunit.",
     },
 
     img: {
@@ -38,6 +38,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    siret: 65465454545721554654,
   },
   {
     idClub: 2,
@@ -64,7 +65,7 @@ export let boites = [
     },
     summary: {
       heading: "Test",
-      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+      paragraph: "La boîte de nuit La Dune est une institution dans l'Hérault depuis des années, c'est un incontournable des fêtes pendant l'été. Avec en plus son rooftop avec un bar et des soirées orientées 25ans+ et ses 2 restaurants aux étages d'en dessous, ça en fait un lieu qui réunit.",
     },
 
     img: {
@@ -76,6 +77,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    siret: 65465454545721554654,
   },
   {
     idClub: 3,
@@ -102,7 +104,7 @@ export let boites = [
     },
     summary: {
       heading: "Test",
-      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+      paragraph: "La boîte de nuit La Dune est une institution dans l'Hérault depuis des années, c'est un incontournable des fêtes pendant l'été. Avec en plus son rooftop avec un bar et des soirées orientées 25ans+ et ses 2 restaurants aux étages d'en dessous, ça en fait un lieu qui réunit.",
     },
 
     img: {
@@ -114,6 +116,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    siret: 65465454545721554654,
   },
   {
     idClub: 4,
@@ -140,7 +143,7 @@ export let boites = [
     },
     summary: {
       heading: "Test",
-      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+      paragraph: "La boîte de nuit La Dune est une institution dans l'Hérault depuis des années, c'est un incontournable des fêtes pendant l'été. Avec en plus son rooftop avec un bar et des soirées orientées 25ans+ et ses 2 restaurants aux étages d'en dessous, ça en fait un lieu qui réunit.",
     },
 
     img: {
@@ -152,6 +155,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    siret: 65465454545721554654,
   },
   {
     idClub: 5,
@@ -178,7 +182,7 @@ export let boites = [
     },
     summary: {
       heading: "Test",
-      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+      paragraph: "La boîte de nuit La Dune est une institution dans l'Hérault depuis des années, c'est un incontournable des fêtes pendant l'été. Avec en plus son rooftop avec un bar et des soirées orientées 25ans+ et ses 2 restaurants aux étages d'en dessous, ça en fait un lieu qui réunit.",
     },
 
     img: {
@@ -190,6 +194,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    siret: 65465454545721554654,
   },
   {
     idClub: 6,
@@ -216,7 +221,7 @@ export let boites = [
     },
     summary: {
       heading: "Test",
-      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+      paragraph: "La boîte de nuit La Dune est une institution dans l'Hérault depuis des années, c'est un incontournable des fêtes pendant l'été. Avec en plus son rooftop avec un bar et des soirées orientées 25ans+ et ses 2 restaurants aux étages d'en dessous, ça en fait un lieu qui réunit.",
     },
 
     img: {
@@ -228,6 +233,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    siret: 65465454545721554654,
   },
   {
     idClub: 7,
@@ -254,7 +260,7 @@ export let boites = [
     },
     summary: {
       heading: "Test",
-      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+      paragraph: "La boîte de nuit La Dune est une institution dans l'Hérault depuis des années, c'est un incontournable des fêtes pendant l'été. Avec en plus son rooftop avec un bar et des soirées orientées 25ans+ et ses 2 restaurants aux étages d'en dessous, ça en fait un lieu qui réunit.",
     },
 
     img: {
@@ -266,6 +272,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    siret: 65465454545721554654,
   },
   {
     idClub: 8,
@@ -292,7 +299,7 @@ export let boites = [
     },
     summary: {
       heading: "Test",
-      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+      paragraph: "La boîte de nuit La Dune est une institution dans l'Hérault depuis des années, c'est un incontournable des fêtes pendant l'été. Avec en plus son rooftop avec un bar et des soirées orientées 25ans+ et ses 2 restaurants aux étages d'en dessous, ça en fait un lieu qui réunit.",
     },
 
     img: {
@@ -304,6 +311,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    siret: 65465454545721554654,
   },
   {
     idClub: 9,
@@ -330,7 +338,7 @@ export let boites = [
     },
     summary: {
       heading: "Test",
-      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+      paragraph: "La boîte de nuit La Dune est une institution dans l'Hérault depuis des années, c'est un incontournable des fêtes pendant l'été. Avec en plus son rooftop avec un bar et des soirées orientées 25ans+ et ses 2 restaurants aux étages d'en dessous, ça en fait un lieu qui réunit.",
     },
 
     img: {
@@ -342,6 +350,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    siret: 65465454545721554654,
   },
   {
     idClub: 10,
@@ -368,7 +377,7 @@ export let boites = [
     },
     summary: {
       heading: "Test",
-      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+      paragraph: "La boîte de nuit La Dune est une institution dans l'Hérault depuis des années, c'est un incontournable des fêtes pendant l'été. Avec en plus son rooftop avec un bar et des soirées orientées 25ans+ et ses 2 restaurants aux étages d'en dessous, ça en fait un lieu qui réunit.",
     },
 
     img: {
@@ -380,6 +389,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    siret: 65465454545721554654,
   },
   {
     idClub: 11,
@@ -406,7 +416,7 @@ export let boites = [
     },
     summary: {
       heading: "Test",
-      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+      paragraph: "La boîte de nuit La Dune est une institution dans l'Hérault depuis des années, c'est un incontournable des fêtes pendant l'été. Avec en plus son rooftop avec un bar et des soirées orientées 25ans+ et ses 2 restaurants aux étages d'en dessous, ça en fait un lieu qui réunit.",
     },
 
     img: {
@@ -418,6 +428,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    siret: 65465454545721554654,
   },
   {
     idClub: 12,
@@ -444,7 +455,7 @@ export let boites = [
     },
     summary: {
       heading: "Test",
-      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+      paragraph: "La boîte de nuit La Dune est une institution dans l'Hérault depuis des années, c'est un incontournable des fêtes pendant l'été. Avec en plus son rooftop avec un bar et des soirées orientées 25ans+ et ses 2 restaurants aux étages d'en dessous, ça en fait un lieu qui réunit.",
     },
 
     img: {
@@ -456,6 +467,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    siret: 65465454545721554654,
   },
   {
     idClub: 13,
@@ -482,7 +494,7 @@ export let boites = [
     },
     summary: {
       heading: "Test",
-      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+      paragraph: "La boîte de nuit La Dune est une institution dans l'Hérault depuis des années, c'est un incontournable des fêtes pendant l'été. Avec en plus son rooftop avec un bar et des soirées orientées 25ans+ et ses 2 restaurants aux étages d'en dessous, ça en fait un lieu qui réunit.",
     },
 
     img: {
@@ -494,6 +506,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    siret: 65465454545721554654,
   },
   {
     idClub: 14,
@@ -520,7 +533,7 @@ export let boites = [
     },
     summary: {
       heading: "Test",
-      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+      paragraph: "La boîte de nuit La Dune est une institution dans l'Hérault depuis des années, c'est un incontournable des fêtes pendant l'été. Avec en plus son rooftop avec un bar et des soirées orientées 25ans+ et ses 2 restaurants aux étages d'en dessous, ça en fait un lieu qui réunit.",
     },
 
     img: {
@@ -532,6 +545,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    siret: 65465454545721554654,
   },
   {
     idClub: 15,
@@ -558,7 +572,7 @@ export let boites = [
     },
     summary: {
       heading: "Test",
-      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+      paragraph: "La boîte de nuit La Dune est une institution dans l'Hérault depuis des années, c'est un incontournable des fêtes pendant l'été. Avec en plus son rooftop avec un bar et des soirées orientées 25ans+ et ses 2 restaurants aux étages d'en dessous, ça en fait un lieu qui réunit.",
     },
 
     img: {
@@ -570,6 +584,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    siret: 65465454545721554654,
   },
   {
     idClub: 16,
@@ -596,7 +611,7 @@ export let boites = [
     },
     summary: {
       heading: "Test",
-      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+      paragraph: "La boîte de nuit La Dune est une institution dans l'Hérault depuis des années, c'est un incontournable des fêtes pendant l'été. Avec en plus son rooftop avec un bar et des soirées orientées 25ans+ et ses 2 restaurants aux étages d'en dessous, ça en fait un lieu qui réunit.",
     },
 
     img: {
@@ -608,6 +623,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    siret: 65465454545721554654,
   },
   {
     idClub: 17,
@@ -634,7 +650,7 @@ export let boites = [
     },
     summary: {
       heading: "Test",
-      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+      paragraph: "La boîte de nuit La Dune est une institution dans l'Hérault depuis des années, c'est un incontournable des fêtes pendant l'été. Avec en plus son rooftop avec un bar et des soirées orientées 25ans+ et ses 2 restaurants aux étages d'en dessous, ça en fait un lieu qui réunit.",
     },
 
     img: {
@@ -646,6 +662,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    siret: 65465454545721554654,
   },
   {
     idClub: 18,
@@ -672,7 +689,7 @@ export let boites = [
     },
     summary: {
       heading: "Test",
-      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+      paragraph: "La boîte de nuit La Dune est une institution dans l'Hérault depuis des années, c'est un incontournable des fêtes pendant l'été. Avec en plus son rooftop avec un bar et des soirées orientées 25ans+ et ses 2 restaurants aux étages d'en dessous, ça en fait un lieu qui réunit.",
     },
 
     img: {
@@ -684,6 +701,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    siret: 65465454545721554654,
   },
   {
     idClub: 19,
@@ -710,7 +728,7 @@ export let boites = [
     },
     summary: {
       heading: "Test",
-      paragraph: "kjdfkjdfkjdfgkjdfgkjdfgkjdfjgdfkjdfkjhdfvk.jdfvkdwfvdfkjvwdfkjvwdfkjdfvkdfhvuhvdkhvsdkvhsdkvh. vkjvwdfkjwdfkvwdfvkjdfvkdfvkbwfkjdfvkbwvkjfvwkvw.",
+      paragraph: "La boîte de nuit La Dune est une institution dans l'Hérault depuis des années, c'est un incontournable des fêtes pendant l'été. Avec en plus son rooftop avec un bar et des soirées orientées 25ans+ et ses 2 restaurants aux étages d'en dessous, ça en fait un lieu qui réunit.",
     },
 
     img: {
@@ -722,5 +740,6 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    siret: 65465454545721554654,
   },
 ];

@@ -195,7 +195,7 @@ body {
 
 .preventes:hover,
 .preventes:focus {
-    filter: brightness(1.2) saturate(1.1);
+        filter: brightness(1.4) saturate(1.5);
 }
 
 .preventes:visited {
@@ -226,6 +226,8 @@ h1 {
     max-width: 30.18rem;
     line-height: 1.6;
     text-indent: 50px;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .detail_right img {

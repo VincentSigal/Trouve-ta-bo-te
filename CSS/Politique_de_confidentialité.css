@@ -50,21 +50,11 @@ h1 {
     color: var(--textcolor);
 }
 
-@media (max-width: 1355px) {
+
+
+@media (min-width: 1230px) {
     main {
         padding-top: 7rem;
-    }
-}
-
-@media (min-width: 1355px) {
-    main {
-        padding-top: 5rem;
-    }
-}
-
-@media (max-width: 1015px) {
-    main {
-        padding-top: 2rem;
     }
 }
 
