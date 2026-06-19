@@ -16,7 +16,7 @@ export function init_newsletter() {
                     <div class="newsligne"></div>
                 </div>
                 <div class="slogannews">
-                    <img src="/img/logo.png" alt="Logo Trouve ta boîte">
+                    <img src="/FRONT_END/img/logo.png" alt="Logo Trouve ta boîte">
                     <p>Trouve ta boîte</p>
                 </div>
                 <div class="traitnews1"></div>
@@ -43,7 +43,7 @@ export function init_newsletter() {
                     </select>
                     <div class="divmail">
                         <div>
-                            <img src="/img/icons/mailnews_icon.svg" alt="Logo email">
+                            <img src="/FRONT_END/img/icons/mailnews_icon.svg" alt="Logo email">
                         </div>
                         <input type="email" name="emailnews" placeholder="Exemple@gmail.com" title="Email" required>
                     </div>
@@ -75,7 +75,7 @@ export function init_newsletter() {
     const btn_close = document.querySelector(`.newscross`);
 
     // Lien newsletter présent dans le menu burger
-    const newsletter_burger = document.querySelector(`.burger_sinscrire`);
+    const newsletter_burger = document.querySelector(`.btn-newsletter`);
     const menu_burger = document.querySelector(".menu_burger");
     const foreground_menu = document.querySelector(".foreground_menu");
 

@@ -1,4 +1,4 @@
-@import url(/CSS/fonts.css);
+@import url(/FRONT_END/CSS/fonts.css);
 
 :root {
     --maincolor: #FFCB70;
@@ -19,7 +19,7 @@
 
 body {
     font-family: "Montserrat", sans-serif;
-    background-image: url(/img/background_club.jpg);
+    background-image: url(/FRONT_END/img/background_club.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

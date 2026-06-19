@@ -63,10 +63,10 @@ function init_burger() {
                     <div class="ligne"></div>
                 </div>
                 <ul class="menu_burger">
-                    <li><a href="/HTML/Accueil.html" title="Accueil">Accueil</a></li>
-                    <li><a href="/HTML/Boîtes_de_nuit.html" title="Boîtes de nuit">Boîtes de nuit</a></li>
+                    <li><a href="/FRONT_END/HTML/Accueil.html" title="Accueil">Accueil</a></li>
+                    <li><a href="/FRONT_END/HTML/Boîtes_de_nuit.html" title="Boîtes de nuit">Boîtes de nuit</a></li>
                     <li><a href="#" title="Soirées">Soirées</a></li>
-                    <li><a href="/HTML/Contact.html" title="Contact">Contact</a></li>
+                    <li><a href="/FRONT_END/HTML/Contact.html" title="Contact">Contact</a></li>
                         <p class="burger_sinscrire">Ne rate aucune soirée avec notre Newsletter
                             !</p>
                     </li>
@@ -265,7 +265,7 @@ btnSave.addEventListener("click", () => {
     errorForm.classList.add("hidden");
 
     const nouvelleBoite = {
-        background: inputBackground.value.trim() || "/img/background_club.jpg",
+        background: inputBackground.value.trim() || "/FRONT_END/img/background_club.jpg",
         name: inputName.value.trim().toUpperCase(),
         location: {
             location_link: inputLocationLink.value.trim() || "#",
@@ -273,7 +273,7 @@ btnSave.addEventListener("click", () => {
         },
         tags: [inputTag1.value.trim(), inputTag2.value.trim()],
         description: inputDescription.value.trim(),
-        linkDetails: "/HTML/Details_boite.html",
+        linkDetails: "/FRONT_END/HTML/Details_boite.html",
         music: inputMusique.value.trim(),
     };
 

@@ -1,4 +1,4 @@
-@import url(/CSS/headerfooter.css);
+@import url(/FRONT_END/CSS/headerfooter.css);
 
 .page-container {
     background-color: rgba(0, 0, 0, 0.5);
@@ -47,13 +47,13 @@ h1 {
 }
 
 .one::before {
-    content: url(/img/icons/bulle_icon.svg);
+    content: url(/FRONT_END/img/icons/bulle_icon.svg);
     vertical-align: middle;
     margin-right: 0.62rem;
 }
 
 .two::before {
-    content: url(/img/icons/bulle2_icon.svg);
+    content: url(/FRONT_END/img/icons/bulle2_icon.svg);
     vertical-align: baseline;
     margin-right: 0.62rem;
 }

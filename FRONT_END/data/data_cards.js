@@ -3,7 +3,7 @@
 export let boites = [
   {
     idClub: 1,
-    background: "/img/la_dune/la_dune.png",
+    background: "/FRONT_END/img/la_dune/la_dune.png",
     name: "LA DUNE",
     location: {
       location_link: "https://maps.app.goo.gl/sHrLCVrAQdApoHeQA",
@@ -11,11 +11,11 @@ export let boites = [
     },
     tags: ["Club n°2 France", "Open Format"],
     description: "Discothèque élégante et futuriste avec toit-terrasse proposant de la cuisine française moderne et une vue sur la mer.",
-    linkDetails: "/HTML/Details_boite.html",
+    linkDetails: "/FRONT_END/HTML/Details_boite.html",
     music: "Open Format",
     // DONNEES PAGE DETAILS BOITE
     logo: {
-      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
     age: "18-25",
@@ -30,7 +30,7 @@ export let boites = [
     },
 
     img: {
-      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos: ["/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png"],
       photos_alt: "testtesttest"
     },
     adress: {
@@ -38,11 +38,11 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
-    siret: 65465454545721554654,
+    siret: 11111111111111,
   },
   {
     idClub: 2,
-    background: "/img/amnesia/amnesia.png",
+    background: "/FRONT_END/img/amnesia/amnesia.png",
     name: "L'AMNESIA",
     location: {
       location_link: "https://maps.app.goo.gl/b3EV2N6SayRqxcwX7",
@@ -50,11 +50,11 @@ export let boites = [
     },
     tags: ["Club n°1 France", "Pop"],
     description: "Discothèque populaire ouverte en saison, accueillant régulièrement des DJ internationaux et français.",
-    linkDetails: "/HTML/Details_boite.html",
+    linkDetails: "/FRONT_END/HTML/Details_boite.html",
     music: "Pop",
     // DONNEES PAGE DETAILS BOITE
     logo: {
-      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
     age: "18-30",
@@ -69,7 +69,7 @@ export let boites = [
     },
 
     img: {
-      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos: ["/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png"],
       photos_alt: "testtesttest"
     },
     adress: {
@@ -77,11 +77,11 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
-    siret: 65465454545721554654,
+    siret: 11111111111112,
   },
   {
     idClub: 3,
-    background: "/img/entrepot/lentrepot.png",
+    background: "/FRONT_END/img/entrepot/lentrepot.png",
     name: "L'ENTREPÔT",
     location: {
       location_link: "https://maps.app.goo.gl/oSKwXMHpghmogWfh8",
@@ -89,11 +89,11 @@ export let boites = [
     },
     tags: ["Urban", "Showcase"],
     description: "Discothèque animée diffusant du dancehall et du hip-hop dans un espace de type entrepôt, avec danse de salon chaque semaine.",
-    linkDetails: "/HTML/Details_boite.html",
+    linkDetails: "/FRONT_END/HTML/Details_boite.html",
     music: "Rap, Shatta, Afro, Buyon",
     // DONNEES PAGE DETAILS BOITE
     logo: {
-      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
     age: "18-30",
@@ -108,7 +108,7 @@ export let boites = [
     },
 
     img: {
-      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos: ["/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png"],
       photos_alt: "testtesttest"
     },
     adress: {
@@ -116,11 +116,11 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
-    siret: 65465454545721554654,
+    siret: 11111111111113,
   },
   {
     idClub: 4,
-    background: "/img/le_pulp/le_pulp.png",
+    background: "/FRONT_END/img/le_pulp/le_pulp.png",
     name: "LE PULP",
     location: {
       location_link: "https://maps.app.goo.gl/hSZdKXxsvk59Nr3E9",
@@ -132,7 +132,7 @@ export let boites = [
     music: "Pop",
     // DONNEES PAGE DETAILS BOITE
     logo: {
-      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
     age: "25-40",
@@ -147,7 +147,7 @@ export let boites = [
     },
 
     img: {
-      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos: ["/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png"],
       photos_alt: "testtesttest"
     },
     adress: {
@@ -155,11 +155,11 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
-    siret: 65465454545721554654,
+    siret: 11111111111114,
   },
   {
     idClub: 5,
-    background: "/img/bora/bora.jpg",
+    background: "/FRONT_END/img/bora/bora.jpg",
     name: "BORA CLUB",
     location: {
       location_link: "https://maps.app.goo.gl/ceTV4d2RfxnSEnnm7",
@@ -167,11 +167,11 @@ export let boites = [
     },
     tags: ["Rap", "Showcase"],
     description: "Ce club ouvert en saison, qui propose des soirées DJ, comprend un jardin, un lounge privé et plusieurs bars.",
-    linkDetails: "/HTML/Details_boite.html",
+    linkDetails: "/FRONT_END/HTML/Details_boite.html",
     music: "Rap, Shatta, Afro, Buyon",
     // DONNEES PAGE DETAILS BOITE
     logo: {
-      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
     age: "18-30",
@@ -186,7 +186,7 @@ export let boites = [
     },
 
     img: {
-      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos: ["/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png"],
       photos_alt: "testtesttest"
     },
     adress: {
@@ -194,11 +194,11 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
-    siret: 65465454545721554654,
+    siret: 11111111111115,
   },
   {
     idClub: 6,
-    background: "/img/casita/casita.jpg",
+    background: "/FRONT_END/img/casita/casita.jpg",
     name: "CLUB CASITA",
     location: {
       location_link: "https://maps.app.goo.gl/PwA4d2hXyMJSQyjw9",
@@ -206,11 +206,11 @@ export let boites = [
     },
     tags: ["Hip-hop", "House"],
     description: "Cette boîte de nuit organise des soirées variées, au son du hip-hop, de l’électro, du rock et de la house.",
-    linkDetails: "/HTML/Details_boite.html",
+    linkDetails: "/FRONT_END/HTML/Details_boite.html",
     music: "Open Format",
     // DONNEES PAGE DETAILS BOITE
     logo: {
-      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
     age: "18-25",
@@ -225,7 +225,7 @@ export let boites = [
     },
 
     img: {
-      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos: ["/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png"],
       photos_alt: "testtesttest"
     },
     adress: {
@@ -233,11 +233,11 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
-    siret: 65465454545721554654,
+    siret: 11111111111116,
   },
   {
     idClub: 7,
-    background: "/img/osmose/osmose.jpg",
+    background: "/FRONT_END/img/osmose/osmose.jpg",
     name: "L'OSMOSE",
     location: {
       location_link: "https://maps.app.goo.gl/KREdMoGisBVwRH1Q8",
@@ -245,11 +245,11 @@ export let boites = [
     },
     tags: ["Généraliste", "Lounge"],
     description: "Discothèque lounge avec plusieurs salles, proposant de la musique généraliste.",
-    linkDetails: "/HTML/Details_boite.html",
+    linkDetails: "/FRONT_END/HTML/Details_boite.html",
     music: "Pop",
     // DONNEES PAGE DETAILS BOITE
     logo: {
-      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
     age: "25-40",
@@ -264,7 +264,7 @@ export let boites = [
     },
 
     img: {
-      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos: ["/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png"],
       photos_alt: "testtesttest"
     },
     adress: {
@@ -272,11 +272,11 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
-    siret: 65465454545721554654,
+    siret: 11111111111117,
   },
   {
     idClub: 8,
-    background: "/img/dieze/dieze.jpg",
+    background: "/FRONT_END/img/dieze/dieze.jpg",
     name: "Dieze Warehouse",
     location: {
       location_link: "https://maps.app.goo.gl/Fzci1sVkdAtK36LE7",
@@ -284,11 +284,11 @@ export let boites = [
     },
     tags: ["Techno", "Warehouse"],
     description: "Ancien entrepôt reconverti en lieu événementiel accueillant les plus grands noms de la scène techno.",
-    linkDetails: "/HTML/Details_boite.html",
+    linkDetails: "/FRONT_END/HTML/Details_boite.html",
     music: "Techno",
     // DONNEES PAGE DETAILS BOITE
     logo: {
-      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
     age: "18-30",
@@ -303,7 +303,7 @@ export let boites = [
     },
 
     img: {
-      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos: ["/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png"],
       photos_alt: "testtesttest"
     },
     adress: {
@@ -311,11 +311,11 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
-    siret: 65465454545721554654,
+    siret: 11111111111118,
   },
   {
     idClub: 9,
-    background: "/img/rockstore/rockstore.webp",
+    background: "/FRONT_END/img/rockstore/rockstore.webp",
     name: "Rockstore",
     location: {
       location_link: "https://maps.app.goo.gl/tZh4MQr22SUJeBda8",
@@ -323,11 +323,11 @@ export let boites = [
     },
     tags: ["Concerts", "30ans d'activité"],
     description: "Salle mythique de Montpellier alternant concerts, boîte de nuit et événements musicaux variés.",
-    linkDetails: "/HTML/Details_boite.html",
+    linkDetails: "/FRONT_END/HTML/Details_boite.html",
     music: "Open Format",
     // DONNEES PAGE DETAILS BOITE
     logo: {
-      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
     age: "25-40",
@@ -342,7 +342,7 @@ export let boites = [
     },
 
     img: {
-      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos: ["/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png"],
       photos_alt: "testtesttest"
     },
     adress: {
@@ -350,11 +350,11 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
-    siret: 65465454545721554654,
+    siret: 11111111111119,
   },
   {
     idClub: 10,
-    background: "/img/must_club/must_club.webp",
+    background: "/FRONT_END/img/must_club/must_club.webp",
     name: "Must Club",
     location: {
       location_link: "https://maps.app.goo.gl/ykNjzxP67TgqtZwY7",
@@ -362,11 +362,11 @@ export let boites = [
     },
     tags: ["Open Format", "Ambiance Festive"],
     description: "Club récent de la côte héraultaise proposant des soirées généralistes et événements saisonniers.",
-    linkDetails: "/HTML/Details_boite.html",
+    linkDetails: "/FRONT_END/HTML/Details_boite.html",
     music: "Open Format",
     // DONNEES PAGE DETAILS BOITE
     logo: {
-      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
     age: "18-30",
@@ -381,7 +381,7 @@ export let boites = [
     },
 
     img: {
-      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos: ["/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png"],
       photos_alt: "testtesttest"
     },
     adress: {
@@ -389,11 +389,11 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
-    siret: 65465454545721554654,
+    siret: 11111111111110,
   },
   {
     idClub: 11,
-    background: "/img/milk/milk.webp",
+    background: "/FRONT_END/img/milk/milk.webp",
     name: "Le Milk Famous Club",
     location: {
       location_link: "https://maps.app.goo.gl/vwFukTkRAFoiUYScA",
@@ -401,11 +401,11 @@ export let boites = [
     },
     tags: ["Open Format", "+15ans d'activité"],
     description: "Club moderne aux portes de Montpellier accueillant régulièrement des DJ et soirées thématiques.",
-    linkDetails: "/HTML/Details_boite.html",
+    linkDetails: "/FRONT_END/HTML/Details_boite.html",
     music: "Open Format",
     // DONNEES PAGE DETAILS BOITE
     logo: {
-      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
     age: "18-25",
@@ -420,7 +420,7 @@ export let boites = [
     },
 
     img: {
-      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos: ["/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png"],
       photos_alt: "testtesttest"
     },
     adress: {
@@ -428,11 +428,11 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
-    siret: 65465454545721554654,
+    siret: 11111111111101,
   },
   {
     idClub: 12,
-    background: "/img/melomane/melomane.webp",
+    background: "/FRONT_END/img/melomane/melomane.webp",
     name: "Mélomane Club",
     location: {
       location_link: "https://maps.app.goo.gl/pygW8CxzqRC2uWKT6",
@@ -440,11 +440,11 @@ export let boites = [
     },
     tags: ["Techno", "Hard"],
     description: "Le Mélomane Club, est une adresse incontournable pour les amateurs de rave, techno et hard music.",
-    linkDetails: "/HTML/Details_boite.html",
+    linkDetails: "/FRONT_END/HTML/Details_boite.html",
     music: "Techno",
     // DONNEES PAGE DETAILS BOITE
     logo: {
-      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
     age: "18-30",
@@ -459,7 +459,7 @@ export let boites = [
     },
 
     img: {
-      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos: ["/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png"],
       photos_alt: "testtesttest"
     },
     adress: {
@@ -467,11 +467,11 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
-    siret: 65465454545721554654,
+    siret: 11111111111112,
   },
   {
     idClub: 13,
-    background: "/img/panama/panama.webp",
+    background: "/FRONT_END/img/panama/panama.webp",
     name: "Le Panama Club",
     location: {
       location_link: "https://maps.app.goo.gl/PQ2McqpiGXJArj1z9",
@@ -479,11 +479,11 @@ export let boites = [
     },
     tags: ["Open Format", "Latin"],
     description: "Discothèque du centre historique proposant des soirées commerciales et étudiantes avec un étage dédié à la musique latine.",
-    linkDetails: "/HTML/Details_boite.html",
+    linkDetails: "/FRONT_END/HTML/Details_boite.html",
     music: "Pop",
     // DONNEES PAGE DETAILS BOITE
     logo: {
-      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
     age: "18-25",
@@ -498,7 +498,7 @@ export let boites = [
     },
 
     img: {
-      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos: ["/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png"],
       photos_alt: "testtesttest"
     },
     adress: {
@@ -506,11 +506,11 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
-    siret: 65465454545721554654,
+    siret: 11111111111113,
   },
   {
     idClub: 14,
-    background: "/img/fizz/fizz.webp",
+    background: "/FRONT_END/img/fizz/fizz.webp",
     name: "Le Fizz",
     location: {
       location_link: "https://maps.app.goo.gl/emR1MjEZsqnGWnNQ6",
@@ -518,11 +518,11 @@ export let boites = [
     },
     tags: ["Étudiant", "Commercial"],
     description: "Club populaire du centre-ville connu pour ses soirées étudiantes et son ambiance généraliste.",
-    linkDetails: "/HTML/Details_boite.html",
+    linkDetails: "/FRONT_END/HTML/Details_boite.html",
     music: "Pop",
     // DONNEES PAGE DETAILS BOITE
     logo: {
-      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
     age: "18-25",
@@ -537,7 +537,7 @@ export let boites = [
     },
 
     img: {
-      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos: ["/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png"],
       photos_alt: "testtesttest"
     },
     adress: {
@@ -545,11 +545,11 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
-    siret: 65465454545721554654,
+    siret: 11111111111114,
   },
   {
     idClub: 15,
-    background: "/img/club/club.webp",
+    background: "/FRONT_END/img/club/club.webp",
     name: "Le Club",
     location: {
       location_link: "https://maps.app.goo.gl/BAGPQSRgA9JWuzdV6",
@@ -557,11 +557,11 @@ export let boites = [
     },
     tags: ["Rap", "Centre-ville"],
     description: "Cocktails et sets de DJ dans une petite discothèque animée ouverte tard dans la nuit et prisée des étudiants locaux.",
-    linkDetails: "/HTML/Details_boite.html",
+    linkDetails: "/FRONT_END/HTML/Details_boite.html",
     music: "Rap, Shatta, Afro, Buyon",
     // DONNEES PAGE DETAILS BOITE
     logo: {
-      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
     age: "18-25",
@@ -576,7 +576,7 @@ export let boites = [
     },
 
     img: {
-      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos: ["/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png"],
       photos_alt: "testtesttest"
     },
     adress: {
@@ -584,11 +584,11 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
-    siret: 65465454545721554654,
+    siret: 11111111111115,
   },
   {
     idClub: 16,
-    background: "/img/club_oriental/club_oriental.webp",
+    background: "/FRONT_END/img/club_oriental/club_oriental.webp",
     name: "Le Club Cabaret Oriental",
     location: {
       location_link: "https://maps.app.goo.gl/LvzUz82G7LQRSKTE6",
@@ -596,11 +596,11 @@ export let boites = [
     },
     tags: ["Oriental", "Chanteurs"],
     description: "Établissement mêlant ambiance orientale et spectacles.",
-    linkDetails: "/HTML/Details_boite.html",
+    linkDetails: "/FRONT_END/HTML/Details_boite.html",
     music: "Open Format",
     // DONNEES PAGE DETAILS BOITE
     logo: {
-      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
     age: "25-40",
@@ -615,7 +615,7 @@ export let boites = [
     },
 
     img: {
-      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos: ["/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png"],
       photos_alt: "testtesttest"
     },
     adress: {
@@ -623,11 +623,11 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
-    siret: 65465454545721554654,
+    siret: 11111111111116,
   },
   {
     idClub: 17,
-    background: "/img/eg/eg.webp",
+    background: "/FRONT_END/img/eg/eg.webp",
     name: "L'EG Club",
     location: {
       location_link: "https://maps.app.goo.gl/ogZLhDpRghaFYrJx7",
@@ -635,11 +635,11 @@ export let boites = [
     },
     tags: ["Summer Club", "Patio"],
     description: "Discothèque estivale proche du front de mer avec un patio ouvert.",
-    linkDetails: "/HTML/Details_boite.html",
+    linkDetails: "/FRONT_END/HTML/Details_boite.html",
     music: "Pop",
     // DONNEES PAGE DETAILS BOITE
     logo: {
-      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
     age: "18-40",
@@ -654,7 +654,7 @@ export let boites = [
     },
 
     img: {
-      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos: ["/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png"],
       photos_alt: "testtesttest"
     },
     adress: {
@@ -662,11 +662,11 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
-    siret: 65465454545721554654,
+    siret: 11111111111117,
   },
   {
     idClub: 18,
-    background: "/img/lusine_a_gaz/lusine_a_gaz.webp",
+    background: "/FRONT_END/img/lusine_a_gaz/lusine_a_gaz.webp",
     name: "L'Usine à Gaz",
     location: {
       location_link: "https://maps.app.goo.gl/JCCNhSbp2e8r1qGi7",
@@ -674,11 +674,11 @@ export let boites = [
     },
     tags: ["Open Format", "+20ans d'activité"],
     description: "Installée dans un usine de 1901, cette boîte de nuit propose des concerts et de la musique diversifiée.",
-    linkDetails: "/HTML/Details_boite.html",
+    linkDetails: "/FRONT_END/HTML/Details_boite.html",
     music: "Open Format",
     // DONNEES PAGE DETAILS BOITE
     logo: {
-      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
     age: "18-25",
@@ -693,7 +693,7 @@ export let boites = [
     },
 
     img: {
-      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos: ["/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png"],
       photos_alt: "testtesttest"
     },
     adress: {
@@ -701,11 +701,11 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
-    siret: 65465454545721554654,
+    siret: 11111111111118,
   },
   {
     idClub: 19,
-    background: "/img/le_2/le_2.webp",
+    background: "/FRONT_END/img/le_2/le_2.webp",
     name: "Discothèque Le 2",
     location: {
       location_link: "https://maps.app.goo.gl/dUcxxFo87KNa37wP8",
@@ -713,11 +713,11 @@ export let boites = [
     },
     tags: ["Latin", "Open Format"],
     description: "Discothèque du centre de Béziers proposant des soirées latino et festives.",
-    linkDetails: "/HTML/Details_boite.html",
+    linkDetails: "/FRONT_END/HTML/Details_boite.html",
     music: "Open Format",
     // DONNEES PAGE DETAILS BOITE
     logo: {
-      logo_img: "/img/amnesia/amnesia_banniere.png.png",
+      logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
     age: "18-30",
@@ -732,7 +732,7 @@ export let boites = [
     },
 
     img: {
-      photos: ["/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png", "/img/la_dune/la_dune.png"],
+      photos: ["/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png", "/FRONT_END/img/la_dune/la_dune.png"],
       photos_alt: "testtesttest"
     },
     adress: {
@@ -740,6 +740,6 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
-    siret: 65465454545721554654,
+    siret: 11111111111119,
   },
 ];

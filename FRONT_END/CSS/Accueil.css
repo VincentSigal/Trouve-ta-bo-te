@@ -1,4 +1,4 @@
-@import url(/CSS/headerfooter.css);
+@import url(/FRONT_END/CSS/headerfooter.css);
 
 /* DEBUT MAIN */
 
@@ -186,7 +186,7 @@ h2 {
 }
 
 .card a::after {
-  content: url(/img/icons/pin_icon.svg);
+  content: url(/FRONT_END/img/icons/pin_icon.svg);
   vertical-align: middle;
   margin-left: 0.5rem;
 }
@@ -263,25 +263,6 @@ h2 {
 footer {
   background-color: rgba(0, 0, 0, 0.8);
 }
-
-/* CARROUSSEL A CHANGER */
-
-/* .carroussel {
-  gap: 1.56rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 1.5rem 1rem 1.5rem 1rem;
-}
-
-.carroussel::-webkit-scrollbar {
-  background-color: var(--textcolor);
-  border-radius: 15px;
-  height: 6px;
-}
-
-.carroussel::-webkit-scrollbar-thumb {
-  background-color: var(--maincolor);
-} */
 
 .carousel-container {
   display: flex;

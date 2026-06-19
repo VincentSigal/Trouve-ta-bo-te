@@ -1,4 +1,4 @@
-@import url(/CSS/headerfooter.css);
+@import url(/FRONT_END/CSS/headerfooter.css);
 
 .page-container {
     background-color: rgba(0, 0, 0, 0.5);
@@ -88,11 +88,11 @@ main {
 }
 
 .bg1 {
-    background-image: url(/img/la_dune/la_dune.png);
+    background-image: url(/FRONT_END/img/la_dune/la_dune.png);
 }
 
 .bg2 {
-    background-image: url(/img/amnesia/amnesia.png);
+    background-image: url(/FRONT_END/img/amnesia/amnesia.png);
 }
 
 h3 {
@@ -110,7 +110,7 @@ h3 {
 }
 
 .card a::after {
-    content: url(/img/icons/pin_icon.svg);
+    content: url(/FRONT_END/img/icons/pin_icon.svg);
     vertical-align: middle;
     margin-left: 0.5rem;
 }

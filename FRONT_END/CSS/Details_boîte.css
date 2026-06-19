@@ -1,7 +1,7 @@
-@import url(/CSS/headerfooter.css);
+@import url(/FRONT_END/CSS/headerfooter.css);
 
 body {
-    background: linear-gradient(rgba(0, 0, 0, 0.5)), url(/img/background_scroll.png);
+    background: linear-gradient(rgba(0, 0, 0, 0.5)), url(/FRONT_END/img/background_scroll.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -47,7 +47,7 @@ body {
 }
 
 .musique_boite p:first-child::before {
-    content: url(/img/icons/music_boite.svg);
+    content: url(/FRONT_END/img/icons/music_boite.svg);
     vertical-align: middle;
     margin-right: 0.3rem;
 }
@@ -80,7 +80,7 @@ body {
 }
 
 .age_boite p:first-child::before {
-    content: url(/img/icons/user_boite.svg);
+    content: url(/FRONT_END/img/icons/user_boite.svg);
     vertical-align: middle;
     margin-right: 0.3rem;
 }
@@ -117,7 +117,7 @@ body {
 }
 
 .prix_boite p:first-child::before {
-    content: url(/img/icons/prix_boite.svg);
+    content: url(/FRONT_END/img/icons/prix_boite.svg);
     vertical-align: middle;
     margin-right: 0.3rem;
 }

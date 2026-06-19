@@ -54,7 +54,7 @@ function detailsPage() {
             </section>
             <div class="ligne_div_details">
                 <div class="ligne_details"></div>
-                <img src="/img/logo.png" alt="Logo Trouve ta boîte">
+                <img src="/FRONT_END/img/logo.png" alt="Logo Trouve ta boîte">
                 <div class="ligne_details"></div>
             </div>
             <section class="main_detail">
@@ -70,7 +70,7 @@ function detailsPage() {
             </section>
             <div class="ligne_div_details">
                 <div class="ligne_details"></div>
-                <img src="/img/logo.png" alt="Logo Trouve ta boîte">
+                <img src="/FRONT_END/img/logo.png" alt="Logo Trouve ta boîte">
                 <div class="ligne_details"></div>
             </div>
             <address><a href="${boite.adress.adress_link}">${boite.adress.adress_name}</a></address>

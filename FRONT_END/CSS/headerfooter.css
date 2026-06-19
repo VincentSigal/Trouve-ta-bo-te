@@ -1,4 +1,4 @@
-@import url(/CSS/fonts.css);
+@import url(/FRONT_END/CSS/fonts.css);
 
 :root {
     --maincolor: #FFCB70;
@@ -13,7 +13,7 @@
 }
 
 body {
-    background-image: url(/img/background_club.jpg);
+    background-image: url(/FRONT_END/img/background_club.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -318,7 +318,7 @@ footer img {
     transform: translate(-50%, -50%);
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.8)), url(/img/background_club.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.8)), url(/FRONT_END/img/background_club.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -447,7 +447,7 @@ footer img {
 }
 
 .popnewsletter li::before {
-    content: url(/img/icons/check_icon.svg);
+    content: url(/FRONT_END/img/icons/check_icon.svg);
     margin-right: 0.5rem;
 }
 
@@ -469,7 +469,7 @@ footer img {
 }
 
 .popnewsletter form label:first-child::before {
-    content: url(/img/icons/music.icon.svg);
+    content: url(/FRONT_END/img/icons/music.icon.svg);
 }
 
 .popnewsletter form select {
@@ -566,7 +566,7 @@ footer img {
 }
 
 .popnewsletter form button::before {
-    content: url(/img/icons/cloche_icon.svg);
+    content: url(/FRONT_END/img/icons/cloche_icon.svg);
 }
 
 .popnewsletter form button:hover {
@@ -792,7 +792,7 @@ footer img {
     }
 
     .foreground_menu.open {
-        height: 240px;
+        height: 250px;
     }
 
     .menu_burger.open {
