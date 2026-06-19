@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <link rel="stylesheet" href="/CSS/Connexion_pro.css">
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Connectez-vous à votre espace professionnel Trouve ta boîte pour gérer votre établissement.">
+    <title>Espace Pro | Trouve ta boîte</title>
+</head>
+
+<body>
+
+    <div class="page-container">
+
+        <header id="header">
+            <div class="site-branding">
+                <a href="/HTML/Accueil.html" title="Logo"><img src="/img/logo.png" alt="Logo Trouve ta boîte"></a>
+                <a href="/HTML/Accueil.html" title="Trouve ta boîte">Trouve ta boîte</a>
+            </div>
+
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="/HTML/Accueil.html" title="Accueil">Accueil</a></li>
+                    <div class="nav-divider"></div>
+                    <li><a href="/HTML/Boîtes_de_nuit.html" title="Boîtes de nuit">Boîtes de nuit</a></li>
+                    <div class="nav-divider"></div>
+                    <li><a href="#" title="Soirées">Soirées</a></li>
+                    <div class="nav-divider"></div>
+                    <li><a href="/HTML/Contact.html" title="Contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="CTA">
+                <div class="newsletter-banner">
+                    <p>Ne rate aucune soirée !</p>
+                </div>
+                <button class="btn-newsletter"><img src="/img/icons/mail_icon.svg" alt="Icon email">S'inscrire</button>
+                <div class="newsletter-pro">
+                    <p>Professionnels ?<br>Ajoutez votre boîte</p>
+                </div>
+                <a href="/HTML/Connexion_pro.html" class="btn-espace-pro" title="Espace pro">Espace Pro</a>
+            </div>
+        </header>
+
+        <main>
+
+            <h1>ESPACE PRO</h1>
+
+            <section class="contact_main_section">
+
+                <div class="textform">
+                    <h2 class="headings one">Déjà un compte ?</h2>
+                    <div class="hero-logo-divider">
+                        <div class="hero-divider-two"></div>
+                        <img src="/img/logo.png" alt="Logo Trouve ta boîte">
+                        <div class="hero-divider-two"></div>
+                    </div>
+                    <p class="pbottom">Connectez-vous pour accéder à votre espace et gérer votre établissement.</p>
+
+                    <h2 class="headings two">Pas encore inscrit ?</h2>
+                    <div class="hero-logo-divider">
+                        <div class="hero-divider-two"></div>
+                        <img src="/img/logo.png" alt="Logo Trouve ta boîte">
+                        <div class="hero-divider-two"></div>
+                    </div>
+                    <p>Créez votre compte professionnel et rejoignez la plateforme pour mettre en avant votre boîte de
+                        nuit.</p>
+                    <a href="/HTML/Inscription_pro.html" title="Créer un compte" class="btn-inscription">Créer un
+                        compte</a>
+                </div>
+
+                <form name="ConnexionPro" action="#" method="post">
+                    <fieldset>
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email" placeholder="Exemple@gmail.com" title="Votre email"
+                            required>
+
+                        <div class="password-title">
+                            <label for="password">Mot de passe</label>
+                            <a href="#" title="Mot de passe oublié ?" class="forgot-password">Mot de passe oublié ?</a>
+                        </div>
+
+                        <div class="input-password">
+                            <input type="password" name="password" id="password" placeholder="Votre mot de passe"
+                                title="Votre mot de passe" required>
+                        </div>
+
+                        <div class="contact_checkbox">
+                            <input type="checkbox" name="remember" id="remember">
+                            <label for="remember">Se souvenir de moi</label>
+                        </div>
+
+                        <button type="submit">Se connecter</button>
+
+                        <p class="no-account">Vous n'avez pas de compte ? <a href="/HTML/Inscription_pro.html"
+                                title="Créer un compte">Créez-en un</a></p>
+                    </fieldset>
+                </form>
+
+            </section>
+
+        </main>
+
+        <footer>
+            <nav>
+                <ul>
+                    <li><a href="/HTML/Mentions_légales.html" title="Mentions légales">Mentions légales</a></li>
+                    <li><a href="/HTML/Politique_de_confidentialité.html" title="Politique de confidentialité">Politique
+                            de confidentialité</a></li>
+                    <li><a href="/HTML/Contact.html" title="Contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="professional-cta">
+                <div>
+                    <h3><a href="/HTML/Contact.html" title="Ajouter votre établissement">Propriétaire de boîte ?</a>
+                    </h3>
+                    <a href="/HTML/Contact.html" title="Ajouter votre établissement">Ajouter votre établissement</a>
+                </div>
+                <div>
+                    <h3><a href="/HTML/Contact.html" title="Ajouter votre soirée">Organisateur de soirée ?</a></h3>
+                    <a href="/HTML/Contact.html" title="Ajouter votre soirée">Ajouter votre soirée</a>
+                </div>
+            </div>
+            <img src="/img/logo.png" alt="Logo Trouve ta boîte">
+        </footer>
+    </div>
+
+    <script type="module" src="/JS/connexion_pro.js"></script>
+</body>
+
+</html>

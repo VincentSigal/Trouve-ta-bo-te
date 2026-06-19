@@ -23,10 +23,7 @@ export function init_burger() {
                     <li><a href="/HTML/Boîtes_de_nuit.html" title="Boîtes de nuit">Boîtes de nuit</a></li>
                     <li><a href="#" title="Soirées">Soirées</a></li>
                     <li><a href="/HTML/Contact.html" title="Contact">Contact</a></li>
-                    <li><a href="/HTML/Admin.html" title="Espace professionnel">Espace Pro</a></li>
-                        <p class="burger_sinscrire">Ne rate aucune soirée avec notre Newsletter
-                            !</p>
-                    </li>
+                    <li><a href="/HTML/Admin.html" title="Espace professionnel">Espace Admin</a></li>
                 </ul>
                 <div class="foreground_menu"></div>
             </nav>

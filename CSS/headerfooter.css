@@ -228,6 +228,10 @@ footer a:visited {
     filter: brightness(1.4) saturate(1.5);
 }
 
+.btn-espace-pro:visited {
+    color: black;
+}
+
 /* FIN HEADER */
 
 /* MAIN */
@@ -788,7 +792,7 @@ footer img {
     }
 
     .foreground_menu.open {
-        height: 290px;
+        height: 240px;
     }
 
     .menu_burger.open {

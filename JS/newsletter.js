@@ -45,7 +45,7 @@ export function init_newsletter() {
                         <div>
                             <img src="/img/icons/mailnews_icon.svg" alt="Logo email">
                         </div>
-                        <input type="email" name="emailnews" placeholder="Ton adresse email" title="Email" required>
+                        <input type="email" name="emailnews" placeholder="Exemple@gmail.com" title="Email" required>
                     </div>
                     <button type="submit">S'inscrire</button>
                     <div class="divcheck">
