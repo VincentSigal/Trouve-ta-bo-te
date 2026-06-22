@@ -55,9 +55,53 @@ main {
     max-width: 2.31rem;
 }
 
+/* ── RANGÉE AVEC FLÈCHES ── */
+
+.row-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.row-arrow {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 1px solid var(--maincolor);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: var(--maincolor);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.row-arrow:hover,
+.row-arrow:focus-visible {
+    background-color: var(--maincolor);
+    color: black;
+}
+
 .touteslesboites {
     display: flex;
     gap: 1.25rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 1.5rem 1rem 1.5rem 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--maincolor) transparent;
+}
+
+.touteslesboites::-webkit-scrollbar {
+    height: 6px;
+}
+
+.touteslesboites::-webkit-scrollbar-thumb {
+    background-color: var(--maincolor);
+    border-radius: 10px;
 }
 
 .card {
@@ -68,7 +112,7 @@ main {
     transition: 0.7s;
 }
 
-.card:hover {
+.card:not(.popcard):hover {
     transform: scale(1.1);
     border-color: var(--maincolor);
 }
@@ -84,15 +128,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 1.25rem 0 0.93rem 1.25rem;
-}
-
-.bg1 {
-    background-image: url(/FRONT_END/img/la_dune/la_dune.png);
-}
-
-.bg2 {
-    background-image: url(/FRONT_END/img/amnesia/amnesia.png);
+    padding: 1.25rem 1rem 0.6rem 1rem;
 }
 
 h3 {
@@ -135,55 +171,46 @@ h3 {
     margin-bottom: 1.87rem;
 }
 
-/* POP UP CARD */
-#popup_amnesia {
+/* POP UP CARD (même comportement que sur l'accueil) */
+
+.popdesc {
     display: none;
 }
 
-.popcard {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-    opacity: 0;
-    transform: scale(0.7);
-    transition: 0.3s;
-    cursor: auto;
-}
-
-.popbg {
-    box-shadow: inset 0px 105px 100px 0px rgba(0, 0, 0, 0.9), inset 0px -75px 50px 20px rgba(0, 0, 0, 0.9);
-}
-
-.popdesc {
+.card.popcard .popdesc {
     display: flex;
     flex-direction: column;
-    gap: 0.1rem;
-}
-
-.popdesc div {
-    display: flex;
     gap: 0.3rem;
 }
 
-.popdesc>p {
-    color: var(--textcolor);
+.club-popup-card {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    z-index: 11;
+    display: none;
+}
+
+.club-popup-card.active {
+    display: block;
+}
+
+.card.popcard .bgcard {
+    width: 350px;
+    height: 515px;
+    box-shadow: inset 0px 120px 50px -25px rgba(0, 0, 0, 0.9), inset 0px -225px 90px -25px rgba(0, 0, 0, 0.9);
 }
 
 .popdesc p {
-    font-size: 0.6rem;
+    color: var(--textcolor);
 }
 
 .popdesc a {
     color: #95BEF8;
-    font-size: 0.6rem;
-    text-align: end;
-    padding-right: 1rem;
+    font-size: 0.8rem;
+    align-self: flex-end;
 }
 
 .popdesc a:visited {
@@ -194,30 +221,14 @@ h3 {
     display: none;
 }
 
-#popup_amnesia:checked~.popcard {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-#popup_amnesia:checked~.popcard {
-    transform: scale(1.5);
-}
-
-.popbg {
-    z-index: 2;
-}
-
-#popup_amnesia:checked~.popcard .popbg {
-    border: 1px solid var(--maincolor);
-}
-
 /* FIN POP UP CARD */
 /* FIN MAIN */
 
 /* MEDIA QUERY */
-@media (max-width: 1075px) {
-    .popcard {
-        top: 35px;
+
+@media (max-width: 700px) {
+    .row-arrow {
+        display: none;
     }
 }
 
@@ -227,14 +238,9 @@ h3 {
     }
 }
 
-@media (max-width: 410px) {
-    #popup_amnesia:checked~.popcard {
-        transform: scale(1.2);
-    }
-}
-
-@media (max-width: 335px) {
-    #popup_amnesia:checked~.popcard {
-        transform: scale(1);
+@media (max-width: 390px) {
+    .card.popcard .bgcard {
+        width: 300px;
+        height: 485px;
     }
 }

@@ -286,22 +286,26 @@ footer {
   cursor: grabbing;
 }
 
-.carousel-arrow {
+.row-arrow {
+  flex-shrink: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
-  border-radius: 25px;
-  font-size: 1.4rem;
-  border: none;
-  background: none;
-  cursor: pointer;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--maincolor);
+  background-color: rgba(0, 0, 0, 0.4);
   color: var(--maincolor);
+  font-size: 1.1rem;
+  cursor: pointer;
   transition: 0.3s;
 }
 
-.carousel-arrow:hover {
-  color: var(--accent);
-  transform: scale(1.4);
+.row-arrow:hover,
+.row-arrow:focus-visible {
+  background-color: var(--maincolor);
+  color: black;
 }
 
 .carousel-pagination {

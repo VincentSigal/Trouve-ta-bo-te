@@ -17,8 +17,8 @@ export function init_carrousel() {
         return document.querySelectorAll(".card");
     }
 
-    const nextBtn = document.querySelector(".next");
-    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".row-arrow-right");
+    const prevBtn = document.querySelector(".row-arrow-left");
 
 
     // État actuel du carrousel
