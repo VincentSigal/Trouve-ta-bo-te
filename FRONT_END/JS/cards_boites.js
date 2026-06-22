@@ -52,7 +52,6 @@ export function renderCards(data) {
    POPUP DES CARTES
    ========================== */
 
-    // Récupère toutes les cartes affichées
     const cards_popup = document.querySelectorAll(`.card`);
 
     // Conteneur de la popup
@@ -82,22 +81,17 @@ export function renderCards(data) {
             // à l'intérieur de la popup
             const popupCard = popup.querySelector(".card");
 
-            // Applique le style popup
             popupCard.classList.add("popcard");
 
-            // Affiche la popup
             popup.classList.add("active");
 
-            // Affiche l'arrière-plan assombri
             show_overlay();
 
             // Ferme la popup lorsqu'on clique dessus
             popupCard.addEventListener("click", () => {
 
-                // Masque la popup
                 popup.classList.remove("active");
 
-                // Masque l'overlay
                 close_overlay();
             });
         });
