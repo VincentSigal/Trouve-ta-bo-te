@@ -52,7 +52,14 @@ export async function getBoiteById(req, res) {
 
 export async function createBoite(req, res) {
 
-    const { background, name, location_link, description, siret, idUser, idCity } = req.body;
+    const { background,
+        name,
+        location_link,
+        description,
+        siret,
+        idUser,
+        idCity
+    } = req.body;
 
     const sql = `INSERT INTO boites (background, name, location_link, description, siret, idUser, idCity)
                  VALUES (?, ?, ?, ?, ?, ?, ?)`;
