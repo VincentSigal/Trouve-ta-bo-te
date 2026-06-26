@@ -296,7 +296,7 @@ h1 {
 }
 
 .events-popup-close:hover,
-.events-popup-close:focus-visible {
+.events-popup-close:focus {
     background-color: var(--maincolor);
     color: black;
 }
@@ -394,7 +394,7 @@ h1 {
 }
 
 .event-detail-close:hover,
-.event-detail-close:focus-visible {
+.event-detail-close:focus {
     background-color: var(--maincolor);
     color: black;
 }
@@ -412,6 +412,15 @@ h1 {
 @media (max-width: 900px) {
     .calendar-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .event-filters {
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 20px;
     }
 }
 
