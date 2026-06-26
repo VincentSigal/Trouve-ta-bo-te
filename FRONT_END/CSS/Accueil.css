@@ -81,14 +81,19 @@ h1 {
 .club-filters select {
   background-color: var(--maincolor);
   border: 1px solid black;
+  border-radius: 15px;
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-size: 0.9rem;
-  font-weight: 400;
+  font-weight: 600;
   font-style: italic;
   color: #000000;
   padding: 0.1rem 0;
   cursor: pointer;
+}
+
+.club-filters select option {
+  font-weight: 600;
 }
 
 .club-filters button {
@@ -99,12 +104,15 @@ h1 {
   font-size: 0.9rem;
   font-weight: 800;
   color: var(--maincolor);
-  padding: 0.1rem 1.81rem;
+  padding: 0.5rem 1.81rem;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-.club-filters button:hover {
-  background-color: rgba(0, 0, 0, 1);
+.club-filters button:hover,
+.club-filters button:focus {
+  background-color: var(--maincolor);
+  color: black;
 }
 
 .error-filter {

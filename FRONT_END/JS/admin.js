@@ -7,7 +7,17 @@
 // ============================================================
 
 import { boites as boitesInitiales } from "../data/data_cards.js";
+import { init_overlay } from "./overlay.js";
+import { init_burger } from "./burger.js";
+import { scrollHeader } from "./header.js";
 
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    init_overlay();
+    init_burger();
+    scrollHeader();
+});
 // ── MOT DE PASSE (temporaire, côté front) ──
 // TODO backend : remplacer par une vraie route d'authentification
 const ADMIN_PASSWORD = "admin123"; // ← Change ce mot de passe
@@ -24,75 +34,12 @@ let editingIndex = null; // null = ajout, number = modification
 //  AUTHENTIFICATION
 // ============================================================
 
-const loginScreen = document.getElementById("loginScreen");
-const adminPanel = document.getElementById("adminPanel");
-const loginBtn = document.getElementById("loginBtn");
-const logoutBtn = document.getElementById("logoutBtn");
-const passwordInput = document.getElementById("passwordInput");
-const errorLogin = document.getElementById("errorLogin");
-
-// HEADER DISPARAÎT AU SCROLL
-function scrollHeader() {
-    const header = document.querySelector("#header");
-
-    let lastScroll = window.scrollY;
-
-    window.addEventListener("scroll", () => {
-        const currentScroll = window.scrollY;
-
-        if (currentScroll > lastScroll) {
-            header.classList.add("hidden");
-        } else {
-            header.classList.remove("hidden");
-        }
-
-        lastScroll = currentScroll;
-    });
-};
-scrollHeader();
-
-/* BURGER */
-function init_burger() {
-    const header = document.querySelector("header");
-
-    const burger_html = `
-<nav class="burger">
-                <div class="hamburger">
-                    <div class="ligne"></div>
-                    <div class="ligne"></div>
-                    <div class="ligne"></div>
-                </div>
-                <ul class="menu_burger">
-                    <li><a href="/FRONT_END/HTML/Accueil.html" title="Accueil">Accueil</a></li>
-                    <li><a href="/FRONT_END/HTML/Boîtes_de_nuit.html" title="Boîtes de nuit">Boîtes de nuit</a></li>
-                    <li><a href="#" title="Soirées">Soirées</a></li>
-                    <li><a href="/FRONT_END/HTML/Contact.html" title="Contact">Contact</a></li>
-                        <p class="burger_sinscrire">Ne rate aucune soirée avec notre Newsletter
-                            !</p>
-                    </li>
-                </ul>
-                <div class="foreground_menu"></div>
-            </nav>
-`;
-
-    header.insertAdjacentHTML("beforeend", burger_html);
-
-    const hamburger = document.querySelector(".hamburger");
-    const menu_burger = document.querySelector(".menu_burger");
-    const foreground_menu = document.querySelector(".foreground_menu");
-
-
-    hamburger.addEventListener("click", () => {
-        menu_burger.classList.toggle("open");
-        hamburger.classList.toggle("active");
-        if (menu_burger.classList.contains("open")) {
-            foreground_menu.classList.add("open");
-        } else {
-            foreground_menu.classList.remove("open");
-        };
-    });
-};
-init_burger();
+const loginScreen = document.querySelector("#loginScreen");
+const adminPanel = document.querySelector("#adminPanel");
+const loginBtn = document.querySelector("#loginBtn");
+const logoutBtn = document.querySelector("#logoutBtn");
+const passwordInput = document.querySelector("#passwordInput");
+const errorLogin = document.querySelector("#errorLogin");
 
 function checkAuth() {
     if (sessionStorage.getItem(LS_AUTH) === "true") {
@@ -177,22 +124,22 @@ function saveBoites(boites) {
 //  FORMULAIRE
 // ============================================================
 
-const formContainer = document.getElementById("formContainer");
-const formTitle = document.getElementById("formTitle");
-const btnOpenForm = document.getElementById("btnOpenForm");
-const btnSave = document.getElementById("btnSave");
-const btnCancel = document.getElementById("btnCancel");
-const errorForm = document.getElementById("errorForm");
+const formContainer = document.querySelector("#formContainer");
+const formTitle = document.querySelector("#formTitle");
+const btnOpenForm = document.querySelector("#btnOpenForm");
+const btnSave = document.querySelector("#btnSave");
+const btnCancel = document.querySelector("#btnCancel");
+const errorForm = document.querySelector("#errorForm");
 
 // Champs du formulaire
-const inputName = document.getElementById("inputName");
-const inputLocation = document.getElementById("inputLocation");
-const inputLocationLink = document.getElementById("inputLocationLink");
-const inputMusique = document.getElementById("inputMusique");
-const inputTag1 = document.getElementById("inputTag1");
-const inputTag2 = document.getElementById("inputTag2");
-const inputDescription = document.getElementById("inputDescription");
-const inputBackground = document.getElementById("inputBackground");
+const inputName = document.querySelector("#inputName");
+const inputLocation = document.querySelector("#inputLocation");
+const inputLocationLink = document.querySelector("#inputLocationLink");
+const inputMusique = document.querySelector("#inputMusique");
+const inputTag1 = document.querySelector("#inputTag1");
+const inputTag2 = document.querySelector("#inputTag2");
+const inputDescription = document.querySelector("#inputDescription");
+const inputBackground = document.querySelector("#inputBackground");
 
 btnOpenForm.addEventListener("click", () => {
     openForm(null);
@@ -207,26 +154,34 @@ function openForm(index) {
     errorForm.classList.add("hidden");
     formContainer.classList.remove("hidden");
 
-    if (index !== null) {
+    if (index === null) {
+        // Mode ajout (CREATE)
+
+        formTitle.textContent = "Ajouter une boîte";
+        clearForm();
+
+    } else {
         // Mode modification (UPDATE)
+
         formTitle.textContent = "Modifier la boîte";
+
         const boites = loadBoites();
         const b = boites[index];
+
         inputName.value = b.name;
         inputLocation.value = b.location.location_name;
         inputLocationLink.value = b.location.location_link;
-        inputMusique.value = b.musique;
+        inputMusique.value = b.music;
         inputTag1.value = b.tags[0];
         inputTag2.value = b.tags[1];
         inputDescription.value = b.description;
         inputBackground.value = b.background;
-    } else {
-        // Mode ajout (CREATE)
-        formTitle.textContent = "Ajouter une boîte";
-        clearForm();
     }
 
-    formContainer.scrollIntoView({ behavior: "smooth", block: "start" });
+    formContainer.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 }
 
 function closeForm() {
@@ -302,29 +257,55 @@ function renderList() {
     const boites = loadBoites();
 
     if (boites.length === 0) {
-        boitesList.innerHTML = `<p style="color: var(--accent); font-size: 0.9rem;">Aucune boîte enregistrée.</p>`;
+        boitesList.innerHTML = `
+            <p style="color: var(--accent); font-size: 0.9rem;">
+                Aucune boîte enregistrée.
+            </p>
+        `;
         return;
     }
 
-    boitesList.innerHTML = boites.map((b, index) => `
-        <div class="boite-card">
-            <div class="boite-card-img" style="background-image: url(${b.background})"></div>
-            <div class="boite-card-body">
-                <p class="boite-card-name">${b.name}</p>
-                <p class="boite-card-location">📍 ${b.location.location_name}</p>
-                <div class="boite-card-tags">
-                    <span>#${b.tags[0]}</span>
-                    <span>#${b.tags[1]}</span>
-                    <span>${b.music}</span>
+    // On prépare une chaîne HTML vide
+    let html = "";
+
+    // Pour chaque boîte, on ajoute son HTML
+    boites.forEach((b, index) => {
+        html += `
+            <div class="boite-card">
+                <div class="boite-card-img" style="background-image: url(${b.background})"></div>
+
+                <div class="boite-card-body">
+                    <p class="boite-card-name">${b.name}</p>
+
+                    <p class="boite-card-location">
+                        📍 ${b.location.location_name}
+                    </p>
+
+                    <div class="boite-card-tags">
+                        <span>#${b.tags[0]}</span>
+                        <span>#${b.tags[1]}</span>
+                        <span>${b.music}</span>
+                    </div>
+
+                    <p class="boite-card-desc">
+                        ${b.description}
+                    </p>
                 </div>
-                <p class="boite-card-desc">${b.description}</p>
+
+                <div class="boite-card-actions">
+                    <button class="btn-edit" data-index="${index}">
+                        ✏️ Modifier
+                    </button>
+
+                    <button class="btn-delete" data-index="${index}">
+                        🗑 Supprimer
+                    </button>
+                </div>
             </div>
-            <div class="boite-card-actions">
-                <button class="btn-edit" data-index="${index}">✏️ Modifier</button>
-                <button class="btn-delete" data-index="${index}">🗑 Supprimer</button>
-            </div>
-        </div>
-    `).join("");
+        `;
+    });
+
+    boitesList.innerHTML = html;
 
     // Events modifier
     document.querySelectorAll(".btn-edit").forEach((btn) => {
