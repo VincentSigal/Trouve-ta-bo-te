@@ -96,7 +96,7 @@ footer a:visited {
 }
 
 .main-navigation ul a:hover,
-.main-navigation ul a:focus {
+.main-navigation ul a:focus-visible {
     background-color: var(--maincolor);
     color: black;
 }
@@ -224,7 +224,7 @@ footer a:visited {
 }
 
 .btn-espace-pro:hover,
-.btn-espace-pro:focus {
+.btn-espace-pro:focus-visible {
     filter: brightness(1.4) saturate(1.5);
 }
 
@@ -261,7 +261,7 @@ footer ul li {
 }
 
 footer li:hover,
-footer nav a:focus {
+footer nav a:focus-visible {
     text-decoration: underline var(--maincolor);
 }
 
@@ -291,13 +291,13 @@ footer nav a:focus {
 }
 
 .professional-cta h3:hover,
-.professional-cta h3:focus {
+.professional-cta h3:focus-visible {
     color: var(--accent);
     transform: scale(1.2);
 }
 
 .professional-cta a:hover,
-.professional-cta a:focus {
+.professional-cta a:focus-visible {
     color: var(--accent);
 }
 
@@ -732,7 +732,7 @@ footer img {
     }
 
     .hamburger:hover .ligne,
-    .hamburger:focus .ligne {
+    .hamburger:focus-visible .ligne {
         border: 2px solid var(--accent);
     }
 
@@ -749,7 +749,7 @@ footer img {
     }
 
     .burger a:hover,
-    .burger a:focus {
+    .burger a:focus-visible {
         color: var(--accent);
     }
 
@@ -775,7 +775,7 @@ footer img {
     }
 
     .burger_sinscrire:hover,
-    .burger_sinscrire:focus {
+    .burger_sinscrire:focus-visible {
         transform: scale(1.1);
     }
 

@@ -194,7 +194,7 @@ body {
 }
 
 .preventes:hover,
-.preventes:focus {
+.preventes:focus-visible {
         filter: brightness(1.4) saturate(1.5);
 }
 
@@ -277,7 +277,7 @@ address a {
 }
 
 address a:hover,
-address a:focus {
+address a:focus-visible {
     text-decoration: underline;
 }
 

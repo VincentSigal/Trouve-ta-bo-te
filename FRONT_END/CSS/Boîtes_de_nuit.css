@@ -80,7 +80,7 @@ main {
 }
 
 .row-arrow:hover,
-.row-arrow:focus-visible {
+.row-arrow:focus-visible-visible {
     background-color: var(--maincolor);
     color: black;
 }
@@ -152,7 +152,7 @@ h3 {
 }
 
 .card a:hover,
-.card a:focus {
+.card a:focus-visible {
     text-decoration: underline var(--maincolor);
 }
 

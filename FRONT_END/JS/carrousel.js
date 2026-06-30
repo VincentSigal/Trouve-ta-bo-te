@@ -30,6 +30,8 @@ export function init_carrousel() {
     let visibleCards; // Nombre de cartes visibles à l'écran
     let maxIndex; // Nombre de position maximale du carrousel
 
+    const NOMBRE_MAX_DOTS = 5;
+
     // Calcule la largeur réelle d'une carte
     // (largeur + espace entre les cartes)
     function getCardWidth() {
@@ -95,40 +97,56 @@ export function init_carrousel() {
     /* ==========================
        PAGINATION (DOTS)
        ========================== */
-    // Génère automatiquement le nombre de dots
+    // Génère automatiquement le nombre de dots (LIMITE A 5)
     // en fonction du nombre de positions possibles
     const dotsContainer = document.querySelector(".carousel-pagination");
     function createDots() {
 
         dotsContainer.innerHTML = "";
 
-        for (let i = 0; i <= maxIndex; i++) {
+        const nombreDots = Math.min(maxIndex + 1, NOMBRE_MAX_DOTS);
+
+        for (let i = 0; i < nombreDots; i++) {
             const dot = document.createElement("div");
             dot.classList.add("dot");
 
-            if (i === currentIndex) {
-                dot.classList.add("dot_active");
-            };
-
             dot.addEventListener("click", () => {
-                currentIndex = i;
+                currentIndex = positionPourDot(i, nombreDots);
                 updateCarrousel();
             });
-            dotsContainer.appendChild(dot);
-        };
 
+            dotsContainer.appendChild(dot);
+        }
+
+        updateDots();
+    };
+
+    // Convertit un index de dot (0, 1, 2...) en position
+    // réelle du carrousel, répartie proportionnellement
+    function positionPourDot(indexDot, nombreDots) {
+
+        if (nombreDots <= 1) return 0;
+
+        return Math.round((indexDot / (nombreDots - 1)) * maxIndex);
     };
     calculateCarousel();
     createDots();
     // Met en évidence le dot correspondant
     // à la position actuelle du carrousel
     function updateDots() {
-        const dots = document.querySelectorAll(".dot");
 
-        dots.forEach(dot => dot.classList.remove("dot_active"));
-        if (dots[currentIndex]) {
-            dots[currentIndex].classList.add("dot_active");
-        };
+        const dots = document.querySelectorAll(".dot");
+        const nombreDots = dots.length;
+
+        let dotActif = 0;
+
+        if (nombreDots > 1 && maxIndex > 0) {
+            dotActif = Math.round((currentIndex / maxIndex) * (nombreDots - 1));
+        }
+
+        dots.forEach((dot, i) => {
+            dot.classList.toggle("dot_active", i === dotActif);
+        });
     };
 
 

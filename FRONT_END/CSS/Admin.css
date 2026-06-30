@@ -127,7 +127,7 @@ footer a {
 }
 
 .input-login button:hover,
-.input-login button:focus {
+.input-login button:focus-visible {
         filter: brightness(1.4) saturate(1.5);
 }
 
@@ -208,7 +208,7 @@ footer a:visited {
 }
 
 .main-navigation ul a:hover,
-.main-navigation ul a:focus {
+.main-navigation ul a:focus-visible {
     background-color: var(--maincolor);
     color: black;
 }
@@ -226,7 +226,7 @@ footer a:visited {
 }
 
 .logout-btn:hover,
-.logout-btn:focus {
+.logout-btn:focus-visible {
     border-color: var(--danger);
     color: var(--danger);
 }
@@ -279,7 +279,7 @@ footer a:visited {
 }
 
 .btn-add:hover,
-.btn-add:focus {
+.btn-add:focus-visible {
         filter: brightness(1.4) saturate(1.5);
 }
 
@@ -356,7 +356,7 @@ footer a:visited {
 }
 
 .btn-save:hover,
-.btn-save:focus {
+.btn-save:focus-visible {
     opacity: 0.85;
 }
 
@@ -372,7 +372,7 @@ footer a:visited {
 }
 
 .btn-cancel:hover,
-.btn-cancel:focus {
+.btn-cancel:focus-visible {
     border-color: var(--textcolor);
 }
 
@@ -399,7 +399,7 @@ footer a:visited {
 }
 
 .boite-card:hover,
-.boite-card:focus {
+.boite-card:focus-visible {
     border-color: var(--maincolor);
 }
 
@@ -474,7 +474,7 @@ footer a:visited {
 }
 
 .btn-edit:hover,
-.btn-edit:focus {
+.btn-edit:focus-visible {
     border-color: var(--maincolor);
     color: var(--maincolor);
 }
@@ -493,7 +493,7 @@ footer a:visited {
 }
 
 .btn-delete:hover,
-.btn-delete:focus {
+.btn-delete:focus-visible {
     border-color: var(--danger);
     color: var(--danger);
 }
@@ -542,7 +542,7 @@ footer a:visited {
 }
 
 .btn-export:hover,
-.btn-export:focus {
+.btn-export:focus-visible {
     background-color: var(--maincolor);
     color: #000;
 }
@@ -631,7 +631,7 @@ footer a:visited {
     }
 
     .hamburger:hover .ligne,
-    .hamburger:focus .ligne {
+    .hamburger:focus-visible .ligne {
         border: 2px solid var(--accent);
     }
 
@@ -648,7 +648,7 @@ footer a:visited {
     }
 
     .burger a:hover,
-    .burger a:focus {
+    .burger a:focus-visible {
         color: var(--accent);
     }
 
@@ -674,7 +674,7 @@ footer a:visited {
     }
 
     .burger_sinscrire:hover,
-    .burger_sinscrire:focus {
+    .burger_sinscrire:focus-visible {
         transform: scale(1.1);
     }
 

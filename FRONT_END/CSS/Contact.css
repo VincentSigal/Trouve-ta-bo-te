@@ -139,9 +139,9 @@ input#checkbox {
 }
 
 form input:hover,
-form input:focus,
+form input:focus-visible,
 textarea:hover,
-textarea:focus {
+textarea:focus-visible {
     border: 2px solid var(--accent);
 }
 
@@ -175,7 +175,7 @@ form button {
 }
 
 form button:hover,
-form button:focus {
+form button:focus-visible {
         filter: brightness(1.4) saturate(1.5);
 
 }

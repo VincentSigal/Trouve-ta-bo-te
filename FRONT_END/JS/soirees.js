@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     afficherCalendrier(evenementsAffiches);
 
     initFiltres();
-    initVoirPlus();
+    initBoutonVoirToutesLesSoirees();
 });
 
 
@@ -46,8 +46,6 @@ function creerListeDe14Jours() {
 
     const liste = [];
 
-    // On part toujours d'aujourd'hui, peu importe
-    // le jour où la page est consultée
     for (let i = 0; i < 14; i++) {
 
         const date = new Date();
@@ -108,21 +106,16 @@ function afficherCalendrier(listeEvenements) {
 
     let grid_html = ``;
 
-    // Une case par jour, dans l'ordre des 14 jours
     jours14.forEach((jourActuel) => {
 
         const { nomJour, numeroJour, nomMois } = formaterJourAffiche(jourActuel);
 
-        // On cherche uniquement les événements
-        // qui correspondent à CE jour précis
         const evenementsDuJour = listeEvenements.filter((event) => event.date === jourActuel);
 
         let cards_html = ``;
 
         if (evenementsDuJour.length > 0) {
 
-            // On limite l'affichage à 3 soirées maximum
-            // pour garder toutes les colonnes à la même hauteur
             const LIMITE_PAR_JOUR = 3;
 
             const evenementsAMontrer = evenementsDuJour.slice(0, LIMITE_PAR_JOUR);
@@ -142,8 +135,6 @@ function afficherCalendrier(listeEvenements) {
                     </div>`;
             });
 
-            // Si on a plus de soirées que la limite,
-            // on ajoute un lien pour les voir toutes
             if (nombreEnPlus > 0) {
 
                 cards_html += `
@@ -173,7 +164,7 @@ function afficherCalendrier(listeEvenements) {
     grid.innerHTML = grid_html;
 
     initClicsSurCartes();
-    initVoirPlusParJour();
+    initBoutonsVoirPlusParJour();
 };
 
 
@@ -181,12 +172,9 @@ function afficherCalendrier(listeEvenements) {
    "+ X AUTRES" SUR UN JOUR PRÉCIS
    ========================== */
 
-function initVoirPlusParJour() {
+function initBoutonsVoirPlusParJour() {
 
     const boutons = document.querySelectorAll(".voir-plus-jour");
-    const overlayPopup = document.querySelector("#eventsPopupOverlay");
-    const grid = document.querySelector("#eventsPopupGrid");
-    const titrePopup = document.querySelector("#eventsPopupOverlay h2");
 
     boutons.forEach((bouton) => {
 
@@ -194,34 +182,12 @@ function initVoirPlusParJour() {
 
             const jourClique = bouton.dataset.jour;
 
-            // On récupère uniquement les soirées
-            // de ce jour précis, dans la liste affichée actuelle
             const evenementsDuJour = evenementsAffiches.filter((event) => event.date === jourClique);
 
             const { nomJour, numeroJour, nomMois } = formaterJourAffiche(jourClique);
-            titrePopup.textContent = `Soirées du ${nomJour} ${numeroJour} ${nomMois}`;
+            const titre = `Soirées du ${nomJour} ${numeroJour} ${nomMois}`;
 
-            let grid_html = ``;
-
-            evenementsDuJour.forEach((event) => {
-
-                const boite = trouverBoite(event.idClub);
-
-                grid_html += `
-                    <div class="event-card" data-id="${event.idEvent}">
-                        <img src="${event.poster}" alt="${event.name}">
-                        <div class="event-card-info">
-                            <p class="event-card-name">${event.name}</p>
-                            <p class="event-card-boite">${boite.name}</p>
-                        </div>
-                    </div>`;
-            });
-
-            grid.innerHTML = grid_html;
-
-            overlayPopup.classList.add("active");
-
-            initClicsSurCartes();
+            afficherPopupListe(evenementsDuJour, titre);
         });
     });
 };
@@ -236,11 +202,8 @@ function remplirFiltres() {
     const selectBoite = document.querySelector("#filterBoite");
     const selectMusique = document.querySelector("#filterMusique");
 
-    // On récupère uniquement les boîtes qui
-    // organisent réellement une soirée dans les 14 jours
     const idsClubsAvecSoiree = events.map((event) => event.idClub);
 
-    // On enlève les doublons grâce à un Set
     const idsUniques = [...new Set(idsClubsAvecSoiree)];
 
     idsUniques.forEach((idClub) => {
@@ -251,16 +214,12 @@ function remplirFiltres() {
             <option value="${idClub}">${boite.name}</option>`);
     });
 
-    // Pour les styles musicaux, on récupère
-    // ceux des boîtes qui ont une soirée
     const stylesUniques = [];
 
     idsUniques.forEach((idClub) => {
 
         const boite = trouverBoite(idClub);
 
-        // On ajoute le style seulement s'il
-        // n'est pas déjà présent dans la liste
         const dejaPresent = stylesUniques.includes(boite.music);
 
         if (dejaPresent === false) {
@@ -307,8 +266,6 @@ function appliquerFiltres() {
     const valeurBoite = selectBoite.value;
     const valeurMusique = selectMusique.value;
 
-    // On repart toujours de la liste complète
-    // avant d'appliquer les filtres actuels
     let resultat = events;
 
     if (valeurBoite !== "") {
@@ -332,63 +289,69 @@ function appliquerFiltres() {
 
 
 /* ==========================
-   POPUP "VOIR TOUTES LES SOIRÉES"
+   POPUP "LISTE DE SOIRÉES"
+   (utilisée pour "voir toutes les soirées"
+   ET pour le "+ X autres" d'un jour précis)
    ========================== */
 
-function initVoirPlus() {
+function afficherPopupListe(listeEvenements, titre) {
+
+    const popup = document.querySelector("#eventsPopup");
+    const grid = document.querySelector("#eventsPopupGrid");
+    const titrePopup = document.querySelector("#eventsPopup h2");
+    const btnClose = document.querySelector("#btnCloseEventsPopup");
+
+    titrePopup.textContent = titre;
+
+    let grid_html = ``;
+
+    listeEvenements.forEach((event) => {
+
+        const boite = trouverBoite(event.idClub);
+        const { nomJour, numeroJour, nomMois } = formaterJourAffiche(event.date);
+
+        grid_html += `
+            <div class="event-card" data-id="${event.idEvent}">
+                <img src="${event.poster}" alt="${event.name}">
+                <div class="event-card-info">
+                    <p class="event-card-date">${nomJour} ${numeroJour} ${nomMois}</p>
+                    <p class="event-card-name">${event.name}</p>
+                    <p class="event-card-boite">${boite.name}</p>
+                </div>
+            </div>`;
+    });
+
+    grid.innerHTML = grid_html;
+
+    // Affiche la popup et l'overlay
+    popup.classList.add("active");
+    show_overlay();
+
+    // Ferme cette popup au clic sur la croix
+    btnClose.addEventListener("click", () => {
+        popup.classList.remove("active");
+        close_overlay();
+    });
+
+    // Ferme cette popup au clic sur l'overlay
+    on_overlay_click(() => {
+        popup.classList.remove("active");
+        close_overlay();
+    });
+
+    initClicsSurCartes();
+};
+
+
+function initBoutonVoirToutesLesSoirees() {
 
     const btnVoirPlus = document.querySelector("#btnVoirPlus");
-    const overlayPopup = document.querySelector("#eventsPopupOverlay");
-    const btnClose = document.querySelector("#btnCloseEventsPopup");
-    const grid = document.querySelector("#eventsPopupGrid");
-    const titrePopup = document.querySelector("#eventsPopupOverlay h2");
 
     btnVoirPlus.addEventListener("click", () => {
 
-        titrePopup.textContent = "Toutes les soirées";
-
-        let grid_html = ``;
-
-        // On affiche TOUTES les soirées,
-        // triées par date, peu importe les filtres actifs
         const evenementsTries = [...events].sort((a, b) => a.date.localeCompare(b.date));
 
-        evenementsTries.forEach((event) => {
-
-            const boite = trouverBoite(event.idClub);
-            const { nomJour, numeroJour, nomMois } = formaterJourAffiche(event.date);
-
-            grid_html += `
-                <div class="event-card" data-id="${event.idEvent}">
-                    <img src="${event.poster}" alt="${event.name}">
-                    <div class="event-card-info">
-                        <p class="event-card-date">${nomJour} ${numeroJour} ${nomMois}</p>
-                        <p class="event-card-name">${event.name}</p>
-                        <p class="event-card-boite">${boite.name}</p>
-                    </div>
-                </div>`;
-        });
-
-        grid.innerHTML = grid_html;
-
-        overlayPopup.classList.add("active");
-
-        initClicsSurCartes();
-    });
-
-    btnClose.addEventListener("click", () => {
-
-        overlayPopup.classList.remove("active");
-    });
-
-    // Fermeture en cliquant à l'extérieur de la popup
-    overlayPopup.addEventListener("click", (e) => {
-
-        const clicSurOverlay = e.target === overlayPopup;
-
-        if (clicSurOverlay === true) {
-            overlayPopup.classList.remove("active");
-        }
+        afficherPopupListe(evenementsTries, "Toutes les soirées");
     });
 };
 
@@ -400,7 +363,6 @@ function initVoirPlus() {
 function initClicsSurCartes() {
 
     const cartes = document.querySelectorAll(".event-card");
-    const popup = document.querySelector("#eventDetailPopup");
 
     cartes.forEach((carte) => {
 
@@ -409,34 +371,72 @@ function initClicsSurCartes() {
             const idEvent = Number(carte.dataset.id);
 
             const event = events.find((e) => e.idEvent === idEvent);
-            const boite = trouverBoite(event.idClub);
-            const { nomJour, numeroJour, nomMois } = formaterJourAffiche(event.date);
 
-            popup.innerHTML = `
-                <div class="event-detail-content">
-                    <button class="event-detail-close" id="btnCloseDetail">&times;</button>
-                    <img src="${event.poster}" alt="${event.name}">
-                    <h2>${event.name}</h2>
-                    <p class="event-detail-boite">${boite.name} — ${boite.location.location_name}</p>
-                    <p class="event-detail-date">${nomJour} ${numeroJour} ${nomMois} à ${event.heure}</p>
-                    <p class="event-detail-prix">${event.prix}</p>
-                    <p class="event-detail-description">${event.description}</p>
-                </div>`;
-
-            popup.classList.add("active");
-            show_overlay();
-
-            const btnCloseDetail = document.querySelector("#btnCloseDetail");
-
-            btnCloseDetail.addEventListener("click", () => {
-                popup.classList.remove("active");
-                close_overlay();
-            });
+            afficherPopupDetail(event);
         });
     });
+};
 
-    on_overlay_click(() => {
-        popup.classList.remove("active");
-        close_overlay();
+function afficherPopupDetail(event) {
+
+    const popup = document.querySelector("#eventDetailPopup");
+    const listePopup = document.querySelector("#eventsPopup");
+
+    const boite = trouverBoite(event.idClub);
+    const { nomJour, numeroJour, nomMois } = formaterJourAffiche(event.date);
+
+    popup.innerHTML = `
+        <div class="event-detail-content">
+            <button class="event-detail-close" id="btnCloseDetail">&times;</button>
+            <img src="${event.poster}" alt="${event.name}">
+            <h2>${event.name}</h2>
+            <p class="event-detail-boite">${boite.name} — ${boite.location.location_name}</p>
+            <p class="event-detail-date">${nomJour} ${numeroJour} ${nomMois} à ${event.heure}</p>
+            <p class="event-detail-prix">${event.prix}</p>
+            <p class="event-detail-description">${event.description}</p>
+        </div>`;
+
+    // Affiche la popup détail et l'overlay
+    // (si l'overlay était déjà affiché pour une autre
+    // popup en dessous, ça ne change rien, il reste affiché)
+    popup.classList.add("active");
+    show_overlay();
+
+    // Si la liste de soirées est ouverte en dessous,
+    // on l'assombrit légèrement pour bien mettre en
+    // avant la popup détail qui passe par-dessus
+    const listeEstOuverte = listePopup.classList.contains("active");
+
+    if (listeEstOuverte === true) {
+        listePopup.classList.add("assombrie");
+    }
+
+    const btnCloseDetail = document.querySelector("#btnCloseDetail");
+
+    // Ferme cette popup au clic sur sa croix
+    btnCloseDetail.addEventListener("click", () => {
+        fermerPopupDetail(popup, listePopup);
     });
+
+    // Ferme cette popup au clic sur l'overlay
+    on_overlay_click(() => {
+        fermerPopupDetail(popup, listePopup);
+    });
+};
+
+function fermerPopupDetail(popup, listePopup) {
+
+    popup.classList.remove("active");
+
+    // On retire l'assombrissement de la liste,
+    // qu'elle soit ouverte ou pas
+    listePopup.classList.remove("assombrie");
+
+    // Si la liste de soirées est encore ouverte en dessous,
+    // on garde l'overlay affiché pour elle
+    const listeEstOuverte = listePopup.classList.contains("active");
+
+    if (listeEstOuverte === false) {
+        close_overlay();
+    }
 };

@@ -5,15 +5,19 @@ import { renderCards } from "./cards_boites.js";
 import { init_newsletter } from "./newsletter.js";
 import { scrollHeader } from "./header.js";
 import { init_carrousel } from "./carrousel.js";
-import { init_filter } from "./filter.js";
+import { init_filter, remplirFiltres } from "./filter.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
     init_overlay();
     init_burger();
+
+    remplirFiltres();
+
     renderCards(boites);
     init_newsletter();
     scrollHeader();
     init_carrousel();
     init_filter();
 });
+

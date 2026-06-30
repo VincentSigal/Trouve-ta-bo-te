@@ -126,7 +126,7 @@ h1 {
 }
 
 .btn-inscription:hover,
-.btn-inscription:focus {
+.btn-inscription:focus-visible {
     filter: brightness(1.4) saturate(1.5);
 }
 
@@ -214,9 +214,9 @@ input#checkbox {
 }
 
 form input:hover,
-form input:focus,
+form input:focus-visible,
 #password:hover,
-#password:focus {
+#password:focus-visible {
     border: 2px solid var(--accent);
 }
 
@@ -251,7 +251,7 @@ form button {
 }
 
 form button:hover,
-form button:focus {
+form button:focus-visible {
     filter: brightness(1.4) saturate(1.5);
 }
 
@@ -270,7 +270,7 @@ form button:focus {
 }
 
 .no-account a:hover,
-.no-account a:focus {
+.no-account a:focus-visible {
     text-decoration: underline;
 }
 

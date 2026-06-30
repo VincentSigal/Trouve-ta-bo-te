@@ -1,6 +1,6 @@
 /* ==========================
-   FILTRAGE DES BOÎTES
-   ========================== */
+FILTRAGE DES BOÎTES DE LA PAGE D'ACCUEIL
+========================== */
 
 import { boites } from "../data/data_cards.js";
 import { renderCards } from "./cards_boites.js";
@@ -11,76 +11,146 @@ export function init_filter() {
     // Récupération des éléments du formulaire
     const villeSelect = document.querySelector("#ville");
     const musiqueSelect = document.querySelector("#musique");
-    const filterBtn = document.querySelector("#btn-filter");
+    const btnReset = document.querySelector("#btn-filter");
 
-    // Lance le filtrage au clic sur le bouton
-    filterBtn.addEventListener("click", () => {
+    // Filtrage automatique
+    villeSelect.addEventListener("change", appliquerFiltres);
+    musiqueSelect.addEventListener("change", appliquerFiltres);
 
-        // Valeurs sélectionnées par l'utilisateur
-        const ville = villeSelect.value;
-        const musique = musiqueSelect.value;
+    // Réinitialisation des filtres
+    btnReset.addEventListener("click", () => {
 
-        // Conserve uniquement les boîtes correspondant
-        // aux critères sélectionnés
-        const resultatFiltre = boites.filter((boite) => {
+        villeSelect.selectedIndex = 0;
+        musiqueSelect.selectedIndex = 0;
 
-            // Si "Toutes les villes" est sélectionné,
-            // toutes les villes sont acceptées.
-            // Sinon la ville de la boîte doit correspondre.
-            const villeOk =
-                ville === "Toutes les villes"
-                || boite.location.location_name === ville;
+        appliquerFiltres();
 
-            // Même logique pour la musique
-            const musiqueOk =
-                musique === "Toutes les musiques"
-                || boite.music === musique;
-
-            // La boîte est conservée uniquement si
-            // les deux critères sont respectés
-            return villeOk && musiqueOk;
-        });
-
-        // Vérifie si un message d'erreur existe déjà
-        const errorMessage = document.querySelector(".error-filter");
-
-        // Aucun résultat trouvé
-        if (resultatFiltre.length === 0) {
-
-            // Évite de créer plusieurs fois
-            // le même message d'erreur
-            if (!errorMessage) {
-
-                // Affiche un message sous les filtres
-                document.querySelector(".club-filters").insertAdjacentHTML(
-                    "afterend",
-                    `<p class="error-filter">
-                Aucune boîte ne correspond à votre recherche.
-            </p>`
-                );
-
-            }
-
-            // Supprime les dots du carrousel
-            document.querySelector(".carousel-pagination").innerHTML = "";
-
-            // Arrête l'exécution :
-            // inutile de recréer les cartes
-            // puisqu'il n'y a aucun résultat
-            return;
-        };
-
-        // Supprime l'ancien message d'erreur
-        // si des résultats sont trouvés
-        if (errorMessage) {
-            errorMessage.remove();
-        }
-        
-        // Affiche les cartes filtrées
-        renderCards(resultatFiltre);
-
-        // Réinitialise le carrousel
-        // (index, dots, calculs...)
-        refreshCarrousel();
     });
-};
+
+}
+
+function appliquerFiltres() {
+
+    const villeSelect = document.querySelector("#ville");
+    const musiqueSelect = document.querySelector("#musique");
+
+    // Valeurs sélectionnées
+    const ville = villeSelect.value;
+    const musique = musiqueSelect.value;
+
+    // Filtrage des boîtes
+    const resultatFiltre = boites.filter((boite) => {
+
+        const villeOk =
+            ville === ""
+            || boite.location.location_name === ville;
+
+        const musiqueOk =
+            musique === ""
+            || boite.music === musique;
+
+        return villeOk && musiqueOk;
+
+    });
+
+    // Vérifie si un message existe déjà
+    const errorMessage = document.querySelector(".error-filter");
+
+    // Aucun résultat
+    if (resultatFiltre.length === 0) {
+
+        if (!errorMessage) {
+
+            document.querySelector(".club-filters").insertAdjacentHTML(
+                "afterend",
+                `<p class="error-filter">
+                    Aucune boîte ne correspond à votre recherche.
+                </p>`
+            );
+
+        }
+
+        // Supprime les cartes
+        renderCards([]);
+
+        // Supprime les dots du carrousel
+        document.querySelector(".carousel-pagination").innerHTML = "";
+
+        return;
+    }
+
+    // Supprime le message d'erreur s'il existe
+    if (errorMessage) {
+        errorMessage.remove();
+    }
+
+    // Affiche les cartes filtrées
+    renderCards(resultatFiltre);
+
+    // Recrée le carrousel
+    refreshCarrousel();
+
+}
+
+export function remplirFiltres() {
+
+    const selectVille = document.querySelector("#ville");
+    const selectMusique = document.querySelector("#musique");
+
+    // ----------------------------
+    // VILLES
+    // ----------------------------
+
+    const villes = [];
+
+    boites.forEach((boite) => {
+
+        const ville = boite.location.location_name;
+
+        if (!villes.includes(ville)) {
+            villes.push(ville);
+        }
+
+    });
+
+    villes.sort();
+
+    villes.forEach((ville) => {
+
+        const option = document.createElement("option");
+
+        option.value = ville;
+        option.textContent = ville;
+
+        selectVille.appendChild(option);
+
+    });
+
+    // ----------------------------
+    // MUSIQUES
+    // ----------------------------
+
+    const musiques = [];
+
+    boites.forEach((boite) => {
+
+        if (!musiques.includes(boite.music)) {
+            musiques.push(boite.music);
+        }
+
+    });
+
+    musiques.sort();
+
+    musiques.forEach((musique) => {
+
+        const option = document.createElement("option");
+
+        option.value = musique;
+        option.textContent = musique;
+
+        selectMusique.appendChild(option);
+
+    });
+
+}

@@ -110,7 +110,7 @@ h1 {
 }
 
 .club-filters button:hover,
-.club-filters button:focus {
+.club-filters button:focus-visible {
   background-color: var(--maincolor);
   color: black;
 }
@@ -200,7 +200,7 @@ h2 {
 }
 
 .card a:hover,
-.card a:focus {
+.card a:focus-visible {
   text-decoration: underline var(--maincolor);
 }
 
@@ -335,6 +335,22 @@ footer {
   background: var(--maincolor);
 }
 
+      /*==================
+           RESPONSIVE
+       ==================*/
+
+@media (max-width: 785px) {
+  .carousel-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  main {
+    padding-top: 3rem;
+  }
+}
+
 @media (max-width: 600px) {
   .club-filters {
     align-items: center;
@@ -349,33 +365,14 @@ footer {
   }
 
   .club-filters button {
-    width: 105px;
-    height: 30px;
     text-align: center;
+    align-items: center;
   }
 }
 
-@media (max-width: 785px) {
-  .carousel-arrow {
+@media (max-width: 500px) {
+  .row-arrow {
     display: none;
-  }
-}
-
-@media (max-width: 700px) {
-  main {
-    padding-top: 3rem;
-  }
-}
-
-@media (max-width: 390px) {
-  .card.popcard .bgcard {
-    width: 300px;
-    height: 485px;
-  }
-
-  .carousel-container {
-    margin-left: -16px;
-    margin-right: -16px;
   }
 }
 
