@@ -54,14 +54,21 @@ function parseHeure(texte) {
    ========================== */
 
 async function viderLesTables() {
-    await db.query("DELETE FROM style");
-    await db.query("DELETE FROM opening_schedule");
-    await db.query("DELETE FROM photos_library");
-    await db.query("DELETE FROM events");
-    await db.query("DELETE FROM boites");
-    await db.query("DELETE FROM users");
-    await db.query("DELETE FROM music");
-    await db.query("DELETE FROM cities");
+    // On désactive temporairement les clés étrangères pour pouvoir vider
+    // les tables sans se soucier de l'ordre, et TRUNCATE remet aussi
+    // les compteurs AUTO_INCREMENT à zéro (contrairement à DELETE FROM).
+    await db.query("SET FOREIGN_KEY_CHECKS = 0");
+
+    await db.query("TRUNCATE TABLE style");
+    await db.query("TRUNCATE TABLE opening_schedule");
+    await db.query("TRUNCATE TABLE photos_library");
+    await db.query("TRUNCATE TABLE events");
+    await db.query("TRUNCATE TABLE boites");
+    await db.query("TRUNCATE TABLE users");
+    await db.query("TRUNCATE TABLE music");
+    await db.query("TRUNCATE TABLE cities");
+
+    await db.query("SET FOREIGN_KEY_CHECKS = 1");
 }
 
 
