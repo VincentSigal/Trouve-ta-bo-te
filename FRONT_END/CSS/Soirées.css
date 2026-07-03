@@ -67,7 +67,7 @@ h1 {
 }
 
 .event-filters button:hover,
-.event-filters button:focus-visible-visible {
+.event-filters button:-visible {
     background-color: var(--maincolor);
     color: black;
 }
@@ -149,7 +149,7 @@ h1 {
 }
 
 .voir-plus-jour:hover,
-.voir-plus-jour:focus-visible-visible {
+.voir-plus-jour:focus-visible {
     border-color: var(--maincolor);
     color: var(--maincolor);
     background-color: rgba(255, 203, 112, 0.1);
@@ -167,7 +167,7 @@ h1 {
 }
 
 .event-card:hover,
-.event-card:focus-visible-visible {
+.event-card:focus-visible {
     border-color: var(--maincolor);
     transform: scale(1.03);
 }
@@ -239,7 +239,7 @@ h1 {
 }
 
 #btnVoirPlus:hover,
-#btnVoirPlus:focus-visible-visible {
+#btnVoirPlus:focus-visible {
     filter: brightness(1.4) saturate(1.5);
 }
 
@@ -298,7 +298,7 @@ h1 {
 }
 
 .events-popup-close:hover,
-.events-popup-close:focus-visible-visible {
+.events-popup-close:focus-visible {
     background-color: var(--maincolor);
     color: black;
 }
@@ -396,7 +396,7 @@ h1 {
 }
 
 .event-detail-close:hover,
-.event-detail-close:focus-visible-visible {
+.event-detail-close:focus-visible {
     background-color: var(--maincolor);
     color: black;
 }
@@ -423,6 +423,11 @@ h1 {
         flex-wrap: wrap;
         flex-direction: column;
         gap: 20px;
+    }
+
+    .event-filters select {
+        width: 180px;
+        height: 30px;
     }
 }
 

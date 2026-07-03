@@ -53,19 +53,28 @@ export async function getBoiteById(req, res) {
 export async function createBoite(req, res) {
 
     const { background,
+        logo,
         name,
         location_link,
         description,
+        paragraph,
+        tags1,
+        tags2,
+        age_min,
+        age_max,
+        price,
+        instagram,
         siret,
         idUser,
         idCity
     } = req.body;
 
-    const sql = `INSERT INTO boites (background, name, location_link, description, siret, idUser, idCity)
-                 VALUES (?, ?, ?, ?, ?, ?, ?)`;
+    const sql = `INSERT INTO boites
+        (background, logo, name, location_link, description, paragraph, tags1, tags2, age_min, age_max, price, instagram, siret, idUser, idCity)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
     try {
-        const [result] = await db.query(sql, [background, name, location_link, description, siret, idUser, idCity]);
+        const [result] = await db.query(sql, [background, logo, name, location_link, description, paragraph, tags1, tags2, age_min, age_max, price, instagram, siret, idUser, idCity]);
 
         res.status(201).json({ message: "Boîte créée", idClub: result.insertId });
 
@@ -85,14 +94,14 @@ export async function createBoite(req, res) {
 export async function replaceBoite(req, res) {
 
     const id = req.params.id;
-    const { background, name, location_link, description, siret, idUser, idCity } = req.body;
+    const { background, logo, name, location_link, description, paragraph, tags1, tags2, age_min, age_max, price, instagram, siret, idUser, idCity } = req.body;
 
     const sql = `UPDATE boites 
-                 SET background = ?, name = ?, location_link = ?, description = ?, siret = ?, idUser = ?, idCity = ?
+                 SET background = ?, logo = ?, name = ?, location_link = ?, description = ?, paragraph = ?, tags1 = ?, tags2 = ?, age_min = ?, age_max = ?, price = ?, instagram = ?, siret = ?, idUser = ?, idCity = ?
                  WHERE idClub = ?`;
 
     try {
-        const [result] = await db.query(sql, [background, name, location_link, description, siret, idUser, idCity, id]);
+        const [result] = await db.query(sql, [background, logo, name, location_link, description, paragraph, tags1, tags2, age_min, age_max, price, instagram, siret, idUser, idCity, id]);
 
         if (result.affectedRows === 0) {
             res.status(404).json({ error: "Boîte introuvable" });
@@ -117,7 +126,7 @@ export async function updateBoite(req, res) {
 
     const id = req.params.id;
 
-    const champsAutorises = ["background", "name", "location_link", "description", "siret", "idUser", "idCity"];
+    const champsAutorises = ["background", "logo", "name", "location_link", "description", "paragraph", "tags1", "tags2", "age_min", "age_max", "price", "instagram", "siret", "idUser", "idCity"];
 
     const champsAModifier = [];
     const valeurs = [];

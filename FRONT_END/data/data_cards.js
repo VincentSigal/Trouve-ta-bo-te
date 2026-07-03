@@ -18,11 +18,14 @@ export let boites = [
       logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
-    age: "18-25",
+    age: {
+      age_min: 18,
+      age_max: 25,
+    },
     price: "50€",
     hours: {
       time: "00h - 7h",
-      date: "Dimanche",
+      date: "Lundi, samedi, dimanche",
     },
     summary: {
       heading: "Test",
@@ -38,6 +41,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    instagram:"https://www.instagram.com/amnesiacap",
     siret: 11111111111111,
   },
   {
@@ -57,7 +61,10 @@ export let boites = [
       logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
-    age: "18-30",
+    age: {
+      age_min: 18,
+      age_max: 30,
+    },
     price: "50€",
     hours: {
       time: "00h - 7h",
@@ -77,6 +84,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    instagram:"https://www.instagram.com/amnesiacap",
     siret: 11111111111112,
   },
   {
@@ -96,7 +104,10 @@ export let boites = [
       logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
-    age: "18-30",
+    age: {
+      age_min: 18,
+      age_max: 30,
+    },
     price: "50€",
     hours: {
       time: "00h - 7h",
@@ -116,6 +127,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    instagram:"https://www.instagram.com/amnesiacap",
     siret: 11111111111113,
   },
   {
@@ -135,7 +147,10 @@ export let boites = [
       logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
-    age: "25-40",
+    age: {
+      age_min: 25,
+      age_max: 40,
+    },
     price: "50€",
     hours: {
       time: "00h - 7h",
@@ -155,6 +170,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    instagram:"https://www.instagram.com/amnesiacap",
     siret: 11111111111114,
   },
   {
@@ -174,7 +190,10 @@ export let boites = [
       logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
-    age: "18-30",
+    age: {
+      age_min: 18,
+      age_max: 30,
+    },
     price: "50€",
     hours: {
       time: "00h - 7h",
@@ -194,6 +213,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    instagram:"https://www.instagram.com/amnesiacap",
     siret: 11111111111115,
   },
   {
@@ -213,7 +233,10 @@ export let boites = [
       logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
-    age: "18-25",
+    age: {
+      age_min: 18,
+      age_max: 25,
+    },
     price: "50€",
     hours: {
       time: "00h - 7h",
@@ -233,6 +256,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    instagram:"https://www.instagram.com/amnesiacap",
     siret: 11111111111116,
   },
   {
@@ -252,7 +276,10 @@ export let boites = [
       logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
-    age: "25-40",
+    age: {
+      age_min: 25,
+      age_max: 40,
+    },
     price: "50€",
     hours: {
       time: "00h - 7h",
@@ -272,6 +299,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    instagram:"https://www.instagram.com/amnesiacap",
     siret: 11111111111117,
   },
   {
@@ -291,7 +319,10 @@ export let boites = [
       logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
-    age: "18-30",
+    age: {
+      age_min: 18,
+      age_max: 30,
+    },
     price: "50€",
     hours: {
       time: "00h - 7h",
@@ -311,6 +342,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    instagram:"https://www.instagram.com/amnesiacap",
     siret: 11111111111118,
   },
   {
@@ -330,7 +362,10 @@ export let boites = [
       logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
-    age: "25-40",
+    age: {
+      age_min: 25,
+      age_max: 40,
+    },
     price: "50€",
     hours: {
       time: "00h - 7h",
@@ -350,6 +385,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    instagram:"https://www.instagram.com/amnesiacap",
     siret: 11111111111119,
   },
   {
@@ -369,7 +405,10 @@ export let boites = [
       logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
-    age: "18-30",
+    age: {
+      age_min: 18,
+      age_max: 30,
+    },
     price: "50€",
     hours: {
       time: "00h - 7h",
@@ -389,6 +428,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    instagram:"https://www.instagram.com/amnesiacap",
     siret: 11111111111110,
   },
   {
@@ -408,7 +448,10 @@ export let boites = [
       logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
-    age: "18-25",
+    age: {
+      age_min: 18,
+      age_max: 25,
+    },
     price: "50€",
     hours: {
       time: "00h - 7h",
@@ -428,6 +471,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    instagram:"https://www.instagram.com/amnesiacap",
     siret: 11111111111101,
   },
   {
@@ -447,7 +491,10 @@ export let boites = [
       logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
-    age: "18-30",
+    age: {
+      age_min: 18,
+      age_max: 30,
+    },
     price: "50€",
     hours: {
       time: "00h - 7h",
@@ -467,6 +514,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    instagram:"https://www.instagram.com/amnesiacap",
     siret: 11111111111112,
   },
   {
@@ -486,7 +534,10 @@ export let boites = [
       logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
-    age: "18-25",
+    age: {
+      age_min: 18,
+      age_max: 25,
+    },
     price: "50€",
     hours: {
       time: "00h - 7h",
@@ -506,6 +557,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    instagram:"https://www.instagram.com/amnesiacap",
     siret: 11111111111113,
   },
   {
@@ -525,7 +577,10 @@ export let boites = [
       logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
-    age: "18-25",
+    age: {
+      age_min: 18,
+      age_max: 25,
+    },
     price: "50€",
     hours: {
       time: "00h - 7h",
@@ -545,6 +600,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    instagram:"https://www.instagram.com/amnesiacap",
     siret: 11111111111114,
   },
   {
@@ -564,7 +620,10 @@ export let boites = [
       logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
-    age: "18-25",
+    age: {
+      age_min: 18,
+      age_max: 25,
+    },
     price: "50€",
     hours: {
       time: "00h - 7h",
@@ -584,6 +643,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    instagram:"https://www.instagram.com/amnesiacap",
     siret: 11111111111115,
   },
   {
@@ -603,7 +663,10 @@ export let boites = [
       logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
-    age: "25-40",
+    age: {
+      age_min: 25,
+      age_max: 40,
+    },
     price: "50€",
     hours: {
       time: "00h - 7h",
@@ -623,6 +686,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    instagram:"https://www.instagram.com/amnesiacap",
     siret: 11111111111116,
   },
   {
@@ -642,7 +706,10 @@ export let boites = [
       logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
-    age: "18-40",
+    age: {
+      age_min: 18,
+      age_max: 40,
+    },
     price: "50€",
     hours: {
       time: "00h - 7h",
@@ -662,6 +729,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    instagram:"https://www.instagram.com/amnesiacap",
     siret: 11111111111117,
   },
   {
@@ -681,7 +749,10 @@ export let boites = [
       logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
-    age: "18-25",
+    age: {
+      age_min: 18,
+      age_max: 25,
+    },
     price: "50€",
     hours: {
       time: "00h - 7h",
@@ -701,6 +772,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    instagram:"https://www.instagram.com/amnesiacap",
     siret: 11111111111118,
   },
   {
@@ -720,7 +792,10 @@ export let boites = [
       logo_img: "/FRONT_END/img/amnesia/amnesia_banniere.png.png",
       logo_alt: "TEST",
     },
-    age: "18-30",
+    age: {
+      age_min: 18,
+      age_max: 30,
+    },
     price: "50€",
     hours: {
       time: "00h - 7h",
@@ -740,6 +815,7 @@ export let boites = [
       adress_name: "Poussan",
       maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2904.7835433606538!2d3.501392675636285!3d43.27691037668775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b4c685c3055%3A0x9d9dfe3ab5d09064!2zQW1uw6lzaWE!5e0!3m2!1sfr!2sfr!4v1776167271376!5m2!1sfr!2sfr",
     },
+    instagram:"https://www.instagram.com/amnesiacap",
     siret: 11111111111119,
   },
 ];

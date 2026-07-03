@@ -392,7 +392,7 @@ function afficherPopupDetail(event) {
             <h2>${event.name}</h2>
             <p class="event-detail-boite">${boite.name} — ${boite.location.location_name}</p>
             <p class="event-detail-date">${nomJour} ${numeroJour} ${nomMois} à ${event.heure}</p>
-            <p class="event-detail-prix">${event.prix}</p>
+            <p class="event-detail-prix">${event.price}</p>
             <p class="event-detail-description">${event.description}</p>
         </div>`;
 

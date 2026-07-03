@@ -4,7 +4,7 @@ FILTRAGE DES BOÎTES DE LA PAGE D'ACCUEIL
 
 import { boites } from "../data/data_cards.js";
 import { renderCards } from "./cards_boites.js";
-import { refreshCarrousel } from "./carrousel.js";
+import { refreshCarrousel } from "./carousel_homepage.js";
 
 export function init_filter() {
 

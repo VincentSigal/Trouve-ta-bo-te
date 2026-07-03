@@ -21,7 +21,7 @@ export function init_burger() {
                 <ul class="menu_burger">
                     <li><a href="/FRONT_END/HTML/Accueil.html" title="Accueil">Accueil</a></li>
                     <li><a href="/FRONT_END/HTML/Boîtes_de_nuit.html" title="Boîtes de nuit">Boîtes de nuit</a></li>
-                    <li><a href="#" title="Soirées">Soirées</a></li>
+                    <li><a href="/FRONT_END/HTML/Soirées.html" title="Soirées">Soirées</a></li>
                     <li><a href="/FRONT_END/HTML/Contact.html" title="Contact">Contact</a></li>
                     <li><a href="/FRONT_END/HTML/Admin.html" title="Espace professionnel">Espace Admin</a></li>
                 </ul>

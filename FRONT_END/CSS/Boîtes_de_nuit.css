@@ -80,7 +80,7 @@ main {
 }
 
 .row-arrow:hover,
-.row-arrow:focus-visible-visible {
+.row-arrow:focus-visible {
     background-color: var(--maincolor);
     color: black;
 }

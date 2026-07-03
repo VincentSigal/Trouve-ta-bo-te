@@ -35,7 +35,7 @@ function detailsPage() {
                     </section>
                     <section class="age_boite">
                         <p>Âge:</p>
-                        <p>${boite.age} ans</p>
+                        <p>${boite.age.age_min} - ${boite.age.age_max} ans</p>
                     </section>
                 </div>
                 <section class="horaires_boite">
