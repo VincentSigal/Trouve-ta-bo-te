@@ -2,11 +2,12 @@
 FILTRAGE DES BOÎTES DE LA PAGE D'ACCUEIL
 ========================== */
 
-import { boites } from "../data/data_cards.js";
 import { renderCards } from "./cards_boites.js";
 import { refreshCarrousel } from "./carousel_homepage.js";
 
-export function init_filter() {
+const NOMBRE_BOITES_POPULAIRES = 10;
+
+export function init_filter(boites) {
 
     // Récupération des éléments du formulaire
     const villeSelect = document.querySelector("#ville");
@@ -14,8 +15,8 @@ export function init_filter() {
     const btnReset = document.querySelector("#btn-filter");
 
     // Filtrage automatique
-    villeSelect.addEventListener("change", appliquerFiltres);
-    musiqueSelect.addEventListener("change", appliquerFiltres);
+    villeSelect.addEventListener("change", () => appliquerFiltres(boites));
+    musiqueSelect.addEventListener("change", () => appliquerFiltres(boites));
 
     // Réinitialisation des filtres
     btnReset.addEventListener("click", () => {
@@ -23,13 +24,13 @@ export function init_filter() {
         villeSelect.selectedIndex = 0;
         musiqueSelect.selectedIndex = 0;
 
-        appliquerFiltres();
+        appliquerFiltres(boites);
 
     });
 
 }
 
-function appliquerFiltres() {
+function appliquerFiltres(boites) {
 
     const villeSelect = document.querySelector("#ville");
     const musiqueSelect = document.querySelector("#musique");
@@ -38,23 +39,37 @@ function appliquerFiltres() {
     const ville = villeSelect.value;
     const musique = musiqueSelect.value;
 
-    // Filtrage des boîtes
+    const errorMessage = document.querySelector(".error-filter");
+
+    // Aucun filtre actif : on revient aux boîtes les plus populaires
+    if (ville === "" && musique === "") {
+
+        if (errorMessage) {
+            errorMessage.remove();
+        }
+
+        renderCards(boites.slice(0, NOMBRE_BOITES_POPULAIRES));
+        refreshCarrousel();
+
+        return;
+    }
+
+    // Filtrage des boîtes. L'API renvoie déjà les boîtes triées
+    // par popularité, et filter() conserve cet ordre : pas besoin
+    // de re-trier ici, et pas de limite à 10 quand un filtre est actif.
     const resultatFiltre = boites.filter((boite) => {
 
         const villeOk =
             ville === ""
-            || boite.location.location_name === ville;
+            || boite.city_name === ville;
 
         const musiqueOk =
             musique === ""
-            || boite.music === musique;
+            || boite.music_name === musique;
 
         return villeOk && musiqueOk;
 
     });
-
-    // Vérifie si un message existe déjà
-    const errorMessage = document.querySelector(".error-filter");
 
     // Aucun résultat
     if (resultatFiltre.length === 0) {
@@ -92,7 +107,7 @@ function appliquerFiltres() {
 
 }
 
-export function remplirFiltres() {
+export function remplirFiltres(boites) {
 
     const selectVille = document.querySelector("#ville");
     const selectMusique = document.querySelector("#musique");
@@ -105,10 +120,8 @@ export function remplirFiltres() {
 
     boites.forEach((boite) => {
 
-        const ville = boite.location.location_name;
-
-        if (!villes.includes(ville)) {
-            villes.push(ville);
+        if (!villes.includes(boite.city_name)) {
+            villes.push(boite.city_name);
         }
 
     });
@@ -134,8 +147,8 @@ export function remplirFiltres() {
 
     boites.forEach((boite) => {
 
-        if (!musiques.includes(boite.music)) {
-            musiques.push(boite.music);
+        if (!musiques.includes(boite.music_name)) {
+            musiques.push(boite.music_name);
         }
 
     });

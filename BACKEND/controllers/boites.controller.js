@@ -9,7 +9,14 @@ export async function getAllBoites(req, res) {
 
     try {
 
-        const [results] = await db.query("SELECT * FROM boites");
+        const sql = `SELECT boites.*, cities.city_name, music.music AS music_name
+                     FROM boites
+                     JOIN cities ON boites.idCity = cities.idCity
+                     LEFT JOIN style ON style.idClub = boites.idClub
+                     LEFT JOIN music ON music.idMusic = style.idMusic
+                     ORDER BY boites.clicks DESC`;
+
+        const [results] = await db.query(sql);
         res.json(results);
 
     } catch (err) {

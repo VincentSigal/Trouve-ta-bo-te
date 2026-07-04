@@ -2,9 +2,6 @@
    AFFICHAGE DES CARTES
    ========================== */
 
-// Données des boîtes de nuit
-import { boites } from "../data/data_cards.js";
-
 // Fonctions de gestion de l'overlay
 import { show_overlay, close_overlay, on_overlay_click } from "./overlay.js";
 
@@ -28,15 +25,15 @@ export function renderCards(data) {
                         <div class="bgcard" style="background-image:url(${boites_js.background})">
                             <div>
                                 <h3>${boites_js.name}</h3>
-                                <address><a href="${boites_js.location.location_link}" target="_blank"
-                                        title="${boites_js.location.location_name}">${boites_js.location.location_name}</a></address>
+                                <address><a href="${boites_js.location_link}" target="_blank"
+                                        title="${boites_js.city_name}">${boites_js.city_name}</a></address>
                             </div>
                             <div>
-                                <p>#${boites_js.tags[0]}</p>
-                                <p>#${boites_js.tags[1]}</p>
+                                <p>#${boites_js.tags1}</p>
+                                <p>#${boites_js.tags2}</p>
                                 <div class="popdesc">
                                     <p>${boites_js.description}</p>
-                                    <a href="${boites_js.linkDetails}?id=${boites_js.idClub}" title="Voir plus de détails">Voir plus de détails</a>
+                                    <a href="/FRONT_END/HTML/Details_boite.html?id=${boites_js.idClub}" title="Voir plus de détails">Voir plus de détails</a>
                                 </div>
                             </div>
                         </div>
