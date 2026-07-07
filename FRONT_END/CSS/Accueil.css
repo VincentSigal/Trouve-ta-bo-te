@@ -6,6 +6,7 @@ main {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0)28%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.2) 34%, rgba(0, 0, 0, 0.4) 38%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 1) 60%);
   padding-top: 7rem;
   padding-bottom: 1.5rem;
+  min-height: 100vh;
 }
 
 .hero-section {

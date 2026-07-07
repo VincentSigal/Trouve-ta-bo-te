@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initFiltres();
     initBoutonVoirToutesLesSoirees();
+    initClicsPopularite();
 });
 
 
@@ -126,7 +127,7 @@ function afficherCalendrier(listeEvenements) {
                 const boite = trouverBoite(event.idClub);
 
                 cards_html += `
-                    <div class="event-card" data-id="${event.idEvent}">
+                    <div class="event-card" data-id="${event.idEvent}" data-idclub="${event.idClub}">
                         <img src="${event.poster}" alt="${event.name}">
                         <div class="event-card-info">
                             <p class="event-card-name">${event.name}</p>
@@ -311,7 +312,7 @@ function afficherPopupListe(listeEvenements, titre) {
         const { nomJour, numeroJour, nomMois } = formaterJourAffiche(event.date);
 
         grid_html += `
-            <div class="event-card" data-id="${event.idEvent}">
+            <div class="event-card" data-id="${event.idEvent}" data-idclub="${event.idClub}">
                 <img src="${event.poster}" alt="${event.name}">
                 <div class="event-card-info">
                     <p class="event-card-date">${nomJour} ${numeroJour} ${nomMois}</p>
@@ -352,6 +353,31 @@ function initBoutonVoirToutesLesSoirees() {
         const evenementsTries = [...events].sort((a, b) => a.date.localeCompare(b.date));
 
         afficherPopupListe(evenementsTries, "Toutes les soirées");
+    });
+};
+
+
+/* ==========================
+   POPULARITÉ : INCRÉMENTE LE COMPTEUR DE CLICS
+   DE LA BOÎTE QUAND ON CLIQUE SUR UNE DE SES SOIRÉES
+   Posé une seule fois sur document (délégation),
+   pour fonctionner même quand les cartes sont
+   reconstruites (calendrier, popup "voir plus").
+   ========================== */
+
+function initClicsPopularite() {
+
+    document.addEventListener("click", (event) => {
+
+        const carte = event.target.closest(".event-card[data-idclub]");
+
+        if (carte === null) {
+            return;
+        }
+
+        const idClub = carte.dataset.idclub;
+
+        fetch(`http://localhost:3000/api/boites/${idClub}/click`, { method: "POST" });
     });
 };
 

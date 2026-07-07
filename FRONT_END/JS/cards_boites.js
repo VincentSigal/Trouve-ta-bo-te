@@ -6,6 +6,27 @@
 import { show_overlay, close_overlay, on_overlay_click } from "./overlay.js";
 
 
+/* ==========================
+   POPULARITÉ : INCRÉMENTE LE COMPTEUR DE CLICS
+   Posé une seule fois sur document (délégation),
+   pour fonctionner même quand les cartes sont
+   reconstruites (filtres) ou dupliquées (popup).
+   ========================== */
+
+document.addEventListener("click", (event) => {
+
+    const lien = event.target.closest("[data-idclub]");
+
+    if (lien === null) {
+        return;
+    }
+
+    const idClub = lien.dataset.idclub;
+
+    fetch(`http://localhost:3000/api/boites/${idClub}/click`, { method: "POST" });
+});
+
+
 // Génère dynamiquement les cartes
 // à partir des données reçues
 export function renderCards(data) {
@@ -33,7 +54,7 @@ export function renderCards(data) {
                                 <p>#${boites_js.tags2}</p>
                                 <div class="popdesc">
                                     <p>${boites_js.description}</p>
-                                    <a href="/FRONT_END/HTML/Details_boite.html?id=${boites_js.idClub}" title="Voir plus de détails">Voir plus de détails</a>
+                                    <a href="/FRONT_END/HTML/Details_boite.html?id=${boites_js.idClub}" data-idclub="${boites_js.idClub}" title="Voir plus de détails">Voir plus de détails</a>
                                 </div>
                             </div>
                         </div>

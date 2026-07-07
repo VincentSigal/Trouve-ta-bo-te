@@ -194,3 +194,32 @@ export async function deleteBoite(req, res) {
         res.status(500).json({ error: "Erreur serveur" });
     }
 };
+
+
+/* ==========================
+   INCRÉMENTER LE COMPTEUR DE CLICS
+   POST /api/boites/:id/click
+   Appelé quand un utilisateur clique sur "Voir plus de
+   détails" d'une boîte, ou sur une soirée organisée par
+   cette boîte, pour mesurer sa popularité.
+   ========================== */
+
+export async function incrementerClics(req, res) {
+
+    const id = req.params.id;
+
+    try {
+        const [result] = await db.query("UPDATE boites SET clicks = clicks + 1 WHERE idClub = ?", [id]);
+
+        if (result.affectedRows === 0) {
+            res.status(404).json({ error: "Boîte introuvable" });
+            return;
+        }
+
+        res.json({ message: "Clic comptabilisé" });
+
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Erreur serveur" });
+    }
+};
