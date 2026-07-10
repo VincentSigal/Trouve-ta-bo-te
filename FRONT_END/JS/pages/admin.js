@@ -6,10 +6,10 @@
 //  par des appels fetch() vers ton API REST.
 // ============================================================
 
-import { boites as boitesInitiales } from "../data/data_cards.js";
-import { init_overlay } from "./overlay.js";
-import { init_burger } from "./burger.js";
-import { scrollHeader } from "./header.js";
+import { boites as boitesInitiales } from "../../data/data_cards.js";
+import { init_overlay } from "../overlay.js";
+import { init_burger } from "../burger.js";
+import { scrollHeader } from "../header.js";
 
 
 document.addEventListener("DOMContentLoaded", () => {

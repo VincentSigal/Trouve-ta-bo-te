@@ -1,12 +1,12 @@
-import { scrollHeader } from "./header.js";
+import { scrollHeader } from "../components/header.js";
 
-import { init_newsletter } from "./newsletter.js";
-import { init_burger } from "./burger.js";
-import { init_overlay } from "./overlay.js";
+import { init_newsletter } from "../newsletter.js";
+import { init_burger } from "../components/burger.js";
+import { init_overlay } from "../components/overlay.js";
 
-import { init_carrousel } from "./carousel_homepage.js";
-import { renderCards } from "./cards_boites.js";
-import { init_filter, remplirFiltres } from "./filter.js";
+import { init_carrousel } from "../components/carousel_homepage.js";
+import { renderCards } from "../cards_boites.js";
+import { init_filter, remplirFiltres } from "../components/filter.js";
 
 const NOMBRE_BOITES_POPULAIRES = 10;
 

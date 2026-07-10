@@ -5,12 +5,12 @@
    et une popup "voir plus"
    ========================== */
 
-import { events } from "../data/data_events.js";
-import { boites } from "../data/data_cards.js";
-import { init_overlay, show_overlay, close_overlay, on_overlay_click } from "./overlay.js";
-import { init_burger } from "./burger.js";
-import { init_newsletter } from "./newsletter.js";
-import { scrollHeader } from "./header.js";
+import { events } from "../../data/data_events.js";
+import { boites } from "../../data/data_cards.js";
+import { init_overlay, show_overlay, close_overlay, on_overlay_click } from "../components/overlay.js";
+import { init_burger } from "../burger.js";
+import { init_newsletter } from "../newsletter.js";
+import { scrollHeader } from "../components/header.js";
 
 // Liste des 14 jours, générée une seule fois
 // au chargement de la page (toujours à jour

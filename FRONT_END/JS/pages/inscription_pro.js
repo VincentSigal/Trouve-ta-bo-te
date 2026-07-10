@@ -1,7 +1,7 @@
-import { init_overlay } from "./overlay.js";
-import { init_burger } from "./burger.js";
-import { init_newsletter } from "./newsletter.js";
-import { scrollHeader } from "./header.js";
+import { init_overlay } from "../overlay.js";
+import { init_burger } from "../burger.js";
+import { init_newsletter } from "../newsletter.js";
+import { scrollHeader } from "../header.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
     init_burger();
     init_newsletter();
     scrollHeader();
+
+
+    // INSCRIPTION PRO DANS LA BDD
 
     const formulaire = document.querySelector(`form[name="InscriptionPro"]`);
 
