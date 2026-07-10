@@ -86,7 +86,7 @@
 
                         <label for="phone">*Téléphone</label>
                         <input type="tel" name="phone" id="phone" placeholder="06 12 34 56 78" title="Votre téléphone"
-                            required>
+                            pattern="[0-9]{2}( ?[0-9]{2}){4}" maxlength="10" required>
 
                         <label for="city">*Ville</label>
                         <input type="text" name="city" id="city" placeholder="Votre ville" title="Votre ville" required>
