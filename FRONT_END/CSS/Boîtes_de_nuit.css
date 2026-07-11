@@ -55,6 +55,66 @@ main {
     max-width: 2.31rem;
 }
 
+/* ── FILTRE ── */
+
+.club-filters {
+    display: flex;
+    justify-content: center;
+    gap: 0.31rem;
+    border: 1px solid var(--maincolor);
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.87rem 1.25rem;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.club-filters select {
+    background-color: var(--maincolor);
+    border: 1px solid black;
+    border-radius: 15px;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-style: italic;
+    color: #000000;
+    padding: 0.1rem 0;
+    cursor: pointer;
+}
+
+.club-filters select option {
+    font-weight: 600;
+}
+
+.club-filters button {
+    border: 1px solid var(--maincolor);
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--maincolor);
+    padding: 0.5rem 1.81rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.club-filters button:hover,
+.club-filters button:focus-visible {
+    background-color: var(--maincolor);
+    color: black;
+}
+
+.error-filter {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin-top: 1rem;
+}
+
 /* ── RANGÉE AVEC FLÈCHES ── */
 
 .row-wrapper {
@@ -229,6 +289,25 @@ h3 {
 @media (max-width: 700px) {
     .row-arrow {
         display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .club-filters {
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .club-filters select {
+        width: 180px;
+        height: 30px;
+    }
+
+    .club-filters button {
+        text-align: center;
+        align-items: center;
     }
 }
 

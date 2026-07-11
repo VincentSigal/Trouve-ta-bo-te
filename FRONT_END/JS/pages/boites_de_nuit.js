@@ -4,20 +4,123 @@
    regroupées par style musical
    ========================== */
 
-import { boites } from "../../data/data_cards.js";
 import { init_overlay, show_overlay, close_overlay, on_overlay_click } from "../components/overlay.js";
 import { init_burger } from "../components/burger.js";
 import { init_newsletter } from "../components/newsletter.js";
 import { scrollHeader } from "../components/header.js";
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
 
     init_overlay();
     init_burger();
     init_newsletter();
     scrollHeader();
-    renderCategories();
+
+    const reponse = await fetch("http://localhost:3000/api/boites");
+    const boites = await reponse.json();
+
+    remplirFiltreVille(boites);
+    renderCategories(boites);
+    initFiltreVille(boites);
 });
+
+
+/* ==========================
+   POPULARITÉ : INCRÉMENTE LE COMPTEUR DE CLICS
+   Posé une seule fois sur document (délégation),
+   pour fonctionner même quand les catégories
+   sont reconstruites (filtre par ville).
+   ========================== */
+
+document.addEventListener("click", (event) => {
+
+    const lien = event.target.closest("[data-idclub]");
+
+    if (lien === null) {
+        return;
+    }
+
+    const idClub = lien.dataset.idclub;
+
+    fetch(`http://localhost:3000/api/boites/${idClub}/click`, { method: "POST" });
+});
+
+
+/* ==========================
+   FILTRE PAR VILLE
+   ========================== */
+
+function remplirFiltreVille(boites) {
+
+    const selectVille = document.querySelector("#ville");
+
+    const villes = [];
+
+    boites.forEach((boite) => {
+        if (!villes.includes(boite.city_name)) {
+            villes.push(boite.city_name);
+        }
+    });
+
+    villes.sort();
+
+    villes.forEach((ville) => {
+
+        const option = document.createElement("option");
+
+        option.value = ville;
+        option.textContent = ville;
+
+        selectVille.appendChild(option);
+    });
+}
+
+function initFiltreVille(boites) {
+
+    const selectVille = document.querySelector("#ville");
+    const btnReset = document.querySelector("#btn-filter");
+
+    selectVille.addEventListener("change", () => appliquerFiltreVille(boites));
+
+    btnReset.addEventListener("click", () => {
+        selectVille.selectedIndex = 0;
+        appliquerFiltreVille(boites);
+    });
+}
+
+function appliquerFiltreVille(boites) {
+
+    const selectVille = document.querySelector("#ville");
+    const ville = selectVille.value;
+
+    const errorMessage = document.querySelector(".error-filter");
+
+    if (errorMessage) {
+        errorMessage.remove();
+    }
+
+    // Aucun filtre : on affiche à nouveau toutes les boîtes
+    if (ville === "") {
+        renderCategories(boites);
+        return;
+    }
+
+    const resultatFiltre = boites.filter((boite) => boite.city_name === ville);
+
+    if (resultatFiltre.length === 0) {
+
+        document.querySelector(".categories-container").innerHTML = "";
+
+        document.querySelector(".club-filters").insertAdjacentHTML(
+            "afterend",
+            `<p class="error-filter">Aucune boîte ne correspond à votre recherche.</p>`
+        );
+
+        return;
+    }
+
+    renderCategories(resultatFiltre);
+}
 
 
 /* ==========================
@@ -32,7 +135,7 @@ function groupByMusic(data) {
 
     data.forEach((boite) => {
 
-        const style = boite.music;
+        const style = boite.music_name;
 
         // Si le style n'existe pas encore
         // dans l'objet, on crée un tableau vide
@@ -51,11 +154,11 @@ function groupByMusic(data) {
    GENERATION DE LA PAGE
    ========================== */
 
-function renderCategories() {
+function renderCategories(data) {
 
-    const main_container = document.querySelector("main");
+    const container = document.querySelector(".categories-container");
 
-    const groupes = groupByMusic(boites);
+    const groupes = groupByMusic(data);
 
     let categories_html = ``;
 
@@ -75,15 +178,15 @@ function renderCategories() {
                     <div class="bgcard" style="background-image:url(${boite.background})">
                         <div>
                             <h3>${boite.name}</h3>
-                            <address><a href="${boite.location.location_link}" target="_blank"
-                                    title="${boite.location.location_name}">${boite.location.location_name}</a></address>
+                            <address><a href="${boite.location_link}" target="_blank"
+                                    title="${boite.city_name}">${boite.city_name}</a></address>
                         </div>
                         <div>
-                            <p>#${boite.tags[0]}</p>
-                            <p>#${boite.tags[1]}</p>
+                            <p>#${boite.tags1}</p>
+                            <p>#${boite.tags2}</p>
                             <div class="popdesc">
                                 <p>${boite.description}</p>
-                                <a href="${boite.linkDetails}?id=${boite.idClub}" title="Voir plus de détails">Voir plus de détails</a>
+                                <a href="/FRONT_END/HTML/Details_boite.html?id=${boite.idClub}" data-idclub="${boite.idClub}" title="Voir plus de détails">Voir plus de détails</a>
                             </div>
                         </div>
                     </div>
@@ -110,7 +213,7 @@ function renderCategories() {
             </section>`;
     };
 
-    main_container.insertAdjacentHTML("beforeend", categories_html);
+    container.innerHTML = categories_html;
 
     initArrows();
     initCardsPopup();
