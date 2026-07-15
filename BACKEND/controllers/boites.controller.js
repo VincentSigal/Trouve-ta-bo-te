@@ -36,14 +36,33 @@ export async function getBoiteById(req, res) {
     const id = req.params.id;
 
     try {
-        const [results] = await db.query("SELECT * FROM boites WHERE idClub = ?", [id]);
+        const sql = `SELECT boites.*, cities.city_name, music.music AS music_name
+                     FROM boites
+                     JOIN cities ON boites.idCity = cities.idCity
+                     LEFT JOIN style ON style.idClub = boites.idClub
+                     LEFT JOIN music ON music.idMusic = style.idMusic
+                     WHERE boites.idClub = ?`;
+
+        const [results] = await db.query(sql, [id]);
 
         if (results.length === 0) {
             res.status(404).json({ error: "Boîte introuvable" });
             return;
         }
 
-        res.json(results[0]);
+        const boite = results[0];
+
+        const [photos] = await db.query(
+            "SELECT urlPhoto, photo_name FROM photos_library WHERE idClub = ?", [id]
+        );
+        boite.photos = photos;
+
+        const [horaires] = await db.query(
+            "SELECT day, opening_hours, closing_hours FROM opening_schedule WHERE idClub = ?", [id]
+        );
+        boite.horaires = horaires;
+
+        res.json(boite);
 
     } catch (err) {
         console.error(err);
@@ -63,6 +82,8 @@ export async function createBoite(req, res) {
         logo,
         name,
         location_link,
+        adress_name,
+        maps_iframe,
         description,
         paragraph,
         tags1,
@@ -77,11 +98,11 @@ export async function createBoite(req, res) {
     } = req.body;
 
     const sql = `INSERT INTO boites
-        (background, logo, name, location_link, description, paragraph, tags1, tags2, age_min, age_max, price, instagram, siret, idUser, idCity)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+        (background, logo, name, location_link, adress_name, maps_iframe, description, paragraph, tags1, tags2, age_min, age_max, price, instagram, siret, idUser, idCity)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
     try {
-        const [result] = await db.query(sql, [background, logo, name, location_link, description, paragraph, tags1, tags2, age_min, age_max, price, instagram, siret, idUser, idCity]);
+        const [result] = await db.query(sql, [background, logo, name, location_link, adress_name, maps_iframe, description, paragraph, tags1, tags2, age_min, age_max, price, instagram, siret, idUser, idCity]);
 
         res.status(201).json({ message: "Boîte créée", idClub: result.insertId });
 
@@ -101,14 +122,14 @@ export async function createBoite(req, res) {
 export async function replaceBoite(req, res) {
 
     const id = req.params.id;
-    const { background, logo, name, location_link, description, paragraph, tags1, tags2, age_min, age_max, price, instagram, siret, idUser, idCity } = req.body;
+    const { background, logo, name, location_link, adress_name, maps_iframe, description, paragraph, tags1, tags2, age_min, age_max, price, instagram, siret, idUser, idCity } = req.body;
 
     const sql = `UPDATE boites 
-                 SET background = ?, logo = ?, name = ?, location_link = ?, description = ?, paragraph = ?, tags1 = ?, tags2 = ?, age_min = ?, age_max = ?, price = ?, instagram = ?, siret = ?, idUser = ?, idCity = ?
+                 SET background = ?, logo = ?, name = ?, location_link = ?, adress_name = ?, maps_iframe = ?, description = ?, paragraph = ?, tags1 = ?, tags2 = ?, age_min = ?, age_max = ?, price = ?, instagram = ?, siret = ?, idUser = ?, idCity = ?
                  WHERE idClub = ?`;
 
     try {
-        const [result] = await db.query(sql, [background, logo, name, location_link, description, paragraph, tags1, tags2, age_min, age_max, price, instagram, siret, idUser, idCity, id]);
+        const [result] = await db.query(sql, [background, logo, name, location_link, adress_name, maps_iframe, description, paragraph, tags1, tags2, age_min, age_max, price, instagram, siret, idUser, idCity, id]);
 
         if (result.affectedRows === 0) {
             res.status(404).json({ error: "Boîte introuvable" });
@@ -133,7 +154,7 @@ export async function updateBoite(req, res) {
 
     const id = req.params.id;
 
-    const champsAutorises = ["background", "logo", "name", "location_link", "description", "paragraph", "tags1", "tags2", "age_min", "age_max", "price", "instagram", "siret", "idUser", "idCity"];
+    const champsAutorises = ["background", "logo", "name", "location_link", "adress_name", "maps_iframe", "description", "paragraph", "tags1", "tags2", "age_min", "age_max", "price", "instagram", "siret", "idUser", "idCity"];
 
     const champsAModifier = [];
     const valeurs = [];

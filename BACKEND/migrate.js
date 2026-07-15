@@ -158,9 +158,9 @@ async function creerUtilisateurTest(idParVille) {
 async function creerLesBoites(idParVille, idUser) {
     for (const boite of boites) {
         const sql = `INSERT INTO boites
-            (idClub, background, logo, name, location_link, description, paragraph,
+            (idClub, background, logo, name, location_link, adress_name, maps_iframe, description, paragraph,
              tags1, tags2, age_min, age_max, price, instagram, siret, clicks, idUser, idCity)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
         const valeurs = [
             boite.idClub,
@@ -168,6 +168,8 @@ async function creerLesBoites(idParVille, idUser) {
             boite.logo.logo_img,
             boite.name,
             boite.location.location_link,
+            boite.adress.adress_name,
+            boite.adress.maps,
             boite.description,
             boite.summary.paragraph,
             boite.tags[0],
