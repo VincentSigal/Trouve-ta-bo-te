@@ -5,8 +5,6 @@
    et une popup "voir plus"
    ========================== */
 
-import { events } from "../../data/data_events.js";
-import { boites } from "../../data/data_cards.js";
 import { init_overlay, show_overlay, close_overlay, on_overlay_click } from "../components/overlay.js";
 import { init_burger } from "../components/burger.js";
 import { init_newsletter } from "../components/newsletter.js";
@@ -17,16 +15,33 @@ import { scrollHeader } from "../components/header.js";
 // par rapport à la date du jour)
 let jours14 = [];
 
+// Toutes les soirées récupérées depuis l'API
+let events = [];
+
 // Liste des événements après application
 // des filtres (par défaut = tous)
-let evenementsAffiches = events;
+let evenementsAffiches = [];
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
 
     init_overlay();
     init_burger();
     init_newsletter();
     scrollHeader();
+
+    const reponse = await fetch("http://localhost:3000/api/events");
+    events = await reponse.json();
+
+    // L'API renvoie une seule colonne "date_" combinant
+    // date et heure (ex: "2026-07-20 22:00:00"). On sépare
+    // les deux pour garder le reste du code inchangé.
+    events.forEach((event) => {
+        const [datePart, heurePart] = event.date_.split(" ");
+        event.date = datePart;
+        event.heure = heurePart.slice(0, 5);
+    });
+
+    evenementsAffiches = events;
 
     jours14 = creerListeDe14Jours();
 
@@ -86,18 +101,6 @@ function formaterJourAffiche(dateString) {
 
 
 /* ==========================
-   RETROUVER LA BOÎTE D'UN ÉVÉNEMENT
-   ========================== */
-
-function trouverBoite(idClub) {
-
-    const boiteTrouvee = boites.find((boite) => boite.idClub === idClub);
-
-    return boiteTrouvee;
-};
-
-
-/* ==========================
    AFFICHAGE DU CALENDRIER
    ========================== */
 
@@ -124,14 +127,12 @@ function afficherCalendrier(listeEvenements) {
 
             evenementsAMontrer.forEach((event) => {
 
-                const boite = trouverBoite(event.idClub);
-
                 cards_html += `
                     <div class="event-card" data-id="${event.idEvent}" data-idclub="${event.idClub}">
                         <img src="${event.poster}" alt="${event.name}">
                         <div class="event-card-info">
                             <p class="event-card-name">${event.name}</p>
-                            <p class="event-card-boite">${boite.name}</p>
+                            <p class="event-card-boite">${event.boite_name}</p>
                         </div>
                     </div>`;
             });
@@ -203,28 +204,33 @@ function remplirFiltres() {
     const selectBoite = document.querySelector("#filterBoite");
     const selectMusique = document.querySelector("#filterMusique");
 
-    const idsClubsAvecSoiree = events.map((event) => event.idClub);
+    // Boîtes uniques ayant au moins une soirée
+    const clubsUniques = [];
 
-    const idsUniques = [...new Set(idsClubsAvecSoiree)];
+    events.forEach((event) => {
 
-    idsUniques.forEach((idClub) => {
-
-        const boite = trouverBoite(idClub);
-
-        selectBoite.insertAdjacentHTML("beforeend", `
-            <option value="${idClub}">${boite.name}</option>`);
-    });
-
-    const stylesUniques = [];
-
-    idsUniques.forEach((idClub) => {
-
-        const boite = trouverBoite(idClub);
-
-        const dejaPresent = stylesUniques.includes(boite.music);
+        const dejaPresent = clubsUniques.some((club) => club.idClub === event.idClub);
 
         if (dejaPresent === false) {
-            stylesUniques.push(boite.music);
+            clubsUniques.push({ idClub: event.idClub, name: event.boite_name });
+        }
+    });
+
+    clubsUniques.forEach((club) => {
+
+        selectBoite.insertAdjacentHTML("beforeend", `
+            <option value="${club.idClub}">${club.name}</option>`);
+    });
+
+    // Styles musicaux uniques
+    const stylesUniques = [];
+
+    events.forEach((event) => {
+
+        const dejaPresent = stylesUniques.includes(event.music_name);
+
+        if (dejaPresent === false) {
+            stylesUniques.push(event.music_name);
         }
     });
 
@@ -276,12 +282,7 @@ function appliquerFiltres() {
 
     if (valeurMusique !== "") {
 
-        resultat = resultat.filter((event) => {
-
-            const boite = trouverBoite(event.idClub);
-
-            return boite.music === valeurMusique;
-        });
+        resultat = resultat.filter((event) => event.music_name === valeurMusique);
     }
 
     evenementsAffiches = resultat;
@@ -308,7 +309,6 @@ function afficherPopupListe(listeEvenements, titre) {
 
     listeEvenements.forEach((event) => {
 
-        const boite = trouverBoite(event.idClub);
         const { nomJour, numeroJour, nomMois } = formaterJourAffiche(event.date);
 
         grid_html += `
@@ -317,7 +317,7 @@ function afficherPopupListe(listeEvenements, titre) {
                 <div class="event-card-info">
                     <p class="event-card-date">${nomJour} ${numeroJour} ${nomMois}</p>
                     <p class="event-card-name">${event.name}</p>
-                    <p class="event-card-boite">${boite.name}</p>
+                    <p class="event-card-boite">${event.boite_name}</p>
                 </div>
             </div>`;
     });
@@ -408,17 +408,18 @@ function afficherPopupDetail(event) {
     const popup = document.querySelector("#eventDetailPopup");
     const listePopup = document.querySelector("#eventsPopup");
 
-    const boite = trouverBoite(event.idClub);
     const { nomJour, numeroJour, nomMois } = formaterJourAffiche(event.date);
+
+    const prixAffiche = event.price !== null ? `${event.price}€` : "Gratuit";
 
     popup.innerHTML = `
         <div class="event-detail-content">
             <button class="event-detail-close" id="btnCloseDetail">&times;</button>
             <img src="${event.poster}" alt="${event.name}">
             <h2>${event.name}</h2>
-            <p class="event-detail-boite">${boite.name} — ${boite.location.location_name}</p>
+            <p class="event-detail-boite">${event.boite_name} — ${event.city_name}</p>
             <p class="event-detail-date">${nomJour} ${numeroJour} ${nomMois} à ${event.heure}</p>
-            <p class="event-detail-prix">${event.price}</p>
+            <p class="event-detail-prix">${prixAffiche}</p>
             <p class="event-detail-description">${event.description}</p>
         </div>`;
 

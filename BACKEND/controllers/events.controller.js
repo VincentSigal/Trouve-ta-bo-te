@@ -10,9 +10,10 @@ export async function getAllEvents(req, res) {
 
     try {
 
-        const sql = `SELECT events.*, boites.name AS boite_name, music.music AS music_name
+        const sql = `SELECT events.*, boites.name AS boite_name, cities.city_name, music.music AS music_name
                      FROM events
                      JOIN boites ON events.idClub = boites.idClub
+                     JOIN cities ON boites.idCity = cities.idCity
                      LEFT JOIN music ON music.idMusic = events.idMusic
                      ORDER BY events.date_ ASC`;
 
@@ -37,9 +38,10 @@ export async function getEventById(req, res) {
 
     try {
 
-        const sql = `SELECT events.*, boites.name AS boite_name, music.music AS music_name
+        const sql = `SELECT events.*, boites.name AS boite_name, cities.city_name, music.music AS music_name
                      FROM events
                      JOIN boites ON events.idClub = boites.idClub
+                     JOIN cities ON boites.idCity = cities.idCity
                      LEFT JOIN music ON music.idMusic = events.idMusic
                      WHERE events.idEvent = ?`;
 
