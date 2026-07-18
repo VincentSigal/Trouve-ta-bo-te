@@ -9,6 +9,7 @@ import { init_overlay, show_overlay, close_overlay, on_overlay_click } from "../
 import { init_burger } from "../components/burger.js";
 import { init_newsletter } from "../components/newsletter.js";
 import { scrollHeader } from "../components/header.js";
+import dayjs from "https://cdn.jsdelivr.net/npm/dayjs@1/+esm";
 
 // Liste des 14 jours, générée une seule fois
 // au chargement de la page (toujours à jour
@@ -64,14 +65,7 @@ function creerListeDe14Jours() {
 
     for (let i = 0; i < 14; i++) {
 
-        const date = new Date();
-        date.setDate(date.getDate() + i);
-
-        const annee = date.getFullYear();
-        const mois = String(date.getMonth() + 1).padStart(2, "0");
-        const jour = String(date.getDate()).padStart(2, "0");
-
-        const dateFormatee = `${annee}-${mois}-${jour}`;
+        const dateFormatee = dayjs().add(i, "day").format("YYYY-MM-DD");
 
         liste.push(dateFormatee);
     }
@@ -90,11 +84,13 @@ function formaterJourAffiche(dateString) {
     const joursTexte = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
     const moisTexte = ["Jan", "Fév", "Mar", "Avr", "Mai", "Juin", "Juil", "Août", "Sep", "Oct", "Nov", "Déc"];
 
-    const date = new Date(dateString);
+    // On force midi pour éviter tout décalage de fuseau horaire
+    // lors du parsing d'une date seule (sans heure)
+    const date = dayjs(`${dateString}T12:00:00`);
 
-    const nomJour = joursTexte[date.getDay()];
-    const numeroJour = date.getDate();
-    const nomMois = moisTexte[date.getMonth()];
+    const nomJour = joursTexte[date.day()];
+    const numeroJour = date.date();
+    const nomMois = moisTexte[date.month()];
 
     return { nomJour, numeroJour, nomMois };
 };

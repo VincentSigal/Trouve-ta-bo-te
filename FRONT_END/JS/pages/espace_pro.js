@@ -3,7 +3,8 @@
    Gestion des boîtes et soirées du pro connecté.
 
    Architecture du fichier :
-   1. Données et persistance (localStorage)
+   0. Protection de l'accès (JWT)
+   1. Chargement des données depuis l'API
    2. Rendu des cartes
    3. Modale (formulaire ajout / modification)
    4. Actions CRUD (Créer, Modifier, Supprimer)
@@ -11,105 +12,57 @@
    6. Initialisation
    ========================== */
 
+const API_URL = "http://localhost:3000/api";
+
 
 /* ─────────────────────────────────────
-   1. DONNÉES ET PERSISTANCE
+   0. PROTECTION DE L'ACCÈS
 
-   localStorage permet de stocker des données
-   dans le navigateur, même après rechargement.
-   Il ne stocke que du texte, donc on convertit
-   nos tableaux JS avec JSON.stringify() avant
-   de les sauvegarder, et JSON.parse() pour les
-   relire.
-
-   Ces deux fonctions (charger / sauvegarder)
-   seront les seules à remplacer quand on
-   branchera le vrai backend Node/MySQL.
+   Le token peut être dans localStorage (connexion
+   "dont se souvenir") ou sessionStorage (sinon).
+   S'il n'y en a nulle part, la personne n'est pas
+   connectée : on la renvoie direct vers la connexion.
 ───────────────────────────────────── */
 
-const CLE_BOITES = "espace_pro_boites";
-const CLE_SOIREES = "espace_pro_soirees";
+const token = localStorage.getItem("token") || sessionStorage.getItem("token");
+const utilisateurConnecte = JSON.parse(localStorage.getItem("user") || sessionStorage.getItem("user") || "null");
 
-// Données factices initiales : utilisées uniquement
-// à la toute première visite (localStorage vide)
-const boitesInitiales = [
-    {
-        id: 2,
-        name: "L'AMNESIA",
-        ville: "Cap d'Agde",
-        music: "Open Format",
-        description: "Club emblématique du Cap d'Agde, réputé pour ses soirées Open Format jusqu'au bout de la nuit.",
-        img: "/FRONT_END/img/amnesia/amnesia.png",
-    },
-    {
-        id: 8,
-        name: "Dieze Warehouse",
-        ville: "Montpellier",
-        music: "Techno",
-        description: "L'adresse techno underground de Montpellier, dans un cadre industriel brut.",
-        img: "/FRONT_END/img/dieze/dieze.jpg",
-    },
-];
+if (token === null) {
+    window.location.href = "/FRONT_END/HTML/Connexion_pro.html";
+}
 
-const soireesInitiales = [
-    {
-        id: 1,
-        name: "Soirée Ouverture de Saison",
-        date: "2026-07-12",
-        heure: "23h59",
-        prix: "20€",
-        description: "La soirée d'ouverture de saison à L'Amnesia, avec les meilleurs DJ pop du moment.",
-        idBoite: 2,
-        poster: "/FRONT_END/img/amnesia/amnesia.png",
-    },
-    {
-        id: 2,
-        name: "Techno Night",
-        date: "2026-07-14",
-        heure: "00h00",
-        prix: "15€",
-        description: "Une nuit entière dédiée à la techno underground, dans l'ambiance brute du Dieze Warehouse.",
-        idBoite: 8,
-        poster: "/FRONT_END/img/dieze/dieze.jpg",
-    },
-];
 
-// Variables d'état : elles contiennent toujours
-// la version la plus à jour des données en mémoire
+/* ─────────────────────────────────────
+   1. CHARGEMENT DES DONNÉES DEPUIS L'API
+
+   On récupère TOUTES les boîtes et TOUTES les soirées,
+   puis on ne garde que celles qui appartiennent à la
+   personne connectée (peu de données au total, donc
+   filtrer côté navigateur reste très bien pour ce projet).
+───────────────────────────────────── */
+
 let boites = [];
 let soirees = [];
 
-function chargerDonnees() {
-    const boitesSauvegardees = localStorage.getItem(CLE_BOITES);
-    const soireesSauvegardees = localStorage.getItem(CLE_SOIREES);
+async function chargerDonnees() {
 
-    // Si des données existent déjà → on les utilise
-    // Sinon (1re visite) → on part des données initiales
-    boites = boitesSauvegardees
-        ? JSON.parse(boitesSauvegardees)
-        : boitesInitiales;
+    const [reponseBoites, reponseEvents] = await Promise.all([
+        fetch(`${API_URL}/boites`),
+        fetch(`${API_URL}/events`)
+    ]);
 
-    soirees = soireesSauvegardees
-        ? JSON.parse(soireesSauvegardees)
-        : soireesInitiales;
-}
+    const toutesLesBoites = await reponseBoites.json();
+    const toutesLesSoirees = await reponseEvents.json();
 
-function sauvegarderDonnees() {
-    localStorage.setItem(CLE_BOITES, JSON.stringify(boites));
-    localStorage.setItem(CLE_SOIREES, JSON.stringify(soirees));
+    boites = toutesLesBoites.filter((boite) => boite.idUser === utilisateurConnecte.idUser);
+
+    const idsDeMesBoites = boites.map((boite) => boite.idClub);
+    soirees = toutesLesSoirees.filter((soiree) => idsDeMesBoites.includes(soiree.idClub));
 }
 
 
 /* ─────────────────────────────────────
    2. RENDU DES CARTES
-
-   On génère le HTML depuis les données JS,
-   plutôt que de l'écrire en dur dans le HTML.
-   C'est le principe fondamental du développement
-   web dynamique : les données pilotent l'affichage.
-
-   Chaque fonction de rendu vide le conteneur
-   et le remplit depuis zéro. Simple et fiable.
 ───────────────────────────────────── */
 
 function renderBoites() {
@@ -148,30 +101,27 @@ function templateCarteBoite(boite) {
     return `
         <article class="pro-card">
             <div class="pro-card-img"
-                style="background-image: url('${boite.img || ""}');">
+                style="background-image: url('${boite.background || ""}');">
             </div>
             <div class="pro-card-body">
                 <h3 class="pro-card-name">${boite.name}</h3>
-                <p class="pro-card-sub">📍 ${boite.ville} · 🎵 ${boite.music}</p>
-                <p class="pro-card-desc">${boite.description}</p>
+                <p class="pro-card-sub">📍 ${boite.city_name || "Ville non renseignée"} · 🎵 ${boite.music_name || "Style non renseigné"}</p>
+                <p class="pro-card-desc">${boite.description || ""}</p>
             </div>
             <div class="pro-card-actions">
-                <button class="btn-edit" data-id="${boite.id}">Modifier</button>
-                <button class="btn-delete" data-id="${boite.id}">Supprimer</button>
+                <button class="btn-edit" data-id="${boite.idClub}">Modifier</button>
+                <button class="btn-delete" data-id="${boite.idClub}">Supprimer</button>
             </div>
         </article>`;
 }
 
 function templateCarteSoiree(soiree) {
     // On retrouve la boîte associée pour afficher son nom
-    const boite = boites.find((b) => b.id === soiree.idBoite);
+    const boite = boites.find((b) => b.idClub === soiree.idClub);
     const nomBoite = boite ? boite.name : "Boîte introuvable";
 
-    const dateFormatee = new Date(soiree.date + "T00:00:00").toLocaleDateString("fr-FR", {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-    });
+    const dateHeure = formaterDateHeure(soiree.date_);
+    const prixAffiche = soiree.price !== null ? `${soiree.price}€` : "Gratuit";
 
     return `
         <article class="pro-card">
@@ -180,15 +130,26 @@ function templateCarteSoiree(soiree) {
             </div>
             <div class="pro-card-body">
                 <h3 class="pro-card-name">${soiree.name}</h3>
-                <p class="pro-card-sub">📅 ${dateFormatee} — ${soiree.heure}</p>
-                <p class="pro-card-sub">💰 ${soiree.prix} · 🏠 ${nomBoite}</p>
-                <p class="pro-card-desc">${soiree.description}</p>
+                <p class="pro-card-sub">📅 ${dateHeure}</p>
+                <p class="pro-card-sub">💰 ${prixAffiche} · 🏠 ${nomBoite} · 🎵 ${soiree.music_name || "Style non renseigné"}</p>
+                <p class="pro-card-desc">${soiree.description || ""}</p>
             </div>
             <div class="pro-card-actions">
-                <button class="btn-edit" data-id="${soiree.id}">Modifier</button>
-                <button class="btn-delete" data-id="${soiree.id}">Supprimer</button>
+                <button class="btn-edit" data-id="${soiree.idEvent}">Modifier</button>
+                <button class="btn-delete" data-id="${soiree.idEvent}">Supprimer</button>
             </div>
         </article>`;
+}
+
+// L'API renvoie une seule colonne date_ (ex: "2026-07-20 22:00:00"),
+// grâce à dateStrings:true côté backend, donc un simple découpage
+// de texte suffit — pas besoin de manipuler des objets Date ici.
+function formaterDateHeure(date_) {
+    const [datePart, heurePart] = date_.split(" ");
+    const [annee, mois, jour] = datePart.split("-");
+    const heure = heurePart.slice(0, 5);
+
+    return `${jour}/${mois}/${annee} à ${heure}`;
 }
 
 
@@ -252,29 +213,70 @@ function fermerModale() {
     document.querySelector("#modalOverlay").classList.remove("modal-visible");
 }
 
-// Champs HTML du formulaire Boîte (pré-remplis si modification)
+// Champs HTML du formulaire Boîte (pré-remplis si modification).
+// city_name/music_name viennent directement de l'API (jointures),
+// donc on peut préremplir les champs texte "city"/"music" avec.
 function champsBoite(boite = {}) {
     return `
         <label>Nom de la boîte *
             <input type="text" name="name"
                 value="${boite.name || ""}" required>
         </label>
+        <label>SIRET *
+            <input type="text" name="siret"
+                value="${boite.siret || ""}" required>
+        </label>
         <label>Ville *
-            <input type="text" name="ville"
-                value="${boite.ville || ""}" required>
+            <input type="text" name="city"
+                value="${boite.city_name || ""}" required>
         </label>
         <label>Style musical *
             <input type="text" name="music"
                 placeholder="Ex : Techno, Open Format…"
-                value="${boite.music || ""}" required>
+                value="${boite.music_name || ""}" required>
         </label>
         <label>Description
             <textarea name="description" rows="3">${boite.description || ""}</textarea>
         </label>
-        <label>URL de l'image
-            <input type="text" name="img"
+        <label>Présentation détaillée
+            <textarea name="paragraph" rows="3">${boite.paragraph || ""}</textarea>
+        </label>
+        <label>Tag 1
+            <input type="text" name="tags1" value="${boite.tags1 || ""}">
+        </label>
+        <label>Tag 2
+            <input type="text" name="tags2" value="${boite.tags2 || ""}">
+        </label>
+        <label>Âge minimum
+            <input type="number" name="age_min" value="${boite.age_min ?? ""}">
+        </label>
+        <label>Âge maximum
+            <input type="number" name="age_max" value="${boite.age_max ?? ""}">
+        </label>
+        <label>Prix d'entrée (€)
+            <input type="number" name="price" value="${boite.price ?? ""}">
+        </label>
+        <label>Instagram (lien)
+            <input type="text" name="instagram" value="${boite.instagram || ""}">
+        </label>
+        <label>Image de fond (URL)
+            <input type="text" name="background"
                 placeholder="/FRONT_END/img/…"
-                value="${boite.img || ""}">
+                value="${boite.background || ""}">
+        </label>
+        <label>Logo (URL)
+            <input type="text" name="logo"
+                placeholder="/FRONT_END/img/…"
+                value="${boite.logo || ""}">
+        </label>
+        <label>Lien Google Maps
+            <input type="text" name="location_link" value="${boite.location_link || ""}">
+        </label>
+        <label>Adresse (texte)
+            <input type="text" name="adress_name" value="${boite.adress_name || ""}">
+        </label>
+        <label>Carte intégrée (URL de l'iframe Google Maps)
+            <input type="text" name="maps_iframe" value="${boite.maps_iframe || ""}">
         </label>
         <div class="modal-btns">
             <button type="button" id="btnAnnuler" class="modal-btn-cancel">Annuler</button>
@@ -282,15 +284,26 @@ function champsBoite(boite = {}) {
         </div>`;
 }
 
-// Champs HTML du formulaire Soirée (pré-remplis si modification)
+// Champs HTML du formulaire Soirée (pré-remplis si modification).
+// Pas de champ "style musical" : la soirée reprend automatiquement
+// celui de sa boîte, côté serveur.
 function champsSoiree(soiree = {}) {
-    // On génère les <option> depuis les boîtes existantes
+    // On génère les <option> depuis les boîtes du pro connecté
     const optionsBoites = boites
         .map((b) => `
-            <option value="${b.id}" ${soiree.idBoite === b.id ? "selected" : ""}>
+            <option value="${b.idClub}" ${soiree.idClub === b.idClub ? "selected" : ""}>
                 ${b.name}
             </option>`)
         .join("");
+
+    let datePart = "";
+    let heurePart = "";
+
+    if (soiree.date_ !== undefined) {
+        const decoupage = soiree.date_.split(" ");
+        datePart = decoupage[0];
+        heurePart = decoupage[1].slice(0, 5);
+    }
 
     return `
         <label>Nom de la soirée *
@@ -299,21 +312,23 @@ function champsSoiree(soiree = {}) {
         </label>
         <label>Date *
             <input type="date" name="date"
-                value="${soiree.date || ""}" required>
+                value="${datePart}" required>
         </label>
         <label>Heure *
-            <input type="text" name="heure"
-                placeholder="Ex : 23h00"
-                value="${soiree.heure || ""}" required>
+            <input type="time" name="heure"
+                value="${heurePart}" required>
         </label>
-        <label>Prix
-            <input type="text" name="prix"
-                placeholder="Ex : 15€"
-                value="${soiree.prix || ""}">
+        <label>Prix d'entrée (€)
+            <input type="number" name="price" value="${soiree.price ?? ""}">
+        </label>
+        <label>Style musical de la soirée
+            <input type="text" name="music"
+                placeholder="Laisser vide pour reprendre le style de la boîte"
+                value="${soiree.music_name || ""}">
         </label>
         <label>Boîte associée *
-            <select name="idBoite" required>
-                <option value="" disabled ${!soiree.idBoite ? "selected" : ""}>
+            <select name="idClub" required>
+                <option value="" disabled ${!soiree.idClub ? "selected" : ""}>
                     Choisir une boîte
                 </option>
                 ${optionsBoites}
@@ -338,74 +353,130 @@ function champsSoiree(soiree = {}) {
    4. ACTIONS CRUD
    (Create / Update / Delete)
 
-   Chaque action :
-   1. Modifie le tableau de données (boites ou soirees)
-   2. Sauvegarde dans le localStorage
-   3. Re-génère l'affichage concerné
+   Chaque action appelle l'API avec le token de la
+   personne connectée, puis recharge les données
+   depuis le serveur pour rester bien synchronisé.
 ───────────────────────────────────── */
+
+// Petit raccourci pour les appels qui nécessitent d'être connecté
+async function appelApiProtege(url, methode, corps) {
+    const options = {
+        method: methode,
+        headers: {
+            "Authorization": `Bearer ${token}`
+        }
+    };
+
+    if (corps !== undefined) {
+        options.headers["Content-Type"] = "application/json";
+        options.body = JSON.stringify(corps);
+    }
+
+    const reponse = await fetch(url, options);
+    const resultat = await reponse.json();
+
+    if (reponse.ok === false) {
+        throw new Error(resultat.error || "Une erreur est survenue");
+    }
+
+    return resultat;
+}
+
+// Convertit les champs numériques du formulaire (envoyés en texte
+// par FormData) et remplace les champs vides par null
+function nettoyerCorpsBoite(corps) {
+    const champsNumeriques = ["age_min", "age_max", "price"];
+
+    champsNumeriques.forEach((champ) => {
+        corps[champ] = corps[champ] === "" ? null : Number(corps[champ]);
+    });
+
+    return corps;
+}
+
+// Combine les champs "date" + "heure" du formulaire en un seul
+// champ "date_" (celui attendu par la table events)
+function nettoyerCorpsSoiree(corps) {
+    corps.date_ = `${corps.date} ${corps.heure}:00`;
+    delete corps.date;
+    delete corps.heure;
+
+    corps.price = corps.price === "" ? null : Number(corps.price);
+    corps.idClub = Number(corps.idClub);
+
+    // Champ vide -> on ne l'envoie pas, pour que le serveur
+    // reprenne automatiquement le style de la boîte associée
+    if (corps.music === "") {
+        delete corps.music;
+    }
+
+    return corps;
+}
 
 // ── BOÎTES ──
 
 function ajouterBoite() {
-    ouvrirModale("Ajouter une boîte", champsBoite(), (donnees) => {
-        const nouvelleBoite = {
-            id: genererIdBoite(),
-            name: donnees.get("name").trim(),
-            ville: donnees.get("ville").trim(),
-            music: donnees.get("music").trim(),
-            description: donnees.get("description").trim(),
-            img: donnees.get("img").trim(),
-        };
+    ouvrirModale("Ajouter une boîte", champsBoite(), async (donnees) => {
 
-        boites.push(nouvelleBoite);
-        sauvegarderDonnees();
-        renderBoites();
-        fermerModale();
+        const corps = nettoyerCorpsBoite(Object.fromEntries(donnees.entries()));
+
+        try {
+            await appelApiProtege(`${API_URL}/boites`, "POST", corps);
+
+            await chargerDonnees();
+            renderBoites();
+            renderSoirees();
+            fermerModale();
+
+        } catch (err) {
+            alert(err.message);
+        }
     });
 }
 
-function modifierBoite(id) {
-    const boite = boites.find((b) => b.id === id);
-    if (!boite) return;
+function modifierBoite(idClub) {
+    const boite = boites.find((b) => b.idClub === idClub);
+    if (boite === undefined) return;
 
-    ouvrirModale("Modifier la boîte", champsBoite(boite), (donnees) => {
-        // On modifie directement l'objet trouvé dans le tableau
-        boite.name = donnees.get("name").trim();
-        boite.ville = donnees.get("ville").trim();
-        boite.music = donnees.get("music").trim();
-        boite.description = donnees.get("description").trim();
-        boite.img = donnees.get("img").trim();
+    ouvrirModale("Modifier la boîte", champsBoite(boite), async (donnees) => {
 
-        sauvegarderDonnees();
-        renderBoites();
-        // Les cartes soirées affichent le nom de la boîte,
-        // donc on les recharge aussi si le nom a changé
-        renderSoirees();
-        fermerModale();
+        const corps = nettoyerCorpsBoite(Object.fromEntries(donnees.entries()));
+
+        try {
+            await appelApiProtege(`${API_URL}/boites/${idClub}`, "PATCH", corps);
+
+            await chargerDonnees();
+            renderBoites();
+            // Les cartes soirées affichent le nom de la boîte,
+            // donc on les recharge aussi si le nom a changé
+            renderSoirees();
+            fermerModale();
+
+        } catch (err) {
+            alert(err.message);
+        }
     });
 }
 
-function supprimerBoite(id) {
-    const boite = boites.find((b) => b.id === id);
-    if (!boite) return;
+async function supprimerBoite(idClub) {
+    const boite = boites.find((b) => b.idClub === idClub);
+    if (boite === undefined) return;
 
     const confirme = confirm(
         `Supprimer "${boite.name}" ?\n\nAttention : les soirées liées à cette boîte seront également supprimées.`
     );
-    if (!confirme) return;
+    if (confirme === false) return;
 
-    boites = boites.filter((b) => b.id !== id);
-    // On supprime aussi les soirées orphelines (sans boîte)
-    soirees = soirees.filter((s) => s.idBoite !== id);
+    try {
+        await appelApiProtege(`${API_URL}/boites/${idClub}`, "DELETE");
 
-    sauvegarderDonnees();
-    renderBoites();
-    renderSoirees();
-}
+        await chargerDonnees();
+        renderBoites();
+        renderSoirees();
 
-function genererIdBoite() {
-    if (boites.length === 0) return 1;
-    return Math.max(...boites.map((b) => b.id)) + 1;
+    } catch (err) {
+        alert(err.message);
+    }
 }
 
 // ── SOIRÉES ──
@@ -416,59 +487,60 @@ function ajouterSoiree() {
         return;
     }
 
-    ouvrirModale("Ajouter une soirée", champsSoiree(), (donnees) => {
-        const nouvelleSoiree = {
-            id: genererIdSoiree(),
-            name: donnees.get("name").trim(),
-            date: donnees.get("date"),
-            heure: donnees.get("heure").trim(),
-            prix: donnees.get("prix").trim(),
-            idBoite: parseInt(donnees.get("idBoite")),
-            description: donnees.get("description").trim(),
-            poster: donnees.get("poster").trim(),
-        };
+    ouvrirModale("Ajouter une soirée", champsSoiree(), async (donnees) => {
 
-        soirees.push(nouvelleSoiree);
-        sauvegarderDonnees();
-        renderSoirees();
-        fermerModale();
+        const corps = nettoyerCorpsSoiree(Object.fromEntries(donnees.entries()));
+
+        try {
+            await appelApiProtege(`${API_URL}/events`, "POST", corps);
+
+            await chargerDonnees();
+            renderSoirees();
+            fermerModale();
+
+        } catch (err) {
+            alert(err.message);
+        }
     });
 }
 
-function modifierSoiree(id) {
-    const soiree = soirees.find((s) => s.id === id);
-    if (!soiree) return;
+function modifierSoiree(idEvent) {
+    const soiree = soirees.find((s) => s.idEvent === idEvent);
+    if (soiree === undefined) return;
 
-    ouvrirModale("Modifier la soirée", champsSoiree(soiree), (donnees) => {
-        soiree.name = donnees.get("name").trim();
-        soiree.date = donnees.get("date");
-        soiree.heure = donnees.get("heure").trim();
-        soiree.prix = donnees.get("prix").trim();
-        soiree.idBoite = parseInt(donnees.get("idBoite"));
-        soiree.description = donnees.get("description").trim();
-        soiree.poster = donnees.get("poster").trim();
+    ouvrirModale("Modifier la soirée", champsSoiree(soiree), async (donnees) => {
 
-        sauvegarderDonnees();
-        renderSoirees();
-        fermerModale();
+        const corps = nettoyerCorpsSoiree(Object.fromEntries(donnees.entries()));
+
+        try {
+            await appelApiProtege(`${API_URL}/events/${idEvent}`, "PATCH", corps);
+
+            await chargerDonnees();
+            renderSoirees();
+            fermerModale();
+
+        } catch (err) {
+            alert(err.message);
+        }
     });
 }
 
-function supprimerSoiree(id) {
-    const soiree = soirees.find((s) => s.id === id);
-    if (!soiree) return;
+async function supprimerSoiree(idEvent) {
+    const soiree = soirees.find((s) => s.idEvent === idEvent);
+    if (soiree === undefined) return;
 
     const confirme = confirm(`Supprimer "${soiree.name}" ? Cette action est irréversible.`);
-    if (!confirme) return;
+    if (confirme === false) return;
 
-    soirees = soirees.filter((s) => s.id !== id);
-    sauvegarderDonnees();
-    renderSoirees();
-}
+    try {
+        await appelApiProtege(`${API_URL}/events/${idEvent}`, "DELETE");
 
-function genererIdSoiree() {
-    if (soirees.length === 0) return 1;
-    return Math.max(...soirees.map((s) => s.id)) + 1;
+        await chargerDonnees();
+        renderSoirees();
+
+    } catch (err) {
+        alert(err.message);
+    }
 }
 
 
@@ -481,10 +553,6 @@ function genererIdSoiree() {
    bouton (qui sont créés et détruits dynamiquement),
    on écoute le clic sur le parent et on identifie
    le bouton ciblé avec event.target.closest().
-
-   closest() remonte dans les parents du DOM
-   jusqu'à trouver un élément qui correspond
-   au sélecteur donné, ou retourne null.
 ───────────────────────────────────── */
 
 function initEvenements() {
@@ -501,8 +569,8 @@ function initEvenements() {
         const btnEdit = e.target.closest(".btn-edit");
         const btnDelete = e.target.closest(".btn-delete");
 
-        if (btnEdit) modifierBoite(parseInt(btnEdit.dataset.id));
-        if (btnDelete) supprimerBoite(parseInt(btnDelete.dataset.id));
+        if (btnEdit !== null) modifierBoite(Number(btnEdit.dataset.id));
+        if (btnDelete !== null) supprimerBoite(Number(btnDelete.dataset.id));
     });
 
     // Délégation sur la liste des soirées
@@ -510,8 +578,8 @@ function initEvenements() {
         const btnEdit = e.target.closest(".btn-edit");
         const btnDelete = e.target.closest(".btn-delete");
 
-        if (btnEdit) modifierSoiree(parseInt(btnEdit.dataset.id));
-        if (btnDelete) supprimerSoiree(parseInt(btnDelete.dataset.id));
+        if (btnEdit !== null) modifierSoiree(Number(btnEdit.dataset.id));
+        if (btnDelete !== null) supprimerSoiree(Number(btnDelete.dataset.id));
     });
 
     // Fermeture de la modale via le bouton ✕
@@ -520,19 +588,21 @@ function initEvenements() {
 
     // Fermeture en cliquant sur le fond sombre
     // (mais pas si on clique à l'intérieur de la modale)
+    // et fermeture via le bouton Annuler (délégation, car
+    // ce bouton est injecté dynamiquement dans la modale)
     document.querySelector("#modalOverlay").addEventListener("click", (e) => {
         if (e.target === e.currentTarget) fermerModale();
-    });
-
-    // Fermeture via le bouton Annuler
-    // (délégation car ce bouton est injecté dynamiquement dans la modale)
-    document.querySelector("#modalOverlay").addEventListener("click", (e) => {
         if (e.target.id === "btnAnnuler") fermerModale();
     });
 
-    // Déconnexion (placeholder — la vraie logique JWT viendra avec le backend)
+    // Déconnexion : on efface le token des deux stockages
+    // possibles (peu importe lequel avait été utilisé)
     document.querySelector("#logoutBtn").addEventListener("click", () => {
         if (confirm("Voulez-vous vous déconnecter ?")) {
+            localStorage.removeItem("token");
+            localStorage.removeItem("user");
+            sessionStorage.removeItem("token");
+            sessionStorage.removeItem("user");
             window.location.href = "/FRONT_END/HTML/Connexion_pro.html";
         }
     });
@@ -543,8 +613,12 @@ function initEvenements() {
    6. INITIALISATION
 ───────────────────────────────────── */
 
-document.addEventListener("DOMContentLoaded", () => {
-    chargerDonnees();
+document.addEventListener("DOMContentLoaded", async () => {
+    if (utilisateurConnecte !== null) {
+        document.querySelector("#dashboardGreeting").textContent = `Bonjour, ${utilisateurConnecte.email}`;
+    }
+
+    await chargerDonnees();
     renderBoites();
     renderSoirees();
     initEvenements();

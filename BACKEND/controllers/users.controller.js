@@ -1,5 +1,6 @@
 import db from "../config/db.js";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 const TOURS_DE_SALAGE = 10;
 
@@ -374,4 +375,56 @@ async function reconcilierOwnerInfos(idUser, role, { firstName, lastName, phone 
     }
 
     return "OK";
+};
+
+
+/* ==========================
+   CONNEXION
+   POST /api/users/login
+   Vérifie l'email/mot de passe et renvoie un token JWT.
+   Message d'erreur volontairement identique dans les deux
+   cas (email inconnu / mauvais mot de passe), pour ne pas
+   révéler si un email existe déjà en base.
+   ========================== */
+
+export async function loginUser(req, res) {
+
+    const { email, password } = req.body;
+
+    try {
+
+        const [results] = await db.query(
+            "SELECT idUser, email, password, role FROM users WHERE email = ?", [email]
+        );
+
+        if (results.length === 0) {
+            res.status(401).json({ error: "Email ou mot de passe incorrect" });
+            return;
+        }
+
+        const user = results[0];
+
+        const motDePasseValide = await bcrypt.compare(password, user.password);
+
+        if (motDePasseValide === false) {
+            res.status(401).json({ error: "Email ou mot de passe incorrect" });
+            return;
+        }
+
+        const token = jwt.sign(
+            { idUser: user.idUser, role: user.role },
+            process.env.JWT_SECRET,
+            { expiresIn: "7d" }
+        );
+
+        res.json({
+            message: "Connexion réussie",
+            token,
+            user: { idUser: user.idUser, email: user.email, role: user.role }
+        });
+
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Erreur serveur" });
+    }
 };
