@@ -7,7 +7,7 @@
 import { init_overlay, show_overlay, close_overlay, on_overlay_click } from "../components/overlay.js";
 import { init_burger } from "../components/burger.js";
 import { init_newsletter } from "../components/newsletter.js";
-import { scrollHeader } from "../components/header.js";
+import { scrollHeader, initBoutonEspacePro } from "../components/header.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     init_burger();
     init_newsletter();
     scrollHeader();
+    initBoutonEspacePro();
 
     const reponse = await fetch("http://localhost:3000/api/boites");
     const boites = await reponse.json();

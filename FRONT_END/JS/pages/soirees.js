@@ -8,7 +8,7 @@
 import { init_overlay, show_overlay, close_overlay, on_overlay_click } from "../components/overlay.js";
 import { init_burger } from "../components/burger.js";
 import { init_newsletter } from "../components/newsletter.js";
-import { scrollHeader } from "../components/header.js";
+import { scrollHeader, initBoutonEspacePro } from "../components/header.js";
 import dayjs from "https://cdn.jsdelivr.net/npm/dayjs@1/+esm";
 
 // Liste des 14 jours, générée une seule fois
@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     init_burger();
     init_newsletter();
     scrollHeader();
+    initBoutonEspacePro();
 
     const reponse = await fetch("http://localhost:3000/api/events");
     events = await reponse.json();

@@ -1,4 +1,4 @@
-import { scrollHeader } from "../components/header.js";
+import { scrollHeader, initBoutonEspacePro } from "../components/header.js";
 
 import { init_newsletter } from "../components/newsletter.js";
 import { init_burger } from "../components/burger.js";
@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     init_newsletter();
     scrollHeader();
+    initBoutonEspacePro();
     init_carrousel();
     init_filter(boites);
 });

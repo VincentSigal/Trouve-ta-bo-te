@@ -32,3 +32,31 @@ export function scrollHeader() {
         lastScroll = currentScroll;
     });
 };
+
+/* ==========================
+   BOUTON "ESPACE PRO" / "MON ESPACE"
+
+   Si un token est présent (personne connectée),
+   le bouton .btn-espace-pro devient "Mon espace"
+   avec une icône, et pointe directement vers le
+   tableau de bord au lieu de la page de connexion.
+   ========================== */
+
+export function initBoutonEspacePro() {
+
+    const token = localStorage.getItem("token") || sessionStorage.getItem("token");
+
+    // Personne non connectée : le bouton garde
+    // son comportement par défaut (déjà dans le HTML)
+    if (token === null) {
+        return;
+    }
+
+    const boutons = document.querySelectorAll(".btn-espace-pro");
+
+    boutons.forEach((bouton) => {
+        bouton.href = "/FRONT_END/HTML/Espace_pro.html";
+        bouton.title = "Mon espace";
+        bouton.querySelector("span").textContent = "Mon Espace";
+    });
+};
