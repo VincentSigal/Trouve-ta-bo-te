@@ -55,7 +55,7 @@ export function initBoutonEspacePro() {
     const boutons = document.querySelectorAll(".btn-espace-pro");
 
     boutons.forEach((bouton) => {
-        bouton.href = "/FRONT_END/HTML/Espace_pro.html";
+        bouton.href = "/FRONT_END/HTML/espace_pro.html";
         bouton.title = "Mon espace";
         bouton.querySelector("span").textContent = "Mon Espace";
     });

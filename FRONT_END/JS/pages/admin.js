@@ -228,7 +228,7 @@ btnSave.addEventListener("click", () => {
         },
         tags: [inputTag1.value.trim(), inputTag2.value.trim()],
         description: inputDescription.value.trim(),
-        linkDetails: "/FRONT_END/HTML/Details_boite.html",
+        linkDetails: "/FRONT_END/HTML/details_boite.html",
         music: inputMusique.value.trim(),
     };
 

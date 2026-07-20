@@ -187,7 +187,7 @@ function renderCategories(data) {
                             <p>#${boite.tags2}</p>
                             <div class="popdesc">
                                 <p>${boite.description}</p>
-                                <a href="/FRONT_END/HTML/Details_boite.html?id=${boite.idClub}" data-idclub="${boite.idClub}" title="Voir plus de détails">Voir plus de détails</a>
+                                <a href="/FRONT_END/HTML/details_boite.html?id=${boite.idClub}" data-idclub="${boite.idClub}" title="Voir plus de détails">Voir plus de détails</a>
                             </div>
                         </div>
                     </div>

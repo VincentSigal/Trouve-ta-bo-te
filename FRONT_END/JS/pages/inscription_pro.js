@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            window.location.href = "/FRONT_END/HTML/Connexion_pro.html";
+            window.location.href = "/FRONT_END/HTML/connexion_pro.html";
 
         } catch (err) {
             console.error("Impossible de contacter le serveur :", err);

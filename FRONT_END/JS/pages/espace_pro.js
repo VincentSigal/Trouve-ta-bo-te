@@ -33,7 +33,7 @@ const token = localStorage.getItem("token") || sessionStorage.getItem("token");
 const utilisateurConnecte = JSON.parse(localStorage.getItem("user") || sessionStorage.getItem("user") || "null");
 
 if (token === null) {
-    window.location.href = "/FRONT_END/HTML/Connexion_pro.html";
+    window.location.href = "/FRONT_END/HTML/connexion_pro.html";
 }
 
 
@@ -608,7 +608,7 @@ function initEvenements() {
             localStorage.removeItem("user");
             sessionStorage.removeItem("token");
             sessionStorage.removeItem("user");
-            window.location.href = "/FRONT_END/HTML/Connexion_pro.html";
+            window.location.href = "/FRONT_END/HTML/connexion_pro.html";
         }
     });
 }

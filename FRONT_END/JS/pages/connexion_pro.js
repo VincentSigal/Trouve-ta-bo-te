@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             stockage.setItem("token", resultat.token);
             stockage.setItem("user", JSON.stringify(resultat.user));
 
-            window.location.href = "/FRONT_END/HTML/Espace_pro.html";
+            window.location.href = "/FRONT_END/HTML/espace_pro.html";
 
         } catch (err) {
             console.error("Impossible de contacter le serveur :", err);

@@ -19,11 +19,11 @@ export function init_burger() {
                     <div class="ligne"></div>
                 </div>
                 <ul class="menu_burger">
-                    <li><a href="/FRONT_END/HTML/Accueil.html" title="Accueil">Accueil</a></li>
-                    <li><a href="/FRONT_END/HTML/Boîtes_de_nuit.html" title="Boîtes de nuit">Boîtes de nuit</a></li>
-                    <li><a href="/FRONT_END/HTML/Soirées.html" title="Soirées">Soirées</a></li>
-                    <li><a href="/FRONT_END/HTML/Contact.html" title="Contact">Contact</a></li>
-                    <li><a href="/FRONT_END/HTML/Admin.html" title="Espace professionnel">Espace Admin</a></li>
+                    <li><a href="/FRONT_END/HTML/accueil.html" title="Accueil">Accueil</a></li>
+                    <li><a href="/FRONT_END/HTML/boites_de_nuit.html" title="Boîtes de nuit">Boîtes de nuit</a></li>
+                    <li><a href="/FRONT_END/HTML/soirees.html" title="Soirées">Soirées</a></li>
+                    <li><a href="/FRONT_END/HTML/contact.html" title="Contact">Contact</a></li>
+                    <li><a href="/FRONT_END/HTML/admin.html" title="Espace professionnel">Espace Admin</a></li>
                 </ul>
                 <div class="foreground_menu"></div>
             </nav>
