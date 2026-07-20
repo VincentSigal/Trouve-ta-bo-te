@@ -12,16 +12,17 @@
 
 <body>
 
-    <div class="page-container">
+    <div class="page-container"> <!-- CONTAINER PRINCIPAL -->
 
-        <header id="header">
-            <div class="site-branding">
+
+        <header id="header"> <!-- HEADER -->
+            <div class="site-branding"> <!-- SLOGAN -->
                 <a href="/FRONT_END/HTML/Accueil.html" title="Logo"><img src="/FRONT_END/img/logo.png"
                         alt="Logo Trouve ta boîte"></a>
                 <a href="/FRONT_END/HTML/Accueil.html" title="Trouve ta boîte">Trouve ta boîte</a>
             </div>
 
-            <nav class="main-navigation">
+            <nav class="main-navigation"> <!-- MENU HEADER -->
                 <ul>
                     <li><a href="/FRONT_END/HTML/Accueil.html" title="Accueil">Accueil</a></li>
                     <div class="nav-divider"></div>
@@ -34,27 +35,33 @@
             </nav>
 
             <div class="CTA">
-                <div class="newsletter-banner">
+                <div class="newsletter-banner"> <!-- NEWSLETTER -->
                     <p>Ne rate aucune soirée !</p>
                 </div>
+                <!-- CTA S'INSCRIRE -->
                 <button class="btn-newsletter"><img src="/FRONT_END/img/icons/mail_icon.svg"
                         alt="Icon email">S'inscrire</button>
+
+                <!-- CTA PRO -->
                 <div class="newsletter-pro">
                     <p>Professionnels ?<br>Ajoutez votre boîte</p>
                 </div>
                 <a href="/FRONT_END/HTML/Connexion_pro.html" class="btn-espace-pro" title="Espace pro"><img
                         src="/FRONT_END/img/icons/user_boite.svg" alt="Logo utilisateur"><span>Espace Pro</span></a>
             </div>
+
         </header>
 
+
+        <!-- MAIN -->
         <main>
 
-            <h1>INSCRIPTION PRO</h1>
+            <h1>INSCRIPTION PRO</h1> <!-- HEADINGS 1 -->
 
             <section class="contact_main_section">
 
-                <div class="textform">
-                    <h2 class="headings one">Rejoignez la plateforme</h2>
+                <div class="textform"> <!-- LEFT COLUMN -->
+                    <h2 class="headings one">Rejoignez la plateforme</h2> <!-- HEADINGS 2 -->
                     <div class="hero-logo-divider">
                         <div class="hero-divider-two"></div>
                         <img src="/FRONT_END/img/logo.png" alt="Logo Trouve ta boîte">
@@ -63,45 +70,43 @@
                     <p class="pbottom">Créez votre compte professionnel pour mettre en avant votre établissement
                         auprès de milliers de visiteurs.</p>
 
-                    <h2 class="headings two">Déjà inscrit ?</h2>
+                    <h2 class="headings two">Déjà inscrit ?</h2> <!-- HEADINGS 2 -->
                     <div class="hero-logo-divider">
                         <div class="hero-divider-two"></div>
                         <img src="/FRONT_END/img/logo.png" alt="Logo Trouve ta boîte">
                         <div class="hero-divider-two"></div>
                     </div>
                     <p>Connectez-vous à votre espace pour gérer votre établissement.</p>
+
+                    <!-- BTN CONNECTION -->
                     <a href="/FRONT_END/HTML/Connexion_pro.html" title="Se connecter" class="btn-inscription">Se
                         connecter</a>
                 </div>
 
+                <!-- FORMULAIRE INSCRIPTION -->
                 <form name="InscriptionPro" action="#" method="post">
                     <fieldset>
 
-                        <label for="firstName">*Prénom</label>
+                        <label for="firstName">*Prénom :</label>
                         <input type="text" name="firstName" id="firstName" placeholder="Votre prénom"
                             title="Votre prénom" required>
 
-                        <label for="lastName">*Nom</label>
+                        <label for="lastName">*Nom :</label>
                         <input type="text" name="lastName" id="lastName" placeholder="Votre nom" title="Votre nom"
                             required>
 
-                        <label for="phone">*Téléphone</label>
+                        <label for="phone">*Téléphone :</label>
                         <input type="tel" name="phone" id="phone" placeholder="06 12 34 56 78" title="Votre téléphone"
                             pattern="[0-9]{2}( ?[0-9]{2}){4}" maxlength="10" required>
 
-                        <label for="city">*Ville</label>
+                        <label for="city">*Ville :</label>
                         <input type="text" name="city" id="city" placeholder="Votre ville" title="Votre ville" required>
 
-                        <label for="siret">*Siret de l'établissement</label>
-                        <input type="text" name="siret" id="siret" placeholder="14 chiffres" title="Siret"
-                            pattern="[0-9]{14}" maxlength="14" required>
-
-                        <label for="email">*E-mail</label>
+                        <label for="email">*E-mail :</label>
                         <input type="email" name="email" id="email" placeholder="Exemple@gmail.com" title="Votre email"
                             required>
 
-
-                        <label for="password">*Mot de passe</label>
+                        <label for="password">*Mot de passe :</label>
                         <input type="password" name="password" id="password" placeholder="Votre mot de passe"
                             title="Votre mot de passe" required>
 
@@ -114,6 +119,7 @@
 
                         <p class="no-account">Vous avez déjà un compte ? <a href="/FRONT_END/HTML/Connexion_pro.html"
                                 title="Se connecter">Connectez-vous</a></p>
+
                     </fieldset>
                 </form>
 
@@ -121,8 +127,8 @@
 
         </main>
 
-        <footer>
-            <nav>
+        <footer> <!-- FOOTER -->
+            <nav> <!-- MENU FOOTER -->
                 <ul>
                     <li><a href="/FRONT_END/HTML/Mentions_légales.html" title="Mentions légales">Mentions légales</a>
                     </li>
@@ -133,7 +139,7 @@
                 </ul>
             </nav>
             <div class="professional-cta">
-                <div>
+                <div> <!-- CTA PROFESSIONNEL -->
                     <h3><a href="/FRONT_END/HTML/Contact.html" title="Ajouter votre établissement">Propriétaire de boîte
                             ?</a>
                     </h3>

@@ -144,6 +144,7 @@ fieldset {
     transition: 0.7s;
     width: 100%;
     max-width: 26rem;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 fieldset label {
@@ -177,7 +178,7 @@ fieldset>input {
 #password {
     color: var(--textcolor);
     background-color: transparent;
-    border: 2px solid var(--maincolor);
+    border: 2px solid rgba(255, 203, 112, 0.8);
     border-radius: 30px;
     padding: 0.5rem 0 0.5rem 1rem;
     transition: 0.7s;

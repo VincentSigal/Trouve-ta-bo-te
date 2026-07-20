@@ -96,6 +96,7 @@ fieldset {
     border-radius: 30px;
     padding: 4rem 7.12rem;
     transition: 0.7s;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 fieldset>label {
@@ -176,7 +177,7 @@ form button {
 
 form button:hover,
 form button:focus-visible {
-        filter: brightness(1.4) saturate(1.5);
+    filter: brightness(1.4) saturate(1.5);
 
 }
 

@@ -12,6 +12,11 @@
    6. Initialisation
    ========================== */
 
+import { scrollHeader, initBoutonEspacePro } from "../components/header.js";
+import { init_newsletter } from "../components/newsletter.js";
+import { init_burger } from "../components/burger.js";
+import { init_overlay } from "../components/overlay.js";
+
 const API_URL = "http://localhost:3000/api";
 
 
@@ -614,8 +619,16 @@ function initEvenements() {
 ───────────────────────────────────── */
 
 document.addEventListener("DOMContentLoaded", async () => {
+
+    init_overlay();
+    init_burger();
+    init_newsletter();
+    scrollHeader();
+    initBoutonEspacePro();
+
     if (utilisateurConnecte !== null) {
-        document.querySelector("#dashboardGreeting").textContent = `Bonjour, ${utilisateurConnecte.email}`;
+        const nomAffiche = utilisateurConnecte.firstName || utilisateurConnecte.email;
+        document.querySelector("#dashboardGreeting").textContent = `Bonjour, ${nomAffiche}`;
     }
 
     await chargerDonnees();
