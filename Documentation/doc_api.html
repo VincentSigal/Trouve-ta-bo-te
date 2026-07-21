@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation API | Trouve ta boîte</title>
+    <style>
+        :root {
+            --maincolor: #FFCB70;
+            --bg: #15120e;
+            --bg-card: #1e1a14;
+            --text: #F2EFE9;
+            --muted: #a89f8f;
+            --border: #33291c;
+            --get: #6bbf6b;
+            --post: #FFCB70;
+            --put: #6badd6;
+            --patch: #d6a56b;
+            --delete: #d67070;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: "Segoe UI", Roboto, Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 6rem;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            color: var(--maincolor);
+            margin-bottom: 0.3rem;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            color: var(--maincolor);
+            margin: 3rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section.intro p {
+            margin-bottom: 0.8rem;
+        }
+
+        code.base-url {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.2rem 0.6rem;
+            color: var(--maincolor);
+        }
+
+        /* Table des matières */
+        .toc {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            border: none;
+            padding-bottom: 0;
+            font-size: 1.1rem;
+        }
+
+        .toc ul {
+            list-style: none;
+        }
+
+        .toc li {
+            margin: 0.35rem 0;
+        }
+
+        .toc a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            color: var(--maincolor);
+            text-decoration: underline;
+        }
+
+        /* Badges méthode HTTP */
+        .method {
+            display: inline-block;
+            font-family: monospace;
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 5px;
+            margin-right: 0.5rem;
+            color: black;
+        }
+
+        .method-GET {
+            background: var(--get);
+        }
+
+        .method-POST {
+            background: var(--post);
+        }
+
+        .method-PUT {
+            background: var(--put);
+        }
+
+        .method-PATCH {
+            background: var(--patch);
+        }
+
+        .method-DELETE {
+            background: var(--delete);
+        }
+
+        /* Un endpoint */
+        .endpoint {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            scroll-margin-top: 1.5rem;
+        }
+
+        .endpoint-title {
+            font-family: monospace;
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+
+        .endpoint h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--muted);
+            margin: 1.1rem 0 0.4rem;
+        }
+
+        .endpoint h4:first-of-type {
+            margin-top: 0;
+        }
+
+        .badge-auth {
+            display: inline-block;
+            font-size: 0.75rem;
+            border: 1px solid var(--maincolor);
+            color: var(--maincolor);
+            border-radius: 20px;
+            padding: 0.15rem 0.7rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .badge-public {
+            display: inline-block;
+            font-size: 0.75rem;
+            border: 1px solid var(--muted);
+            color: var(--muted);
+            border-radius: 20px;
+            padding: 0.15rem 0.7rem;
+            margin-bottom: 0.8rem;
+        }
+
+        pre {
+            background: #0e0c09;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            overflow-x: auto;
+            font-size: 0.85rem;
+            font-family: "Consolas", monospace;
+        }
+
+        p {
+            color: var(--text);
+        }
+
+        .note {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-top: 0.6rem;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--muted);
+            text-decoration: none;
+        }
+
+        .back-to-top:hover {
+            color: var(--maincolor);
+        }
+
+        table.errors {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        table.errors th,
+        table.errors td {
+            border: 1px solid var(--border);
+            padding: 0.4rem 0.6rem;
+            text-align: left;
+        }
+
+        table.errors th {
+            color: var(--muted);
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+
+        <h1 class="title" id="title">Documentation de l'API — Trouve ta boîte</h1>
+        <p class="subtitle">Cette page explique comment utiliser l'API du site.</p>
+
+        <section class="intro">
+            <p>Pour utiliser cette API, envoie une requête HTTP à l'adresse :</p>
+            <p><code class="base-url">http://localhost:3000/api</code></p>
+            <p>Toutes les réponses sont au format JSON. Les routes marquées <span class="badge-auth">Connexion
+                    requise</span> ont besoin d'un header <code>Authorization: Bearer &lt;token&gt;</code>, obtenu via
+                <a href="#post-users-login" style="color: var(--maincolor);">POST /users/login</a>.
+            </p>
+        </section>
+
+        <div class="toc">
+            <h2>Liste des routes</h2>
+            <ul>
+                <li><a href="#get-boites">GET /boites</a></li>
+                <li><a href="#get-boites-id">GET /boites/:id</a></li>
+                <li><a href="#post-boites">POST /boites</a></li>
+                <li><a href="#put-boites-id">PUT /boites/:id</a></li>
+                <li><a href="#patch-boites-id">PATCH /boites/:id</a></li>
+                <li><a href="#delete-boites-id">DELETE /boites/:id</a></li>
+                <li><a href="#post-boites-click">POST /boites/:id/click</a></li>
+                <li><a href="#get-events">GET /events</a></li>
+                <li><a href="#get-events-id">GET /events/:id</a></li>
+                <li><a href="#post-events">POST /events</a></li>
+                <li><a href="#put-events-id">PUT /events/:id</a></li>
+                <li><a href="#patch-events-id">PATCH /events/:id</a></li>
+                <li><a href="#delete-events-id">DELETE /events/:id</a></li>
+                <li><a href="#get-users">GET /users</a></li>
+                <li><a href="#get-users-id">GET /users/:id</a></li>
+                <li><a href="#post-users">POST /users</a></li>
+                <li><a href="#post-users-login">POST /users/login</a></li>
+                <li><a href="#put-users-id">PUT /users/:id</a></li>
+                <li><a href="#patch-users-id">PATCH /users/:id</a></li>
+                <li><a href="#delete-users-id">DELETE /users/:id</a></li>
+            </ul>
+        </div>
+
+        <!-- ============ BOÎTES ============ -->
+        <h2 id="boites">Boîtes de nuit</h2>
+
+        <div class="endpoint" id="get-boites">
+            <p class="endpoint-title"><span class="method method-GET">GET</span> /boites</p>
+            <span class="badge-public">Public</span>
+
+            <h4>Description</h4>
+            <p>Renvoie toutes les boîtes de nuit, triées par popularité (nombre de clics décroissant). Chaque boîte
+                contient le nom de sa ville et son style musical.</p>
+
+            <h4>Réponse</h4>
+            <pre>[
+  {
+    "idClub": 1,
+    "name": "L'Amnesia",
+    "background": "/FRONT_END/img/amnesia/amnesia.webp",
+    "logo": "/FRONT_END/img/amnesia/amnesia_logo.png",
+    "location_link": "https://maps.app.goo.gl/...",
+    "adress_name": "Poussan",
+    "description": "...",
+    "tags1": "Techno",
+    "tags2": "Hard",
+    "age_min": 18,
+    "age_max": 30,
+    "price": 50,
+    "instagram": "https://www.instagram.com/...",
+    "siret": "11111111111111",
+    "clicks": 42,
+    "idUser": 3,
+    "idCity": 1,
+    "city_name": "Montpellier",
+    "music_name": "Techno"
+  },
+  ...
+]</pre>
+
+            <a class="back-to-top" href="#title">↑ Retour en haut</a>
+        </div>
+
+        <div class="endpoint" id="get-boites-id">
+            <p class="endpoint-title"><span class="method method-GET">GET</span> /boites/:id</p>
+            <span class="badge-public">Public</span>
+
+            <h4>Description</h4>
+            <p>Renvoie une boîte précise, avec en plus ses photos (<code>photos</code>) et ses horaires d'ouverture
+                (<code>horaires</code>).</p>
+
+            <h4>Réponse</h4>
+            <pre>{
+  "idClub": 1,
+  "name": "L'Amnesia",
+  "city_name": "Montpellier",
+  "music_name": "Techno",
+  "photos": [
+    { "urlPhoto": "/FRONT_END/img/amnesia/1.jpg", "photo_name": "L'Amnesia" }
+  ],
+  "horaires": [
+    { "day": "Samedi", "opening_hours": "00:00:00", "closing_hours": "07:00:00" }
+  ],
+  ...
+}</pre>
+
+            <h4>Erreurs possibles</h4>
+            <table class="errors">
+                <tr>
+                    <th>Code</th>
+                    <th>Cas</th>
+                </tr>
+                <tr>
+                    <td>404</td>
+                    <td>Aucune boîte avec cet id</td>
+                </tr>
+            </table>
+
+            <a class="back-to-top" href="#title">↑ Retour en haut</a>
+        </div>
+
+        <div class="endpoint" id="post-boites">
+            <p class="endpoint-title"><span class="method method-POST">POST</span> /boites</p>
+            <span class="badge-auth">Connexion requise — owner ou admin</span>
+
+            <h4>Description</h4>
+            <p>Crée une nouvelle boîte. Elle est automatiquement attribuée à la personne connectée (un owner ne peut
+                pas créer une boîte pour quelqu'un d'autre). <code>city</code> et <code>music</code> sont des noms en
+                texte libre : s'ils n'existent pas encore en base, ils sont créés automatiquement.</p>
+
+            <h4>Requête</h4>
+            <pre>{
+  "name": "Le Panama",
+  "siret": "12345678900011",
+  "city": "Sète",
+  "music": "House",
+  "background": "/FRONT_END/img/panama/panama.webp",
+  "logo": "/FRONT_END/img/panama/panama_logo.jpg",
+  "location_link": "https://maps.app.goo.gl/...",
+  "adress_name": "12 quai du port",
+  "description": "...",
+  "paragraph": "...",
+  "tags1": "House",
+  "tags2": "Festif",
+  "age_min": 18,
+  "age_max": 30,
+  "price": 15,
+  "instagram": "https://www.instagram.com/..."
+}</pre>
+            <p class="note">Tous les champs sont facultatifs sauf <code>name</code> et <code>siret</code>
+                (obligatoires en base). <code>idCity</code> peut être envoyé directement à la place de
+                <code>city</code> si tu connais déjà son id.
+            </p>
+
+            <h4>Réponse</h4>
+            <pre>{ "message": "Boîte créée", "idClub": 24 }</pre>
+
+            <h4>Erreurs possibles</h4>
+            <table class="errors">
+                <tr>
+                    <th>Code</th>
+                    <th>Cas</th>
+                </tr>
+                <tr>
+                    <td>401</td>
+                    <td>Pas de token / token invalide</td>
+                </tr>
+                <tr>
+                    <td>403</td>
+                    <td>Le compte connecté n'est ni owner ni admin</td>
+                </tr>
+            </table>
+
+            <a class="back-to-top" href="#title">↑ Retour en haut</a>
+        </div>
+
+        <div class="endpoint" id="put-boites-id">
+            <p class="endpoint-title"><span class="method method-PUT">PUT</span> /boites/:id</p>
+            <span class="badge-auth">Connexion requise — propriétaire ou admin</span>
+
+            <h4>Description</h4>
+            <p>Remplace entièrement une boîte. Réservé au propriétaire de la boîte (ou à un admin).</p>
+
+            <h4>Requête</h4>
+            <p>Les mêmes champs que <a href="#post-boites">POST /boites</a>, tous requis pour un remplacement
+                complet.</p>
+
+            <h4>Réponse</h4>
+            <pre>{ "message": "Boîte remplacée" }</pre>
+
+            <h4>Erreurs possibles</h4>
+            <table class="errors">
+                <tr>
+                    <th>Code</th>
+                    <th>Cas</th>
+                </tr>
+                <tr>
+                    <td>401</td>
+                    <td>Pas de token / token invalide</td>
+                </tr>
+                <tr>
+                    <td>403</td>
+                    <td>Cette boîte ne t'appartient pas</td>
+                </tr>
+                <tr>
+                    <td>404</td>
+                    <td>Aucune boîte avec cet id</td>
+                </tr>
+            </table>
+
+            <a class="back-to-top" href="#title">↑ Retour en haut</a>
+        </div>
+
+        <div class="endpoint" id="patch-boites-id">
+            <p class="endpoint-title"><span class="method method-PATCH">PATCH</span> /boites/:id</p>
+            <span class="badge-auth">Connexion requise — propriétaire ou admin</span>
+
+            <h4>Description</h4>
+            <p>Modifie une boîte partiellement : envoie uniquement les champs à changer.</p>
+
+            <h4>Requête</h4>
+            <pre>{ "price": 20, "music": "Techno" }</pre>
+
+            <h4>Réponse</h4>
+            <pre>{ "message": "Boîte modifiée" }</pre>
+
+            <h4>Erreurs possibles</h4>
+            <table class="errors">
+                <tr>
+                    <th>Code</th>
+                    <th>Cas</th>
+                </tr>
+                <tr>
+                    <td>400</td>
+                    <td>Aucun champ valide envoyé</td>
+                </tr>
+                <tr>
+                    <td>401</td>
+                    <td>Pas de token / token invalide</td>
+                </tr>
+                <tr>
+                    <td>403</td>
+                    <td>Cette boîte ne t'appartient pas</td>
+                </tr>
+                <tr>
+                    <td>404</td>
+                    <td>Aucune boîte avec cet id</td>
+                </tr>
+            </table>
+
+            <a class="back-to-top" href="#title">↑ Retour en haut</a>
+        </div>
+
+        <div class="endpoint" id="delete-boites-id">
+            <p class="endpoint-title"><span class="method method-DELETE">DELETE</span> /boites/:id</p>
+            <span class="badge-auth">Connexion requise — propriétaire ou admin</span>
+
+            <h4>Description</h4>
+            <p>Supprime une boîte, ainsi que tout ce qui en dépend (photos, horaires, style musical, soirées,
+                favoris).</p>
+
+            <h4>Réponse</h4>
+            <pre>{ "message": "Boîte supprimée" }</pre>
+
+            <h4>Erreurs possibles</h4>
+            <table class="errors">
+                <tr>
+                    <th>Code</th>
+                    <th>Cas</th>
+                </tr>
+                <tr>
+                    <td>401</td>
+                    <td>Pas de token / token invalide</td>
+                </tr>
+                <tr>
+                    <td>403</td>
+                    <td>Cette boîte ne t'appartient pas</td>
+                </tr>
+                <tr>
+                    <td>404</td>
+                    <td>Aucune boîte avec cet id</td>
+                </tr>
+            </table>
+
+            <a class="back-to-top" href="#title">↑ Retour en haut</a>
+        </div>
+
+        <div class="endpoint" id="post-boites-click">
+            <p class="endpoint-title"><span class="method method-POST">POST</span> /boites/:id/click</p>
+            <span class="badge-public">Public</span>
+
+            <h4>Description</h4>
+            <p>Incrémente de 1 le compteur de clics d'une boîte (utilisé pour mesurer sa popularité). Appelée quand
+                un visiteur clique sur "Voir plus de détails" ou sur une soirée organisée par cette boîte.</p>
+
+            <h4>Réponse</h4>
+            <pre>{ "message": "Clic comptabilisé" }</pre>
+
+            <a class="back-to-top" href="#title">↑ Retour en haut</a>
+        </div>
+
+        <!-- ============ SOIRÉES ============ -->
+        <h2 id="events">Soirées</h2>
+
+        <div class="endpoint" id="get-events">
+            <p class="endpoint-title"><span class="method method-GET">GET</span> /events</p>
+            <span class="badge-public">Public</span>
+
+            <h4>Description</h4>
+            <p>Renvoie toutes les soirées, triées par date la plus proche en premier. Chaque soirée contient le nom
+                de sa boîte, sa ville et son style musical.</p>
+
+            <h4>Réponse</h4>
+            <pre>[
+  {
+    "idEvent": 5,
+    "name": "Soirée Techno",
+    "date_": "2026-08-01 23:00:00",
+    "price": 15,
+    "description": "...",
+    "poster": "/FRONT_END/img/events/5.jpg",
+    "idMusic": 1,
+    "idClub": 1,
+    "boite_name": "L'Amnesia",
+    "city_name": "Montpellier",
+    "music_name": "Techno"
+  },
+  ...
+]</pre>
+
+            <a class="back-to-top" href="#title">↑ Retour en haut</a>
+        </div>
+
+        <div class="endpoint" id="get-events-id">
+            <p class="endpoint-title"><span class="method method-GET">GET</span> /events/:id</p>
+            <span class="badge-public">Public</span>
+
+            <h4>Description</h4>
+            <p>Renvoie une soirée précise.</p>
+
+            <h4>Erreurs possibles</h4>
+            <table class="errors">
+                <tr>
+                    <th>Code</th>
+                    <th>Cas</th>
+                </tr>
+                <tr>
+                    <td>404</td>
+                    <td>Aucune soirée avec cet id</td>
+                </tr>
+            </table>
+
+            <a class="back-to-top" href="#title">↑ Retour en haut</a>
+        </div>
+
+        <div class="endpoint" id="post-events">
+            <p class="endpoint-title"><span class="method method-POST">POST</span> /events</p>
+            <span class="badge-auth">Connexion requise — propriétaire de la boîte, ou admin</span>
+
+            <h4>Description</h4>
+            <p>Crée une soirée pour une boîte. Le champ <code>music</code> est facultatif : s'il n'est pas fourni, le
+                style musical de la boîte organisatrice est repris automatiquement.</p>
+
+            <h4>Requête</h4>
+            <pre>{
+  "name": "Soirée Techno",
+  "date_": "2026-08-01 23:00:00",
+  "price": 15,
+  "description": "Une nuit spéciale techno",
+  "poster": "/FRONT_END/img/events/poster.jpg",
+  "idClub": 1,
+  "music": "Hardstyle"
+}</pre>
+            <p class="note"><code>date_</code> combine la date et l'heure dans un seul champ, au format
+                <code>YYYY-MM-DD HH:MM:SS</code>.
+            </p>
+
+            <h4>Réponse</h4>
+            <pre>{ "message": "Soirée créée", "idEvent": 12 }</pre>
+
+            <h4>Erreurs possibles</h4>
+            <table class="errors">
+                <tr>
+                    <th>Code</th>
+                    <th>Cas</th>
+                </tr>
+                <tr>
+                    <td>401</td>
+                    <td>Pas de token / token invalide</td>
+                </tr>
+                <tr>
+                    <td>403</td>
+                    <td>La boîte visée (idClub) ne t'appartient pas</td>
+                </tr>
+                <tr>
+                    <td>404</td>
+                    <td>Aucune boîte avec cet idClub</td>
+                </tr>
+            </table>
+
+            <a class="back-to-top" href="#title">↑ Retour en haut</a>
+        </div>
+
+        <div class="endpoint" id="put-events-id">
+            <p class="endpoint-title"><span class="method method-PUT">PUT</span> /events/:id</p>
+            <span class="badge-auth">Connexion requise — propriétaire ou admin</span>
+
+            <h4>Description</h4>
+            <p>Remplace entièrement une soirée. Mêmes champs que <a href="#post-events">POST /events</a>.</p>
+
+            <h4>Réponse</h4>
+            <pre>{ "message": "Soirée remplacée" }</pre>
+
+            <a class="back-to-top" href="#title">↑ Retour en haut</a>
+        </div>
+
+        <div class="endpoint" id="patch-events-id">
+            <p class="endpoint-title"><span class="method method-PATCH">PATCH</span> /events/:id</p>
+            <span class="badge-auth">Connexion requise — propriétaire ou admin</span>
+
+            <h4>Description</h4>
+            <p>Modifie une soirée partiellement.</p>
+
+            <h4>Requête</h4>
+            <pre>{ "price": 20 }</pre>
+
+            <h4>Réponse</h4>
+            <pre>{ "message": "Soirée modifiée" }</pre>
+
+            <a class="back-to-top" href="#title">↑ Retour en haut</a>
+        </div>
+
+        <div class="endpoint" id="delete-events-id">
+            <p class="endpoint-title"><span class="method method-DELETE">DELETE</span> /events/:id</p>
+            <span class="badge-auth">Connexion requise — propriétaire ou admin</span>
+
+            <h4>Description</h4>
+            <p>Supprime une soirée.</p>
+
+            <h4>Réponse</h4>
+            <pre>{ "message": "Soirée supprimée" }</pre>
+
+            <a class="back-to-top" href="#title">↑ Retour en haut</a>
+        </div>
+
+        <!-- ============ UTILISATEURS ============ -->
+        <h2 id="users">Utilisateurs</h2>
+
+        <div class="endpoint" id="get-users">
+            <p class="endpoint-title"><span class="method method-GET">GET</span> /users</p>
+            <span class="badge-public">Public</span>
+
+            <h4>Description</h4>
+            <p>Renvoie tous les utilisateurs. Le mot de passe n'est jamais renvoyé.</p>
+
+            <h4>Réponse</h4>
+            <pre>[
+  {
+    "idUser": 1,
+    "email": "jean@club.fr",
+    "date_inscription": "2026-06-20",
+    "newsletter": 0,
+    "role": "owner",
+    "idCity": 1,
+    "firstName": "Jean",
+    "lastName": "Dupont",
+    "phone": "0611111111"
+  },
+  ...
+]</pre>
+
+            <a class="back-to-top" href="#title">↑ Retour en haut</a>
+        </div>
+
+        <div class="endpoint" id="get-users-id">
+            <p class="endpoint-title"><span class="method method-GET">GET</span> /users/:id</p>
+            <span class="badge-public">Public</span>
+
+            <h4>Description</h4>
+            <p>Renvoie un utilisateur précis.</p>
+
+            <h4>Erreurs possibles</h4>
+            <table class="errors">
+                <tr>
+                    <th>Code</th>
+                    <th>Cas</th>
+                </tr>
+                <tr>
+                    <td>404</td>
+                    <td>Aucun utilisateur avec cet id</td>
+                </tr>
+            </table>
+
+            <a class="back-to-top" href="#title">↑ Retour en haut</a>
+        </div>
+
+        <div class="endpoint" id="post-users">
+            <p class="endpoint-title"><span class="method method-POST">POST</span> /users</p>
+            <span class="badge-public">Public</span>
+
+            <h4>Description</h4>
+            <p>Crée un compte. Si <code>role</code> vaut <code>"owner"</code>, <code>firstName</code>,
+                <code>lastName</code> et <code>phone</code> deviennent obligatoires.
+            </p>
+
+            <h4>Requête</h4>
+            <pre>{
+  "email": "jean@club.fr",
+  "password": "motdepasse123",
+  "newsletter": false,
+  "role": "owner",
+  "city": "Montpellier",
+  "firstName": "Jean",
+  "lastName": "Dupont",
+  "phone": "0611111111"
+}</pre>
+            <p class="note">Le mot de passe est hashé avant d'être stocké (bcrypt). <code>city</code> fonctionne
+                comme pour les boîtes : nom en texte libre, créé automatiquement si besoin.</p>
+
+            <h4>Réponse</h4>
+            <pre>{ "message": "Utilisateur créé", "idUser": 8 }</pre>
+
+            <h4>Erreurs possibles</h4>
+            <table class="errors">
+                <tr>
+                    <th>Code</th>
+                    <th>Cas</th>
+                </tr>
+                <tr>
+                    <td>400</td>
+                    <td>role = "owner" sans firstName/lastName/phone</td>
+                </tr>
+                <tr>
+                    <td>409</td>
+                    <td>Cet email est déjà utilisé</td>
+                </tr>
+            </table>
+
+            <a class="back-to-top" href="#title">↑ Retour en haut</a>
+        </div>
+
+        <div class="endpoint" id="post-users-login">
+            <p class="endpoint-title"><span class="method method-POST">POST</span> /users/login</p>
+            <span class="badge-public">Public</span>
+
+            <h4>Description</h4>
+            <p>Vérifie l'email et le mot de passe, et renvoie un token JWT à utiliser dans le header
+                <code>Authorization</code> des routes protégées, sous la forme
+                <code>Authorization: Bearer &lt;token&gt;</code>. Le token est valable 7 jours.
+            </p>
+
+            <h4>Requête</h4>
+            <pre>{
+  "email": "jean@club.fr",
+  "password": "motdepasse123"
+}</pre>
+
+            <h4>Réponse</h4>
+            <pre>{
+  "message": "Connexion réussie",
+  "token": "eyJhbGciOiJIUzI1NiIs...",
+  "user": {
+    "idUser": 1,
+    "email": "jean@club.fr",
+    "role": "owner",
+    "firstName": "Jean"
+  }
+}</pre>
+
+            <h4>Erreurs possibles</h4>
+            <table class="errors">
+                <tr>
+                    <th>Code</th>
+                    <th>Cas</th>
+                </tr>
+                <tr>
+                    <td>401</td>
+                    <td>Email ou mot de passe incorrect (même message dans les deux cas)</td>
+                </tr>
+            </table>
+
+            <a class="back-to-top" href="#title">↑ Retour en haut</a>
+        </div>
+
+        <div class="endpoint" id="put-users-id">
+            <p class="endpoint-title"><span class="method method-PUT">PUT</span> /users/:id</p>
+            <span class="badge-public">Public</span>
+
+            <h4>Description</h4>
+            <p>Remplace entièrement un utilisateur. Mêmes règles que <a href="#post-users">POST /users</a> pour
+                <code>firstName</code>/<code>lastName</code>/<code>phone</code>.
+            </p>
+
+            <h4>Réponse</h4>
+            <pre>{ "message": "Utilisateur remplacé" }</pre>
+
+            <a class="back-to-top" href="#title">↑ Retour en haut</a>
+        </div>
+
+        <div class="endpoint" id="patch-users-id">
+            <p class="endpoint-title"><span class="method method-PATCH">PATCH</span> /users/:id</p>
+            <span class="badge-public">Public</span>
+
+            <h4>Description</h4>
+            <p>Modifie un utilisateur partiellement. Si le rôle passe à <code>"owner"</code>,
+                <code>firstName</code>/<code>lastName</code>/<code>phone</code> deviennent nécessaires (dans cette
+                requête, ou déjà présents en base). Si le rôle passe à autre chose, les infos owner sont
+                automatiquement supprimées.
+            </p>
+
+            <h4>Requête</h4>
+            <pre>{ "phone": "0699999999" }</pre>
+
+            <h4>Réponse</h4>
+            <pre>{ "message": "Utilisateur modifié" }</pre>
+
+            <h4>Erreurs possibles</h4>
+            <table class="errors">
+                <tr>
+                    <th>Code</th>
+                    <th>Cas</th>
+                </tr>
+                <tr>
+                    <td>400</td>
+                    <td>Aucun champ valide, ou passage à owner sans firstName/lastName/phone</td>
+                </tr>
+                <tr>
+                    <td>404</td>
+                    <td>Aucun utilisateur avec cet id</td>
+                </tr>
+                <tr>
+                    <td>409</td>
+                    <td>Cet email est déjà utilisé</td>
+                </tr>
+            </table>
+
+            <a class="back-to-top" href="#title">↑ Retour en haut</a>
+        </div>
+
+        <div class="endpoint" id="delete-users-id">
+            <p class="endpoint-title"><span class="method method-DELETE">DELETE</span> /users/:id</p>
+            <span class="badge-public">Public</span>
+
+            <h4>Description</h4>
+            <p>Supprime un utilisateur (et ses infos owner associées, s'il en a).</p>
+
+            <h4>Réponse</h4>
+            <pre>{ "message": "Utilisateur supprimé" }</pre>
+
+            <h4>Erreurs possibles</h4>
+            <table class="errors">
+                <tr>
+                    <th>Code</th>
+                    <th>Cas</th>
+                </tr>
+                <tr>
+                    <td>404</td>
+                    <td>Aucun utilisateur avec cet id</td>
+                </tr>
+                <tr>
+                    <td>409</td>
+                    <td>Cet utilisateur possède encore des boîtes</td>
+                </tr>
+            </table>
+
+            <a class="back-to-top" href="#title">↑ Retour en haut</a>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

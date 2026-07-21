@@ -394,7 +394,10 @@ export async function loginUser(req, res) {
     try {
 
         const [results] = await db.query(
-            "SELECT idUser, email, password, role FROM users WHERE email = ?", [email]
+            `SELECT users.idUser, users.email, users.password, users.role, owners_infos.firstName
+             FROM users
+             LEFT JOIN owners_infos ON owners_infos.idUser = users.idUser
+             WHERE users.email = ?`, [email]
         );
 
         if (results.length === 0) {
@@ -420,7 +423,7 @@ export async function loginUser(req, res) {
         res.json({
             message: "Connexion réussie",
             token,
-            user: { idUser: user.idUser, email: user.email, role: user.role }
+            user: { idUser: user.idUser, email: user.email, role: user.role, firstName: user.firstName }
         });
 
     } catch (err) {
