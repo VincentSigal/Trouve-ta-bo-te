@@ -1,5 +1,6 @@
 import db from "../config/db.js";
 
+
 /* ==========================
    LIRE TOUTES LES BOÎTES
    GET /api/boites
@@ -99,6 +100,7 @@ export async function createBoite(req, res) {
     } = req.body;
 
     // Seuls les owners et les admins peuvent créer une boîte
+    // Ne pas mettre en dur les tests, remplacer plus tard !!!!!!!
     if (req.user.role !== "owner" && req.user.role !== "admin") {
         res.status(403).json({ error: "Seuls les owners ou admins peuvent créer une boîte" });
         return;
@@ -364,15 +366,10 @@ export async function deleteBoite(req, res) {
             return;
         }
 
-        // On supprime d'abord tout ce qui dépend de cette boîte,
-        // sinon les clés étrangères bloquent la suppression
-        await db.query("DELETE FROM style WHERE idClub = ?", [id]);
-        await db.query("DELETE FROM photos_library WHERE idClub = ?", [id]);
-        await db.query("DELETE FROM opening_schedule WHERE idClub = ?", [id]);
-        await db.query("DELETE FROM events WHERE idClub = ?", [id]);
-        await db.query("DELETE FROM favorites WHERE idClub = ?", [id]);
-        await db.query("DELETE FROM subscribes WHERE idClub = ?", [id]);
-
+        // Les tables liées (style, photos_library, opening_schedule,
+        // events, favorites, subscribes) ont une contrainte
+        // ON DELETE CASCADE sur idClub : elles se nettoient
+        // automatiquement quand on supprime la boîte.
         await db.query("DELETE FROM boites WHERE idClub = ?", [id]);
 
         res.json({ message: "Boîte supprimée" });

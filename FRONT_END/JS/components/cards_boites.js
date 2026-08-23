@@ -54,7 +54,7 @@ export function renderCards(data) {
                                 <p>#${boites_js.tags2}</p>
                                 <div class="popdesc">
                                     <p>${boites_js.description}</p>
-                                    <a href="/FRONT_END/HTML/details_boite.html?id=${boites_js.idClub}" data-idclub="${boites_js.idClub}" title="Voir plus de détails">Voir plus de détails</a>
+                                    <a href="/FRONT_END/HTML/details_boite.html?id=${boites_js.idClub}" data-idclub="${boites_js.idClub}" title="Voir plus de détails" target="_blank">Voir plus de détails</a>
                                 </div>
                             </div>
                         </div>
